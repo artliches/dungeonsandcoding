@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1613163139749,
+  "timestamp": 1613163305280,
   "index": "/dungeonsandcoding/index.html",
   "assetGroups": [
     {
@@ -46,7 +46,7 @@
     "/dungeonsandcoding/index.html": "c43aa8b69fca15b22a3c55fb3748de31e2b168dd",
     "/dungeonsandcoding/main-es2015.9cd91b94bd7c6a94678b.js": "d3cdcabf7404eb94c07ffab066be713f36dd4f28",
     "/dungeonsandcoding/main-es5.9cd91b94bd7c6a94678b.js": "483fcc3ebac32c43d27526f178a7dfdfb045cd1d",
-    "/dungeonsandcoding/manifest.webmanifest": "bf31baf91bdd2fcde24a45e3f2a1be33733c6f69",
+    "/dungeonsandcoding/manifest.webmanifest": "b7223ff26b1c412125c49203cad240972b8fb262",
     "/dungeonsandcoding/polyfills-es2015.ffa9bb4e015925544f91.js": "79b2ff5ba292ae9e56f0b43982b9e76d9ddcf285",
     "/dungeonsandcoding/polyfills-es5.0290b245fbcca09184ac.js": "d6eec49d0091595d34f8340793d4258b8b30602c",
     "/dungeonsandcoding/runtime-es2015.cdfb0ddb511f65fdc0a0.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
