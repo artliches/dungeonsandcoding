@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { UvgBlackRulesComponent } from './uvg-black-rules/uvg-black-rules.component';
+import { UvgBlackSheetComponent } from './uvg-black-sheet/uvg-black-sheet.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UvgBlackRulesComponent,
+    UvgBlackSheetComponent
   ],
   imports: [
     BrowserModule,
