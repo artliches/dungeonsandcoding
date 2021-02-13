@@ -1,0 +1,32 @@
+.rainbow {
+    background-image: linear-gradient(to left, violet, magenta, cyan, lime, yellow, orange, red);
+    background-clip: text;
+    color: transparent;
+}
+
+.black-back {
+    background-color: black;
+}
+
+h2 {
+    margin: 0rem;
+}
+
+.rules-grid {
+    padding-top: 1rem;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-areas: ". main .";
+
+    section.rules-main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 1rem;
+    }
+
+    .uvg-card {
+        .uvg-card-body.rules-card-body {
+            grid-template-rows: repeat(4, min-content);
+        }
+    }
+}
