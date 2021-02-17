@@ -4,6 +4,11 @@ $uvg-border: 1px solid purple;
     size: 8.5in 11in;
 }
 
+@font-face {
+    font-family: 'Baron Neue';
+    src: url(assets/fonts/BaronNeue.otf) format("opentype");
+}
+
 body {
     background-color: black;
     margin: 1rem;
@@ -36,6 +41,8 @@ body {
     font-size: 1rem;
 
     h1 {
+        font-weight: 100;
+        font-family: 'Baron Neue', sans-serif;
         place-self: stretch;
         margin: 0rem;
         padding-left: 0.5rem;
