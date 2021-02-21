@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1613582839950,
+  "timestamp": 1613951360290,
   "index": "/dungeonsandcoding/index.html",
   "assetGroups": [
     {
@@ -10,14 +10,14 @@
       "urls": [
         "/dungeonsandcoding/favicon.ico",
         "/dungeonsandcoding/index.html",
-        "/dungeonsandcoding/main-es2015.28d38cbeb2e1e17eb4cb.js",
-        "/dungeonsandcoding/main-es5.28d38cbeb2e1e17eb4cb.js",
+        "/dungeonsandcoding/main-es2015.85b1736ac0abbe8e0b6c.js",
+        "/dungeonsandcoding/main-es5.85b1736ac0abbe8e0b6c.js",
         "/dungeonsandcoding/manifest.webmanifest",
         "/dungeonsandcoding/polyfills-es2015.ffa9bb4e015925544f91.js",
         "/dungeonsandcoding/polyfills-es5.0290b245fbcca09184ac.js",
         "/dungeonsandcoding/runtime-es2015.cdfb0ddb511f65fdc0a0.js",
         "/dungeonsandcoding/runtime-es5.cdfb0ddb511f65fdc0a0.js",
-        "/dungeonsandcoding/styles.55a43ff2f640ead5c3a6.css"
+        "/dungeonsandcoding/styles.630f00e1aeca4eadf324.css"
       ],
       "patterns": []
     },
@@ -27,6 +27,7 @@
       "updateMode": "prefetch",
       "urls": [
         "/dungeonsandcoding/BaronNeue.c880c33aea3e7965c555.otf",
+        "/dungeonsandcoding/assets/charSheets/uvg&theBlackHack.pdf",
         "/dungeonsandcoding/assets/fonts/BaronNeue.otf",
         "/dungeonsandcoding/assets/icons/android-chrome-192x192.png",
         "/dungeonsandcoding/assets/icons/android-chrome-512x512.png",
@@ -40,6 +41,7 @@
   "dataGroups": [],
   "hashTable": {
     "/dungeonsandcoding/BaronNeue.c880c33aea3e7965c555.otf": "d9ab92cb5f69ce8eef6fdf3fb592cd5040274a81",
+    "/dungeonsandcoding/assets/charSheets/uvg&theBlackHack.pdf": "6f535cd4f3f7c082daaa0a3386b05d2e367973ea",
     "/dungeonsandcoding/assets/fonts/BaronNeue.otf": "d9ab92cb5f69ce8eef6fdf3fb592cd5040274a81",
     "/dungeonsandcoding/assets/icons/android-chrome-192x192.png": "17cc49db7e956fb23dbb4c65aa8d49362519d4c4",
     "/dungeonsandcoding/assets/icons/android-chrome-512x512.png": "2df47f193ce974549120760111230f457ced0b62",
@@ -47,15 +49,15 @@
     "/dungeonsandcoding/assets/icons/favicon-16x16.png": "1f13033abeb427829df1d78d48a6a6579760e94e",
     "/dungeonsandcoding/assets/icons/favicon-32x32.png": "1cd7671c7f1b3d6146f9a420996d134beb42ee26",
     "/dungeonsandcoding/favicon.ico": "2c64a0be9f9bc54d28688c464860b1a344b16b4f",
-    "/dungeonsandcoding/index.html": "0dcb994aeb051616f7f6f5dcb406977c1a4c20d2",
-    "/dungeonsandcoding/main-es2015.28d38cbeb2e1e17eb4cb.js": "5a3cd117068eeacd807aaae7ffef502fc17ebac5",
-    "/dungeonsandcoding/main-es5.28d38cbeb2e1e17eb4cb.js": "88fbee969ac033eb9d501a52020d5035006fd476",
+    "/dungeonsandcoding/index.html": "ceb4f36aa573291260481882e23444f06236d3a2",
+    "/dungeonsandcoding/main-es2015.85b1736ac0abbe8e0b6c.js": "be5a9d5542e4a973957599bb5ff4c2727c6775c4",
+    "/dungeonsandcoding/main-es5.85b1736ac0abbe8e0b6c.js": "a8d0732be2217a35abefcd86127d884194e86254",
     "/dungeonsandcoding/manifest.webmanifest": "b7223ff26b1c412125c49203cad240972b8fb262",
     "/dungeonsandcoding/polyfills-es2015.ffa9bb4e015925544f91.js": "79b2ff5ba292ae9e56f0b43982b9e76d9ddcf285",
     "/dungeonsandcoding/polyfills-es5.0290b245fbcca09184ac.js": "d6eec49d0091595d34f8340793d4258b8b30602c",
     "/dungeonsandcoding/runtime-es2015.cdfb0ddb511f65fdc0a0.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/dungeonsandcoding/runtime-es5.cdfb0ddb511f65fdc0a0.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/dungeonsandcoding/styles.55a43ff2f640ead5c3a6.css": "c44dc3d6dfd51645d47afb7d43315d5267ee5cdc"
+    "/dungeonsandcoding/styles.630f00e1aeca4eadf324.css": "fc01bf0724c9dd422bde09b90466fe40166a1c1a"
   },
   "navigationUrls": [
     {
