@@ -35,11 +35,12 @@
         uvg & the black hack
       </span>
       <span class='descrip'>
-        >> my personal mashup of ultraviolet grasslands and the black hack, including a <a class='clickable' (click)='printUVG()'>printable character sheet</a> and custom rules (coming soon!).
+        >> my personal mashup of ultraviolet grasslands and the black hack, including a <a class='clickable' target="_blank" href='../assets/charSheets/uvg&theBlackHack.pdf'>printable character sheet</a> and custom rules (coming soon!).
       </span>
     </section>
   </article>
 </section>
 
 <app-uvg-black-rules class='no-print' *ngIf='showUVGBlackRules'></app-uvg-black-rules>
-<app-uvg-black-sheet class='print-only'></app-uvg-black-sheet>
+<!-- <app-uvg-black-sheet *ngIf='true' class='print-only'></app-uvg-black-sheet> -->
+<app-vampire-panic-sheet *ngIf='false' class='print-only'></app-vampire-panic-sheet>

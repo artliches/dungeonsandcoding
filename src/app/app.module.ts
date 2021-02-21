@@ -7,12 +7,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UvgBlackRulesComponent } from './uvg-black-rules/uvg-black-rules.component';
 import { UvgBlackSheetComponent } from './uvg-black-sheet/uvg-black-sheet.component';
+import { VampirePanicSheetComponent } from './vampire-panic-sheet/vampire-panic-sheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UvgBlackRulesComponent,
-    UvgBlackSheetComponent
+    UvgBlackSheetComponent,
+    VampirePanicSheetComponent
   ],
   imports: [
     BrowserModule,

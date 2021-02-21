@@ -2,6 +2,10 @@ $uvg-border: 1px solid purple;
 $small-font: 0.8rem;
 $stat-box-size: 50px;
 
+@page {
+    size: 8.5in 11in;
+}
+
 .empty-box {
     border: $uvg-border;
 }
