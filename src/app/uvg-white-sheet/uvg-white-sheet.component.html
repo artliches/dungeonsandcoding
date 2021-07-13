@@ -1,0 +1,140 @@
+<section *ngFor='let class of classDescrptions' class='char-sheet grid'>
+    <section class='upper-stats-section grid'>
+        <section>
+            NAME
+        </section>
+        
+        <section>
+            LEVEL
+        </section>
+
+        <section>
+            CLASS & VOCATION
+        </section>
+
+        <section>
+            XP
+        </section>
+    </section>
+
+    <section class='upper-class-description grid'>
+        <strong>
+            THE {{class.className | uppercase}}
+        </strong>
+        <em>
+            {{class.description}}
+        </em>
+    </section>
+
+    <section class='stats-section grid'>
+        <section class='non-core-stats-section grid'>
+            <section *ngFor='let nStat of nonCoreStats' class='single-non-core-section grid'>
+                <section class='stat grid'>
+                    <strong>
+                        {{nStat.statName |uppercase}}
+                    </strong>
+                    <em>
+                        {{nStat.description}}
+                    </em>
+                </section>
+                <div class='empty-box'></div>
+                <div class='empty-box' *ngIf='nStat.statName === "hit points"'></div>
+            </section>
+        </section>
+
+        <section *ngFor='let stat of stats' class='stat-section grid'>
+            <section class='stat grid'>
+                <strong>
+                    {{stat.statName | uppercase}}
+                </strong>
+                <em>
+                    {{stat.descrption}}
+                </em>
+            </section>
+            <div class='value empty-box'>
+            </div>
+            <div class='empty-box'>
+            </div>
+        </section>
+    </section>
+
+    <section class='right-side-section grid'>
+        <section class='left-section grid'>
+            <section class='advancement-table-section grid'>
+                <section *ngFor='let tableInfo of getObjSansClass(class.className, advancement) | keyvalue: originalOrder'>
+                    <section class='table-row grid'>
+                        <strong>
+                            {{tableInfo.key | uppercase}}
+                        </strong>
+                        <section *ngFor='let value of tableInfo.value'>
+                            {{value}}
+                        </section>
+                    </section>
+                </section>
+            </section>
+    
+            <section class='class-features-section grid small-text'>
+                <section *ngFor='let classInfo of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder'>
+                    <strong>{{classInfo.key | titlecase}}</strong>
+                    <hr />
+                    <span [innerHTML]="classInfo.value"></span>
+                    <p></p>
+                </section>
+            </section>
+        </section>
+
+        <section class='right-section grid'>
+            <section class='class-specials-section grid small-text'>
+                <section *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
+                    <strong>{{classSpecial.key | titlecase}}</strong>
+                    <hr />
+                    <span *ngIf='class.className === "strong"; else slotsSection'>
+                        <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value'>
+                            {{combatAction}}
+                        </p>
+                    </span>
+                    <ng-template #slotsSection>
+                        <section class='slot-section grid'>
+                            <section class='slot empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst">
+                                <div></div>
+                                <div></div>
+                                <div *ngIf='class.className === "wise" && isFirst'>
+                                    <em>Req. 13+ AURA</em>
+                                </div>
+                                <div *ngIf='class.className === "wise" && isFirst'>
+                                    <em>Req. 16+ AURA</em>
+                                </div>
+                            </section>
+                        </section>
+                    </ng-template>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <section class='bottom-section grid'>
+        <section class='inventory-section grid small-text'>
+            <section class='main-inventory'>
+                <strong class='inventory-title'>
+                    Weapons, Armor, & Gear
+                </strong>
+                <div class='inventory-slot grid' *ngFor='let num of inventory'>
+                    <strong>{{num}}</strong>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+            
+            <section class='extra-inventory'>
+                <strong class='inventory-title'>
+                    Extra Gear
+                </strong>
+                <div class='inventory-slot grid' *ngFor='let num of extraInventory'>
+                    <strong>{{num}}</strong>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>

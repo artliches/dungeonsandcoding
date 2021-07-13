@@ -8,13 +8,15 @@ import { environment } from '../environments/environment';
 import { UvgBlackRulesComponent } from './uvg-black-rules/uvg-black-rules.component';
 import { UvgBlackSheetComponent } from './uvg-black-sheet/uvg-black-sheet.component';
 import { VampirePanicSheetComponent } from './vampire-panic-sheet/vampire-panic-sheet.component';
+import { UvgWhiteSheetComponent } from './uvg-white-sheet/uvg-white-sheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UvgBlackRulesComponent,
     UvgBlackSheetComponent,
-    VampirePanicSheetComponent
+    VampirePanicSheetComponent,
+    UvgWhiteSheetComponent
   ],
   imports: [
     BrowserModule,

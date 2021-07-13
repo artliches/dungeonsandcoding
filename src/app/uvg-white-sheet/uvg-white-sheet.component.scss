@@ -1,0 +1,193 @@
+$small-font: 0.9rem;
+
+.grid {
+    display: grid;
+}
+
+em {
+    font-size: $small-font;
+}
+
+.char-sheet {
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+        "upper-stats upper-class"
+        "stats-section class-features-section"
+        "bottom-section bottom-section";
+}
+
+.upper-stats-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.upper-class-description {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.stats-section {
+    row-gap: 0.5rem;
+
+    .non-core-stats-section {
+        grid-gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        .single-non-core-section {
+            column-gap: 0.5rem;
+            grid-template-columns: auto 50px 50px;
+            grid-template-rows: 50px;
+        }
+    }
+
+    .stat-section {
+        column-gap: 0.5rem;
+        grid-template-columns: 3fr 50px 9fr;
+        grid-template-rows: 50px;
+    }
+}
+
+.right-side-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+    column-gap: 1rem;
+    grid-template-areas:
+        "left right";
+
+    .left-section {
+        grid-area: left;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        row-gap: 0.5rem;
+        grid-template-areas:
+            'advTable'
+            'classFeat';
+    }
+    .right-section {
+        grid-area: right;
+
+        .strong-combat-options {
+            &:before {
+                content: '';
+                border: 1px solid white;
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+            }           
+        }
+
+        .slot-section {
+            row-gap: 1rem;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content;
+
+            .slot {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+
+                grid-template-areas:
+                    "first"
+                    "second";
+    
+                div {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 50px;
+                    max-height: 50px;
+
+                    em {
+                        position: relative;
+                        top: -15px;
+                        justify-self: end;
+                        font-size: 0.7rem;
+                        padding-right: 0.3rem;
+                    }
+
+                    &:before {
+                        content: '';
+                        border: 1px solid white;
+                        background-color: black;
+
+                        position: relative;
+                        width: 10px;
+                        height: 10px;
+                        top: 40%;
+                        right: 6.5px;
+                    }
+                    
+                    &:not(:last-child) {
+                        border-bottom: 1px solid white;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.bottom-section {
+    .inventory-section {
+        grid-template-areas:
+            "main extra";
+        
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: max-content;
+        column-gap: 0.5rem;
+
+        .main-inventory {
+            grid-area: main;
+        }
+
+        .extra-intentory {
+            grid-area: extra;
+        }
+
+        .inventory-slot {
+            grid-template-columns: 0.1fr repeat(2, 1fr);
+            grid-template-rows: 25px;
+            border-bottom: 1px solid white;
+
+            div:nth-child(3) {
+                border-left: 1px dotted white;
+            }
+        }
+    }
+}
+
+
+.advancement-table-section {
+    grid-area: advTable;
+    font-size: $small-font;
+    grid-template-columns: repeat(8, 1fr);
+
+    .table-row>strong {
+        padding-bottom: 0.5rem;
+    }
+}
+
+.class-features-section {
+    grid-area: classFeat;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid white;
+    height: 1px;
+}
+
+.stat {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.empty-box {
+    border: 1px solid white;
+}
+
+.small-text {
+    font-size: $small-font;
+}

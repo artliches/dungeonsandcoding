@@ -35,12 +35,21 @@
         uvg & the black hack
       </span>
       <span class='descrip'>
-        >> my personal mashup of ultraviolet grasslands and the black hack, including a <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/uvg&theBlackHack.pdf']">printable character sheet</a> and <a class='clickable' target="_blank" href='https://github.com/artliches/uvgandtheblackhack/blob/main/README.md'>custom rules</a> (incomplete, but check it out!).
+        >> my personal mashup of ultraviolet grasslands and the black hack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/uvg&theBlackHack.pdf']">printable character sheet</a>.
       </span>
+    </section>
+    <section class='whitehack'>
+        <span class='title'>
+            whitehack
+        </span>
+        <span class='descrip'>
+            >> WIP whitehack <a class='clickable' (click)="toggleWhitehackSheets()">sheets</a>, mash up of custom sheets, seakat, and mothership
+        </span>
     </section>
   </article>
 </section>
 
+<app-uvg-white-sheet *ngIf='showWhitehackSheets'></app-uvg-white-sheet>
 <app-uvg-black-rules class='no-print' *ngIf='showUVGBlackRules'></app-uvg-black-rules>
 <!-- <app-uvg-black-sheet *ngIf='true' class='print-only'></app-uvg-black-sheet> -->
 <app-vampire-panic-sheet *ngIf='false' class='print-only'></app-vampire-panic-sheet>
