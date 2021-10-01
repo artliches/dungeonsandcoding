@@ -143,7 +143,7 @@ export class UvgWhiteSheetComponent implements OnInit {
     },
     {
       class: 'strong',
-      keywords: `
+      keyword: `
         <div>
         &emsp;&emsp;If you deliver a killing blow in a memorable battle, you may loot a keyword from the enemy, to be called upon for tricks, special attack, or abilities in one of the following <em>categories</em>, decided at the time of looting:
           <ul>
@@ -159,6 +159,7 @@ export class UvgWhiteSheetComponent implements OnInit {
               <strong>Supernatural.</strong> The killing transfers a non-violent supernatural ability that the monster has.
             </li>
           </ul>
+          &emsp;&emsp;Can only hold one at a time, getting a new one when a new monster is killed. Can be used # of times equal to level.
         </div>`,
 
         'killing momentum':
@@ -185,9 +186,9 @@ export class UvgWhiteSheetComponent implements OnInit {
       'supernatural regeneration': `&emsp;&emsp;Recover from HP loss at twice the normal rate, but
       cannot receive healing from other means.`,
 
-      'magick item': `&emsp;&emsp;At level 3, a magick item may be slotted instead of miracles. This creates a floating HP bonus equal to level, which is removed if the item is broken.`,
+      'magick item': `&emsp;&emsp;At level 3, a magick item may be slotted in second slot instead of miracles. This creates a floating HP bonus equal to level, which is removed if the item is broken.`,
 
-      'equipment restriction': `&emsp;&emsp;Shields or armor heavier than leather incurs +2 HP to costs. Two-handed melee weapons receive -2 AV.`
+      'equipment restriction': `&emsp;&emsp;Shields or armor heavier than leather incurs +2 HP to costs before doubling. Two-handed weapons receive -2 AV unless slotted.`
     }
   ];
 
@@ -199,7 +200,7 @@ export class UvgWhiteSheetComponent implements OnInit {
     {
       class: 'strong',
       'special combat actions': [
-        'Spend a full action to protect an adjacent character by absorbing all attacks until their next turn. Each enemy saves agains this effect.',
+        'Spend a full action to protect an adjacent character by absorbing all attacks until their next turn. Each enemy saves against this effect.',
         'After a hit, push an opponent backwards ten feet and move into the space formerly occupied by the opponent. The target saves. Target’s movement can trigger free attacks from someone else.',
         'When fighting big opponents, roll AGL to cling and climb and gain double combat advantage while hanging on. New AGL rolls may be required.',
         'Work up a battle frenzy (1 round of concentration) for +2 AV and damage, but also −3 AC. Other slotted abilities are blocked. After combat, save or attack closest target.',
@@ -220,11 +221,11 @@ export class UvgWhiteSheetComponent implements OnInit {
   specialCombatOptions = [
     `<strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.`,
     `<strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC`,
-    `<strong>Offense.</strong> Take -2 AC and get +1 AC and +1 dmg. Lasts until your next turn.`,
+    `<strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.`,
     `<strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.`,
     `<strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.`,
     `<strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat advantage against you in the next round.`,
-    `<strong>Trick.</strong> Attack and exchange your damage roll for one of the following:
+    `<strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
       <ul>
         <li>
           <strong>Push</strong> the enemy 5 feet away, and follow if you like.

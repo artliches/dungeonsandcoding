@@ -1,81 +1,143 @@
-$small-font: 0.9rem;
+$box-size: 40px;
+$title-size: 0.8rem;
+em {
+    font-size: 0.5rem;
+}
+
+.small-text {
+    font-size: 0.7rem;
+}
 
 .grid {
     display: grid;
 }
 
+.empty-box {
+    border: 1px solid black;
+}
+
+.bold-font {
+    font-weight: 700;
+}
+
 em {
-    font-size: $small-font;
+    font-size: 0.5rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+    height: 1px;
 }
 
 .char-sheet {
-    grid-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
+    width: 11in;
+    height: 8.5in;
+    background-color: white;
+    color: black;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 0.62rem;
 
+    row-gap: 0.3rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-        "upper-stats upper-class"
-        "stats-section class-features-section"
-        "bottom-section bottom-section";
-}
+        "bio    bio     bio     job"
+        "stat   stat    jFeat   slots"
+        "inven  inven   inven     com";
 
-.upper-stats-section {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
+    .bio-section {
+        grid-area: bio;
+        font-size: $title-size;
+        section:nth-child(2), section:nth-child(1) {
+            border-bottom: 1px solid black;
+        }
+        section:nth-child(even) {
+            padding-left: 0.3rem;
+            border-left: 1px solid black;
+        }
 
-.upper-class-description {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
-}
-
-.stats-section {
-    height: 620px;
-    row-gap: 0.5rem;
-
-    .non-core-stats-section {
-        grid-gap: 0.5rem;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 2fr 1fr;
         grid-template-rows: repeat(2, 1fr);
+    }
 
-        .single-non-core-section {
+    .job-section {
+        grid-area: job;
+        strong {
+            font-family: 'Baron Neue', sans-serif;
+            font-size: 1rem;
+        }
+
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .stats-section {
+        grid-area: stat;
+        .bold-font.title-size {
+            font-size: $title-size;
+        }
+        row-gap: 0.5rem;
+
+        .non-core-stats-section {
+            grid-gap: 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            .single-non-core-section {
+                column-gap: 0.5rem;
+                grid-template-columns: auto $box-size $box-size;
+                grid-template-rows: $box-size;
+            }
+        }
+
+        .stat-section {
+            .bold-font {
+                font-size: $title-size;
+            }
             column-gap: 0.5rem;
-            grid-template-columns: auto 50px 50px;
-            grid-template-rows: 50px;
+            grid-template-columns: 3fr $box-size 9fr;
+            grid-template-rows: $box-size;
         }
     }
 
-    .stat-section {
-        column-gap: 0.5rem;
-        grid-template-columns: 3fr 50px 9fr;
-        grid-template-rows: 50px;
-    }
-}
+    .job-features-section {
+        grid-area: jFeat;
 
-.right-side-section {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: min-content;
-    column-gap: 1rem;
-    grid-template-areas:
-        "left right";
-
-    .left-section {
-        height: 620px;
-        grid-area: left;
         grid-template-columns: 1fr;
         grid-template-rows: min-content;
         row-gap: 0.5rem;
         grid-template-areas:
             'advTable'
             'classFeat';
+
+        .advancement-table-section {
+            grid-area: advTable;
+            grid-template-columns: repeat(8, 1fr);
+
+            .table-row>.bold-font {
+                padding-bottom: 0.5rem;
+            }
+        }
     }
-    .right-section {
-        grid-area: right;
+
+    .slots-section {
+        grid-area: slots;
+        .bold-font {
+            font-size: $title-size;
+        }
+
+        row-gap: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
 
         .strong-combat-options {
             &:before {
                 content: '';
-                border: 1px solid white;
+                border: 1px solid black;
+                background-color: white;
                 height: 10px;
                 width: 10px;
                 display: inline-block;
@@ -83,73 +145,62 @@ em {
         }
 
         .slot-section {
-            row-gap: 1rem;
+            grid-gap: 0.5rem;
+        }
+
+        .slot {
             grid-template-columns: 1fr;
-            grid-template-rows: min-content;
+            grid-template-rows: 1fr;
 
-            .slot {
+            grid-template-areas:
+                "first"
+                "second";
+
+            div {
+                display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
+                grid-template-rows: $box-size;
+                max-height: $box-size;
 
-                grid-template-areas:
-                    "first"
-                    "second";
-    
-                div {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 50px;
-                    max-height: 50px;
-
-                    em {
-                        position: relative;
-                        top: -17px;
-                        justify-self: end;
-                        font-size: 0.7rem;
-                        padding-right: 0.3rem;
-                    }
-
-                    &:before {
-                        content: '';
-                        border: 1px solid white;
-                        background-color: black;
-
-                        position: relative;
-                        width: 10px;
-                        height: 10px;
-                        top: 40%;
-                        right: 6.5px;
-                    }
-                    
-                    &:not(:last-child) {
-                        border-bottom: 1px solid white;
-                    }
+                em {
+                    position: relative;
+                    top: -17px;
+                    justify-self: end;
+                    font-size: 0.7rem;
+                    padding-right: 0.3rem;
                 }
 
-                &.wiseSlot {
-                    div {
-                        max-height: 45px;
-                    }
+                &.slot-box:before {
+                    content: '';
+                    border: 1px solid black;
+                    background-color: white;
+
+                    position: relative;
+                    width: 10px;
+                    height: 10px;
+                    top: 40%;
+                    right: 6.5px;
+                }
+                
+                &:not(:last-child) {
+                    border-bottom: 1px solid black;
+                }
+            }
+
+            &.wiseSlot {
+                div {
+                    max-height: 35px;
                 }
             }
         }
-
     }
-}
-
-.bottom-section {
-    grid-area: bottom-section;
-    width: 100%;
-    grid-gap: 1rem;
-    grid-template-areas: 
-        "inventory speComOpt";
-    
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
 
     .inventory-section {
-        width: 100%;
-        grid-area: inventory;
+        grid-area: inven;
+        .inventory-title {
+            font-size: $title-size;
+        }
+
         grid-template-areas:
             "main extra";
         
@@ -168,57 +219,22 @@ em {
         .inventory-slot {
             grid-template-columns: 0.1fr repeat(2, 1fr);
             grid-template-rows: 25px;
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid black;
 
             div:nth-child(3) {
-                border-left: 1px dotted white;
+                border-left: 1px dotted black;
             }
         }
     }
 
-    .special-combat-options-section {
-        grid-area: speComOpt;
-
-        strong.title {
-            height: 17px;
+    .combat-options-section {
+        grid-area: com;
+        .title {
+            font-size: $title-size;
         }
 
         hr {
             width: 100%;
         }
     }
-}
-
-
-.advancement-table-section {
-    grid-area: advTable;
-    font-size: $small-font;
-    grid-template-columns: repeat(8, 1fr);
-
-    .table-row>strong {
-        padding-bottom: 0.5rem;
-    }
-}
-
-.class-features-section {
-    grid-area: classFeat;
-}
-
-hr {
-    border: none;
-    border-top: 1px solid white;
-    height: 1px;
-}
-
-.stat {
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, 1fr);
-}
-
-.empty-box {
-    border: 1px solid white;
-}
-
-.small-text {
-    font-size: $small-font;
 }
