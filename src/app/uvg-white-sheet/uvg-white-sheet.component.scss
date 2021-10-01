@@ -30,6 +30,7 @@ em {
 }
 
 .stats-section {
+    height: 620px;
     row-gap: 0.5rem;
 
     .non-core-stats-section {
@@ -59,6 +60,7 @@ em {
         "left right";
 
     .left-section {
+        height: 620px;
         grid-area: left;
         grid-template-columns: 1fr;
         grid-template-rows: min-content;
@@ -101,7 +103,7 @@ em {
 
                     em {
                         position: relative;
-                        top: -15px;
+                        top: -17px;
                         justify-self: end;
                         font-size: 0.7rem;
                         padding-right: 0.3rem;
@@ -123,6 +125,12 @@ em {
                         border-bottom: 1px solid white;
                     }
                 }
+
+                &.wiseSlot {
+                    div {
+                        max-height: 45px;
+                    }
+                }
             }
         }
 
@@ -130,7 +138,18 @@ em {
 }
 
 .bottom-section {
+    grid-area: bottom-section;
+    width: 100%;
+    grid-gap: 1rem;
+    grid-template-areas: 
+        "inventory speComOpt";
+    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
     .inventory-section {
+        width: 100%;
+        grid-area: inventory;
         grid-template-areas:
             "main extra";
         
@@ -154,6 +173,18 @@ em {
             div:nth-child(3) {
                 border-left: 1px dotted white;
             }
+        }
+    }
+
+    .special-combat-options-section {
+        grid-area: speComOpt;
+
+        strong.title {
+            height: 17px;
+        }
+
+        hr {
+            width: 100%;
         }
     }
 }

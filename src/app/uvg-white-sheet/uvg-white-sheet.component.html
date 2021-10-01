@@ -33,9 +33,16 @@
                     <strong>
                         {{nStat.statName |uppercase}}
                     </strong>
-                    <em>
-                        {{nStat.description}}
+                    <em *ngIf='class.className === "strong" && nStat.strongDesc ||
+                        class.className === "wise" && nStat.wiseDesc; else elseBlock'>
+                        <span *ngIf='class.className === "strong"'>{{nStat.strongDesc}}</span>
+                        <span *ngIf='class.className === "wise"'>{{nStat.wiseDesc}}</span>
                     </em>
+                    <ng-template #elseBlock>
+                        <em>
+                            {{nStat.description}}
+                        </em>
+                    </ng-template>
                 </section>
                 <div class='empty-box'></div>
                 <div class='empty-box' *ngIf='nStat.statName === "hit points"'></div>
@@ -95,7 +102,7 @@
                     </span>
                     <ng-template #slotsSection>
                         <section class='slot-section grid'>
-                            <section class='slot empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst">
+                            <section [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst">
                                 <div></div>
                                 <div></div>
                                 <div *ngIf='class.className === "wise" && isFirst'>
@@ -118,6 +125,7 @@
                 <strong class='inventory-title'>
                     Weapons, Armor, & Gear
                 </strong>
+                <hr />
                 <div class='inventory-slot grid' *ngFor='let num of inventory'>
                     <strong>{{num}}</strong>
                     <div></div>
@@ -129,6 +137,7 @@
                 <strong class='inventory-title'>
                     Extra Gear
                 </strong>
+                <hr />
                 <div class='inventory-slot grid' *ngFor='let num of extraInventory'>
                     <strong>{{num}}</strong>
                     <div></div>
@@ -136,5 +145,14 @@
                 </div>
             </section>
         </section>
+
+        <section class='small-text special-combat-options-section grid'>
+            <strong class='title'>
+                Special Combat Options
+            </strong>
+            <hr />
+            <div *ngFor='let option of specialCombatOptions' [innerHTML]='option'></div>
+        </section>
+        
     </section>
 </section>

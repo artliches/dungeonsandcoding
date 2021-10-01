@@ -30,7 +30,8 @@ export class UvgWhiteSheetComponent implements OnInit {
   nonCoreStats = [
     {
       statName: 'hit points',
-      description: 'how much punishment your meat-suit can take'
+      description: 'how much punishment your meat-suit can take',
+      strongDesc: '+1 HP. END 13+ / +1 HP. END 16+'
     },
     {
       statName: 'armor class',
@@ -38,11 +39,14 @@ export class UvgWhiteSheetComponent implements OnInit {
     },
     {
       statName: 'saving throw',
-      description: 'how trained or lucky you are in bad situations'
+      description: 'how trained or lucky you are in bad situations',
+      strongDesc: '+1 poison & death / +4 special melee attacks',
+      wiseDesc: '+2 magick & mind'
     },
     {
       statName: 'attack value',
-      description: 'how well you can hurt others'
+      description: 'how well you can hurt others',
+      strongDesc: '+1 AV. STR 13+ / +1 dmg. STR 16+'
     },
   ];
 
@@ -139,11 +143,51 @@ export class UvgWhiteSheetComponent implements OnInit {
     },
     {
       class: 'strong',
-      vocation: 'When properly equipped, and when rolling for a task or an attack that is in line withthe vocation, they always use a positive double roll. For this reason, deft characters don\'t mark the the vocation group next to a specific attribute. Additionaly, when they try to do damage from an advantageous position in combat, deft characters may switch this double positive roll benefit for double damage, if their vocation is relevant to the situation. A combat oriented vocation gets +1 to damage and AC from an off-hand weapon, while non-combat oriented vocations may save to turn a successful task roll into a critical success, once per session.',
+      keywords: `
+        <div>
+        &emsp;&emsp;If you deliver a killing blow in a memorable battle, you may loot a keyword from the enemy, to be called upon for tricks, special attack, or abilities in one of the following <em>categories</em>, decided at the time of looting:
+          <ul>
+            <li>
+              <strong>Memorable enemy.</strong> If the keyword relates to an action, may take +2 for one round to either AC, AV, ST, HP, an attribute, damage, healing, MV, quality or initiative.
+            </li>
+
+            <li>
+              <strong>Substance.</strong> You extract a rare and potent substance (poison, acid, something flammable, etc.). Must be placed in inventory and counts toward encumbrance.
+            </li>
+
+            <li>
+              <strong>Supernatural.</strong> The killing transfers a non-violent supernatural ability that the monster has.
+            </li>
+          </ul>
+        </div>`,
+
+        'killing momentum':
+        `<div>
+        &emsp;&emsp;Putting an enemy at zero or negative hit points allows an additional attack against an adjacent enemy.
+        </div>`,
+
+        'free attacks':
+        `<div>
+        &emsp;&emsp;Can make a number of free attacks equal to level
+        </div>`,
     },
     {
       class: 'wise',
-      vocation: 'When properly equipped, and when rolling for a task or an attack that is in line withthe vocation, they always use a positive double roll. For this reason, deft characters don\'t mark the the vocation group next to a specific attribute. Additionaly, when they try to do damage from an advantageous position in combat, deft characters may switch this double positive roll benefit for double damage, if their vocation is relevant to the situation. A combat oriented vocation gets +1 to damage and AC from an off-hand weapon, while non-combat oriented vocations may save to turn a successful task roll into a critical success, once per session.',
+      miracles: `
+        <div>
+        &emsp;&emsp;Each slot has two miracles permenantly tied to it (except for the level 1 slot), with only one active at a time. Switching which one is active takes a day of preparation.
+        </div>
+        <div>
+        &emsp;&emsp;Miracles are given descriptive or evocative <strong>wording</strong>. The wording, vocation, and desired effect are used to triangulate the <strong>cost</strong> in HP: the player states what the miracle should do and the Referee suggests the costs. Costs may be lowered with drawbacks and ingredients, or increased if the effect is further from the wording, the vocation, and what can be acheived without magick.
+        </div>
+      `,
+
+      'supernatural regeneration': `&emsp;&emsp;Recover from HP loss at twice the normal rate, but
+      cannot receive healing from other means.`,
+
+      'magick item': `&emsp;&emsp;At level 3, a magick item may be slotted instead of miracles. This creates a floating HP bonus equal to level, which is removed if the item is broken.`,
+
+      'equipment restriction': `&emsp;&emsp;Shields or armor heavier than leather incurs +2 HP to costs. Two-handed melee weapons receive -2 AV.`
     }
   ];
 
@@ -173,6 +217,29 @@ export class UvgWhiteSheetComponent implements OnInit {
 
   inventory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   extraInventory = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  specialCombatOptions = [
+    `<strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.`,
+    `<strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC`,
+    `<strong>Offense.</strong> Take -2 AC and get +1 AC and +1 dmg. Lasts until your next turn.`,
+    `<strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.`,
+    `<strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.`,
+    `<strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat advantage against you in the next round.`,
+    `<strong>Trick.</strong> Attack and exchange your damage roll for one of the following:
+      <ul>
+        <li>
+          <strong>Push</strong> the enemy 5 feet away, and follow if you like.
+        </li>
+        <li>
+          <strong>Feint</strong> to make two attacks with combat advantage next round.
+        </li>
+        <li>
+          <strong>Disarm</strong> the enemy to drop their weapon 2d6 feet away.
+        </li>
+        <li>
+          <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat advantage.
+        </li>
+      </ul>`,
+  ];
 
   ngOnInit() {
   }
