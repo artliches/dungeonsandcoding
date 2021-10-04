@@ -1,5 +1,6 @@
 $box-size: 40px;
-$title-size: 0.8rem;
+$title-size: 0.65rem;
+
 em {
     font-size: 0.5rem;
 }
@@ -17,7 +18,12 @@ em {
 }
 
 .bold-font {
-    font-weight: 700;
+    font-family: 'Baron Neue', sans-serif;
+}
+
+.stat {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
 }
 
 em {
@@ -66,20 +72,27 @@ hr {
         grid-area: job;
         strong {
             font-family: 'Baron Neue', sans-serif;
-            font-size: 1rem;
+            font-size: 1.3rem;
+            align-self: end;
+            justify-self: center
+        }
+        em {
+            align-self: start;
+            justify-self: center;
         }
 
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-        justify-items: center;
+        grid-template-rows: repeat(2, min-content);
     }
 
     .stats-section {
         grid-area: stat;
+        row-gap: 0.5rem;
+        grid-template-rows: min-content; 
+
         .bold-font.title-size {
             font-size: $title-size;
         }
-        row-gap: 0.5rem;
 
         .non-core-stats-section {
             grid-gap: 0.5rem;
@@ -88,14 +101,14 @@ hr {
 
             .single-non-core-section {
                 column-gap: 0.5rem;
-                grid-template-columns: auto $box-size $box-size;
+                grid-template-columns: 0.5fr $box-size $box-size;
                 grid-template-rows: $box-size;
             }
         }
 
         .stat-section {
             .bold-font {
-                font-size: $title-size;
+                font-size: 0.9rem;
             }
             column-gap: 0.5rem;
             grid-template-columns: 3fr $box-size 9fr;
@@ -218,6 +231,7 @@ hr {
 
         .inventory-slot {
             grid-template-columns: 0.1fr repeat(2, 1fr);
+            place-items: center;
             grid-template-rows: 25px;
             border-bottom: 1px solid black;
 
