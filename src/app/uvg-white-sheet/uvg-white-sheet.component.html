@@ -16,6 +16,10 @@
         <section>
             XP
         </section>
+
+        <section>
+            LANGUAGES
+        </section>
     </section>
 
     <section class='job-section grid'>
@@ -50,7 +54,7 @@
             </section>
         </section>
 
-        <section *ngFor='let stat of stats' class='stat-section grid'>
+        <section *ngFor="let stat of stats; first as isFirst" class='stat-section grid'>
             <section class='stat grid'>
                 <span class='bold-font'>
                     {{stat.statName | uppercase}}
@@ -148,5 +152,30 @@
         <span class='title bold-font'>
             Combat Options
         </span>
-        <div *ngFor='let option of specialCombatOptions' [innerHTML]='option'></div>    </section>
+        <span>
+            <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
+            <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC</div>
+            <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
+            <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
+            <div><strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
+            <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
+              <ul>
+                <li>
+                  <strong>Push</strong> the enemy 5 ft. away, and follow if you like.
+                </li>
+                <li>
+                  <strong>Feint</strong> to make 2 attacks with combat adv. next round.
+                </li>
+                <li>
+                  <strong>Disarm</strong> the enemy to drop their weapon 2d6 ft. away.
+                </li>
+                <li>
+                  <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
+                </li>
+              </ul>
+            </div>
+            <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
+            <div><strong>Persist.</strong> Once/combat, make a CON task roll or save against <em>incoming damage</em>. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.</div>
+        </span>
+    </section>
 </section>

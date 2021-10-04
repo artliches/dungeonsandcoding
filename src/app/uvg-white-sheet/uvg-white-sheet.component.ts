@@ -224,22 +224,23 @@ export class UvgWhiteSheetComponent implements OnInit {
     `<strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.`,
     `<strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.`,
     `<strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.`,
-    `<strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat advantage against you in the next round.`,
     `<strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
       <ul>
         <li>
-          <strong>Push</strong> the enemy 5 feet away, and follow if you like.
+          <strong>Push</strong> the enemy 5 ft. away, and follow if you like.
         </li>
         <li>
-          <strong>Feint</strong> to make two attacks with combat advantage next round.
+          <strong>Feint</strong> to make 2 attacks with combat adv. next round.
         </li>
         <li>
-          <strong>Disarm</strong> the enemy to drop their weapon 2d6 feet away.
+          <strong>Disarm</strong> the enemy to drop their weapon 2d6 ft. away.
         </li>
         <li>
-          <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat advantage.
+          <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
         </li>
       </ul>`,
+    `<strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.`,
+    `<strong>Persist.</strong> Once/combat, make a CON task roll or save against incoming damage. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.`
   ];
 
   ngOnInit() {

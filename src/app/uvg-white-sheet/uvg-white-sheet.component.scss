@@ -1,6 +1,11 @@
 $box-size: 40px;
 $title-size: 0.65rem;
 
+ul {
+    margin: 0rem;
+    padding-left: 15px;
+}
+
 em {
     font-size: 0.5rem;
 }
@@ -59,13 +64,36 @@ hr {
         section:nth-child(2), section:nth-child(1) {
             border-bottom: 1px solid black;
         }
-        section:nth-child(even) {
+        section:nth-child(even), section:nth-child(5) {
             padding-left: 0.3rem;
             border-left: 1px solid black;
         }
 
-        grid-template-columns: 2fr 1fr;
+        section:nth-child(5) {
+            border-right: 1px solid black;
+        }
+
+        grid-template-columns: 2fr 1fr 1fr;
         grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "name   level   languages"
+            "cVoc   xp      languages";
+        
+        section:nth-child(1) {
+            grid-area: name;
+        }
+        section:nth-child(2) {
+            grid-area: level;
+        }
+        section:nth-child(3) {
+            grid-area: cVoc;
+        }
+        section:nth-child(4) {
+            grid-area: xp;
+        }
+        section:nth-child(5) {
+            grid-area: languages;
+        }
     }
 
     .job-section {
@@ -231,9 +259,12 @@ hr {
 
         .inventory-slot {
             grid-template-columns: 0.1fr repeat(2, 1fr);
-            place-items: center;
             grid-template-rows: 25px;
             border-bottom: 1px solid black;
+
+            span.bold-font {
+                place-self: center;
+            }
 
             div:nth-child(3) {
                 border-left: 1px dotted black;
@@ -243,12 +274,17 @@ hr {
 
     .combat-options-section {
         grid-area: com;
+        grid-template-rows: min-content auto;
         .title {
             font-size: $title-size;
         }
 
         hr {
             width: 100%;
+        }
+
+        em {
+            font-size: 0.62rem;
         }
     }
 }
