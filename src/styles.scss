@@ -34,23 +34,19 @@ body {
     grid-template-areas:
         "title"
         "body";
-    
     overflow: hidden;
     border: 1px solid black;
     border-radius: 0.5rem;
     height: 100%;
-    font-size: 1rem;
 
     .card-title {
         grid-area: title;
-        background-color: magenta;
-        font-size: 1.5rem;
         padding: 0.3rem;
     }
 
     .card-body {
+        display: grid;
         grid-area: body;
-        background-color: cyan;
         padding: 0.3rem;
     }
 }

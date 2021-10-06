@@ -1,4 +1,4 @@
-<section *ngFor='let class of classDescrptions' class='char-sheet grid'>
+<!-- <section *ngFor='let class of classDescrptions' class='char-sheet grid'>
     <section class='bio-section grid'>
         <section>
             NAME
@@ -177,5 +177,72 @@
             <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
             <div><strong>Persist.</strong> Once/combat, make a CON task roll or save against <em>incoming damage</em>. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.</div>
         </span>
+    </section>
+</section> -->
+
+<section *ngFor='let class of classDescrptions' class='vamp-sheet'>
+    <section class='bio-section generic-card'>
+        <section class='card-title'>
+            HELLO, MY NAME IS...
+        </section>
+        <section class='card-body'>
+            <section>
+                NAME
+                <span class='empty-box'></span>
+            </section>
+            
+            <section>
+                LEVEL
+                <span class='empty-box'></span>
+            </section>
+    
+            <section>
+                CLASS
+                <ng-container *ngIf='class.className === "deft"'> & VOCATION</ng-container>
+                <span class='empty-box'></span>
+            </section>
+    
+            <section>
+                XP
+                <span class='empty-box'></span>
+            </section>
+    
+            <section>
+                LANGUAGES
+                <span class='empty-box'></span>
+            </section>
+        </section>
+    </section>
+
+    <section class='job-section grid'>
+        <strong>
+            THE {{class.className | uppercase}}
+        </strong>
+        <em>
+            {{class.description}}
+        </em>
+    </section>
+
+    <section class='stats-section generic-card'>
+        <section class='card-title'>
+            ROLL 3D6 FOR EACH <span class='important'>STAT</span> AND PLACE IT IN THE CIRCLE
+        </section>
+        <section class='card-body'>
+            <section *ngFor="let stat of stats; first as isFirst" class='core-stat-section'>
+                <section class='stat-descrip grid'>
+                    <span>
+                        {{stat.statName | uppercase}}
+                    </span>
+                    <em>
+                        {{stat.descrption}}
+                    </em>
+                </section>
+                <section class='stat-boxes'>
+                    <div class='value circle'></div>
+                    <div class='empty-box'></div>
+                </section>
+
+            </section>
+        </section>
     </section>
 </section>
