@@ -29,6 +29,7 @@ em {
 .stat {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
+    place-content: center;
 }
 
 em {

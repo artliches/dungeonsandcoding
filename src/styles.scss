@@ -28,6 +28,38 @@ body {
     font-weight: bold;
 }
 
+.generic-card {
+    display: grid;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+        "title"
+        "body";
+    
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    height: 100%;
+    font-size: 1rem;
+
+    .card-title {
+        grid-area: title;
+        background-color: magenta;
+        font-size: 1.5rem;
+        padding: 0.3rem;
+    }
+
+    .card-body {
+        grid-area: body;
+        background-color: cyan;
+        padding: 0.3rem;
+    }
+}
+
+.circle {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
 .uvg-card {
     display: grid;
     grid-template-rows: min-content auto;

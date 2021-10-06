@@ -169,7 +169,7 @@ export class UvgWhiteSheetComponent implements OnInit {
 
         'free attacks':
         `<div>
-        &emsp;&emsp;Can make a number of free attacks equal to level
+        Can make a number of free attacks equal to level
         </div>`,
     },
     {
