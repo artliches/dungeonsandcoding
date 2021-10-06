@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UvgBlackRulesComponent } from './uvg-black-rules.component';
 
@@ -6,7 +6,7 @@ describe('UvgBlackRulesComponent', () => {
   let component: UvgBlackRulesComponent;
   let fixture: ComponentFixture<UvgBlackRulesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ UvgBlackRulesComponent ]
     })

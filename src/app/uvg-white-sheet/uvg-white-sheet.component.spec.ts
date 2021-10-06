@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { UvgWhiteSheetComponent } from './uvg-white-sheet.component';
 
@@ -6,7 +6,7 @@ describe('UvgWhiteSheetComponent', () => {
   let component: UvgWhiteSheetComponent;
   let fixture: ComponentFixture<UvgWhiteSheetComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ UvgWhiteSheetComponent ]
     })
