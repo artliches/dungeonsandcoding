@@ -197,8 +197,8 @@
             </section>
     
             <section>
-                CLASS
-                <ng-container *ngIf='class.className === "deft"'> & VOCATION</ng-container>
+                CLAN
+                <ng-container *ngIf='class.className === "deft"'> & MASK</ng-container>
                 <span class='empty-box'></span>
             </section>
     
@@ -218,6 +218,9 @@
         <strong>
             THE {{class.className | uppercase}}
         </strong>
+        <em>
+            {{class.description}}
+        </em>
     </section>
 
     <section class='stats-section generic-card grey-card'>
@@ -294,14 +297,15 @@
             </span>
         </section>
         <section class='card-body' *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
-            <span class='grid' *ngIf='class.className === "strong"; else slotsSection'>
-                <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value'>
-                    {{combatAction}}
+            <span class='grid strong-options-grid' *ngIf='class.className === "strong"; else slotsSection'>
+                <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value' [innerHTML]='combatAction'>
+                    <!-- {{combatAction}} -->
                 </p>
             </span>
             <ng-template #slotsSection>
                 <section class='slot-section grid'>
-                    <section [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot-split empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst; let i = index">
+                    <section
+                     [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot-split empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst; let i = index">
                         <div class='slot-box'></div>
                         <div class='slot-box'></div>
                         <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
@@ -329,7 +333,7 @@
                 </div>
             </section>
             
-            <section class='extra-inventory grid'>
+            <section class='extra-inventory'>
                 <div class='inventory-slot' *ngFor='let num of extraInventory'>
                     <span>{{num}}</span>
                     <div></div>
@@ -339,7 +343,44 @@
         </section>
     </section>
 
-    <section class='advancement-table-section generic-card grey-card'>
+    <section class='combat-options-section generic-card grey-card'>
+        <span class='card-title'>
+            SPECIAL <span class='important'>MANUEVERS</span>
+        </span>
+        <span class='card-body'>
+            <section>
+                <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
+                <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC</div>
+                <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
+                <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
+                <div><strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
+                <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
+                <div><strong>Persist.</strong> Once/combat, make a CON task roll or save against <em>incoming damage</em>. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.</div>
+            </section>
+            <section>
+                <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
+                    <ul>
+                      <li>
+                        <strong>Push</strong> the enemy 5 ft. away, and follow if you like.
+                      </li>
+                      <li>
+                        <strong>Feint</strong> to make 2 attacks with combat adv. next round.
+                      </li>
+                      <li>
+                        <strong>Disarm</strong> the enemy to drop their weapon 2d6 ft. away.
+                      </li>
+                      <li>
+                        <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
+                      </li>
+                    </ul>
+                  </div>
+
+            </section>
+
+        </span>
+    </section>
+
+    <!-- <section class='advancement-table-section generic-card grey-card'>
         <section class='card-title'>
             NOTE HOW YOU <span class='important'>GROW</span>
         </section>
@@ -355,5 +396,5 @@
                 </section>
             </section>
         </section>
-    </section>
+    </section> -->
 </section>

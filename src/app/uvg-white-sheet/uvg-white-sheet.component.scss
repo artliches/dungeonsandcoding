@@ -1,10 +1,10 @@
 // $box-size: 40px;
 // $title-size: 0.65rem;
 
-// ul {
-//     margin: 0rem;
-//     padding-left: 15px;
-// }
+ul {
+    margin: 0rem;
+    padding-left: 15px;
+}
 
 // em {
 //     font-size: 0.5rem;
@@ -295,7 +295,8 @@ $title-font: 'Baron Neue', sans-serif;
 $box-size: 35px;
 $standard-gap: 0.3rem;
 $bio-card-color: red;
-$inventory-card-color: orange;
+$inventory-card-color: hsl(22, 100%, 50%);
+$background-grey: hsl(210, 11%, 93%);
 
 em {
     font-size: 0.5rem;
@@ -326,8 +327,8 @@ em {
 }
 
 .generic-card.grey-card {
-    background-color:  #eaecee ;
-    border-color:  #eaecee ;
+    background-color:  $background-grey ;
+    border-color:  $background-grey ;
     padding: $standard-gap;
     height: auto;
 }
@@ -336,7 +337,7 @@ em {
     color: grey;
     border-bottom: 1px solid grey;
     .important {
-        color: black;
+        color: $bio-card-color;
     }
 }
 
@@ -348,6 +349,7 @@ em {
     margin-bottom: 1rem;
     padding: 0.3rem;
     font-size: 0.65rem;
+    overflow: hidden;
 
     display: grid;
     grid-gap: $standard-gap;
@@ -356,15 +358,15 @@ em {
 
     grid-template-areas:
         "bio    bio     bio     job"
-        "bio    bio     bio     adv"
-        "nCore  nCore   jFeat   adv"
+        "bio    bio     bio     com"
+        "nCore  nCore   jFeat   com"
         "stats  stats   jFeat   slots"
         "inven  inven   inven   slots"
         "inven  inven   inven   slots";
 
     .bio-section {
         grid-area: bio;
-        height: min-content;
+        height: auto;
         &.generic-card {
             border-color: $bio-card-color;
             border-width: 3px;
@@ -376,6 +378,7 @@ em {
         .card-title {
             background-color: $bio-card-color;
             color: white;
+            font-weight: bold;
             border-bottom: none;
         }
 
@@ -409,13 +412,14 @@ em {
         grid-area: job;
         strong {
             font-family: 'Baron Neue', sans-serif;
-            font-size: 1.3rem;
+            font-size: .8rem;
             align-self: end;
             justify-self: center
         }
         em {
             align-self: start;
             justify-self: center;
+            font-size: 5.5pt;
         }
 
         grid-template-columns: 1fr;
@@ -490,8 +494,18 @@ em {
                 background-color: white;
                 height: 10px;
                 width: 10px;
+                border-radius: 1rem;
                 display: inline-block;
             }           
+        }
+
+        .strong-options-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, auto);
+
+            p {
+                margin: 0rem;
+            }
         }
 
         .slot-section {
@@ -516,6 +530,7 @@ em {
                 &:before {
                     content: '';
                     border: 1px solid black;
+                    border-radius: 1rem;
                     background-color: white;
                     display: block;
     
@@ -532,7 +547,7 @@ em {
                     justify-self: end;
                     font-size: 0.7rem;
                     padding-right: 0.3rem;
-                    color: lightgray;
+                    color: grey;
                 }
             }
         }
@@ -542,12 +557,12 @@ em {
         grid-area: inven;
 
         &.generic-card {
-            border-color: $inventory-card-color;
+            border-color: black;
             border-width: 3px;
         }
 
         .card-title {
-            background-color: $inventory-card-color;
+            background-color: black;
             color: white;
             border-bottom: none;
         }
@@ -561,13 +576,23 @@ em {
             grid-template-rows: max-content;
             column-gap: 0.5rem;
             padding-bottom: 0rem;
+            place-content: center;
 
             .main-inventory {
                 grid-area: main;
+                .inventory-slot > span {
+                    color: darkgreen;
+                }
             }
 
-            .extra-intentory {
+            .extra-inventory {
                 grid-area: extra;
+                .inventory-slot:nth-child(-n+5) {
+                    color: rgb(226, 155, 0);
+                }
+                .inventory-slot:nth-child(n+6) {
+                    color: rgb(192, 0, 0);
+                }
             }
 
             .inventory-slot {
@@ -576,14 +601,24 @@ em {
                 grid-template-rows: 13.5pt;
                 border-bottom: 1px solid black;
 
-                span.bold-font {
-                    place-self: center;
+                span {
+                    place-self: center start;
+                    font-family: $title-font;
                 }
 
                 div:nth-child(3) {
                     border-left: 1px dotted black;
                 }
             }
+        }
+    }
+
+    .combat-options-section {
+        grid-area: com;
+        height: min-content;
+        .card-body {
+            display: grid;
+            font-size: 5.7pt;            
         }
     }
 
