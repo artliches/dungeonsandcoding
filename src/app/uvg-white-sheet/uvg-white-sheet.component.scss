@@ -292,7 +292,14 @@
 
 $temp: (1: 'name', 2: 'level', 3: 'class', 4: 'xp', 5: 'lang', 6: 'lang');
 $title-font: 'Baron Neue', sans-serif;
-$box-size: 40px;
+$box-size: 35px;
+$standard-gap: 0.3rem;
+$bio-card-color: red;
+$inventory-card-color: orange;
+
+em {
+    font-size: 0.5rem;
+}
 
 .empty-box {
     border: 1px solid black;
@@ -302,6 +309,35 @@ $box-size: 40px;
 .card-title {
     font-family: $title-font;
     font-size: 0.8rem;
+}
+
+.empty-box, .circle {
+    background-color: white;
+    border-width: 2px;
+}
+
+.stat-descrip {
+    display: grid;
+    place-content: center start;
+    span {
+        font-family: $title-font;
+        font-size: 0.75rem;
+    }
+}
+
+.generic-card.grey-card {
+    background-color:  #eaecee ;
+    border-color:  #eaecee ;
+    padding: $standard-gap;
+    height: auto;
+}
+
+.card-title {
+    color: grey;
+    border-bottom: 1px solid grey;
+    .important {
+        color: black;
+    }
 }
 
 .vamp-sheet {
@@ -314,19 +350,23 @@ $box-size: 40px;
     font-size: 0.65rem;
 
     display: grid;
-    grid-gap: 0.3rem;
+    grid-gap: $standard-gap;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: min-content;
+    grid-template-rows: repeat(6, min-content);
 
     grid-template-areas:
         "bio    bio     bio     job"
-        "stats  stats   jFeat   slots";
+        "bio    bio     bio     adv"
+        "nCore  nCore   jFeat   adv"
+        "stats  stats   jFeat   slots"
+        "inven  inven   inven   slots"
+        "inven  inven   inven   slots";
 
     .bio-section {
         grid-area: bio;
         height: min-content;
         &.generic-card {
-            border-color: red;
+            border-color: $bio-card-color;
             border-width: 3px;
         }
         .empty-box {
@@ -334,13 +374,14 @@ $box-size: 40px;
         }
 
         .card-title {
-            background-color: red;
+            background-color: $bio-card-color;
             color: white;
+            border-bottom: none;
         }
 
         .card-body {
             grid-gap: 0.5rem;
-            grid-template-columns: 3fr 1fr 3fr;
+            grid-template-columns: 45% 10% 43%;
             grid-template-rows: repeat(2, 1fr);
             grid-template-areas:
                 "name   level   lang"
@@ -378,56 +419,192 @@ $box-size: 40px;
         }
 
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, min-content);
+        // grid-template-rows: repeat(2, min-content);
     }
 
     .stats-section {
         grid-area: stats;
         height: min-content;
 
-        &.generic-card {
-            background-color:  #eaecee ;
-            border-color:  #eaecee ;
-            padding-right: 0.3rem;
-        }
-
-        .card-title {
-            color: grey;
-            border-bottom: 1px solid grey;
-            .important {
-                color: black;
-            }
-        }
-
         .card-body {
             height: min-content;
             grid-gap: 0.8rem;
         }
 
-        .empty-box, .circle {
-            background-color: white;
-            border-width: 2px;
-        }
-
         .core-stat-section {
-            .stat-descrip {
-                place-content: center start;
-                span {
-                    font-family: $title-font;
-                }
-            }
-
             .stat-boxes {
                 display: grid;
                 grid-template-rows: 1fr;
                 grid-template-columns: $box-size 9fr;
-                column-gap: 0.3rem;
+                column-gap: $standard-gap;
             }
             display: grid;
-            column-gap: 0.3rem;
+            column-gap: $standard-gap;
             grid-template-columns: 20% 80%;
             grid-template-rows: $box-size;
         }
 
+    }
+
+    .non-core-section {
+        grid-area: nCore;
+        height: min-content;
+        .card-body {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 0.8rem;
+
+            .single-non-core-section {
+                display: grid;
+                grid-template-columns: 0.6fr repeat(2, $box-size);
+                grid-template-rows: $box-size;
+                grid-gap: $standard-gap;
+            }
+        }
+    }
+
+    .job-features-section {
+        grid-area: jFeat;
+        display: grid;
+        font-size: 0.71rem;
+
+        .feature-title {
+            font-family: $title-font;
+            border-bottom: 1px solid black;
+
+            &.keyword-title {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .slots-section {
+        grid-area: slots;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+
+        .strong-combat-options {
+            &:before {
+                content: '';
+                border: 1px solid black;
+                background-color: white;
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+            }           
+        }
+
+        .slot-section {
+            grid-gap: 0.5rem;
+        }
+
+        .slot-split {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+
+            &.wiseSlot {
+                &:first-child {
+                    grid-template-rows: repeat(4, 1fr);
+                }
+            }
+
+            div.slot-box {
+                display: grid;
+                &:not(:last-child) {
+                    border-bottom: 1px solid black;
+                }
+                &:before {
+                    content: '';
+                    border: 1px solid black;
+                    background-color: white;
+                    display: block;
+    
+                    position: relative;
+                    width: 10px;
+                    height: 10px;
+                    top: 40%;
+                    right: 6.5px;
+                }
+
+                em {
+                    position: relative;
+                    top: -17px;
+                    justify-self: end;
+                    font-size: 0.7rem;
+                    padding-right: 0.3rem;
+                    color: lightgray;
+                }
+            }
+        }
+    }
+
+    .inventory-section {
+        grid-area: inven;
+
+        &.generic-card {
+            border-color: $inventory-card-color;
+            border-width: 3px;
+        }
+
+        .card-title {
+            background-color: $inventory-card-color;
+            color: white;
+            border-bottom: none;
+        }
+
+        .card-body {
+            display: grid;
+            grid-template-areas:
+                "main extra";
+        
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: max-content;
+            column-gap: 0.5rem;
+            padding-bottom: 0rem;
+
+            .main-inventory {
+                grid-area: main;
+            }
+
+            .extra-intentory {
+                grid-area: extra;
+            }
+
+            .inventory-slot {
+                display: grid;
+                grid-template-columns: 0.1fr repeat(2, 1fr);
+                grid-template-rows: 13.5pt;
+                border-bottom: 1px solid black;
+
+                span.bold-font {
+                    place-self: center;
+                }
+
+                div:nth-child(3) {
+                    border-left: 1px dotted black;
+                }
+            }
+        }
+    }
+
+    .advancement-table-section {
+        height: min-content;
+        display: grid;
+        grid-area: adv;
+        font-size: .79rem;
+
+        .card-body {
+            grid-template-columns: repeat(8, 1fr);
+            .table-row>.bold-font {
+                padding-bottom: 0.5rem;
+            }
+            .adv-headers {
+                font-family: $title-font;
+            }
+        }
+
+        &.generic-card {
+            padding: $standard-gap;
+        }
     }
 }

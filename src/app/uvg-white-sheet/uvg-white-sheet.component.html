@@ -218,18 +218,15 @@
         <strong>
             THE {{class.className | uppercase}}
         </strong>
-        <em>
-            {{class.description}}
-        </em>
     </section>
 
-    <section class='stats-section generic-card'>
+    <section class='stats-section generic-card grey-card'>
         <section class='card-title'>
             ROLL 3D6 FOR EACH <span class='important'>STAT</span> AND PLACE IT IN THE CIRCLE
         </section>
         <section class='card-body'>
             <section *ngFor="let stat of stats; first as isFirst" class='core-stat-section'>
-                <section class='stat-descrip grid'>
+                <section class='stat-descrip'>
                     <span>
                         {{stat.statName | uppercase}}
                     </span>
@@ -241,7 +238,121 @@
                     <div class='value circle'></div>
                     <div class='empty-box'></div>
                 </section>
+            </section>
+        </section>
+    </section>
 
+    <section class='non-core-section generic-card grey-card'>
+        <section class='card-title'>
+            MARK DOWN YOUR <span class='important'>STATS</span>, RE-ROLL <span class='important'>HD</span> EACH LEVEL
+        </section>
+        <section class='card-body'>
+            <section *ngFor='let nStat of nonCoreStats' class='single-non-core-section'>
+                <section class='stat-descrip'>
+                    <span>
+                        {{nStat.statName |uppercase}}
+                    </span>
+                    <em *ngIf='class.className === "strong" && nStat.strongDesc ||
+                        class.className === "wise" && nStat.wiseDesc; else elseBlock'>
+                        <em *ngIf='class.className === "strong"'>{{nStat.strongDesc}}</em>
+                        <em *ngIf='class.className === "wise"'>{{nStat.wiseDesc}}</em>
+                    </em>
+                    <ng-template #elseBlock>
+                        <em>
+                            {{nStat.description}}
+                        </em>
+                    </ng-template>
+                </section>
+                <div class='circle'></div>
+                <div class='circle' *ngIf='nStat.statName === "hit points"'></div>
+            </section>
+        </section>
+    </section>
+
+    <section class='job-features-section generic-card grey-card'>
+        <section class='card-title'>NOTE WHAT YOUR <span class='important'>JOB</span> CAN DO</section>
+        <section class='card-body'>
+            <section *ngFor="let classInfo of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder; first as isFirst">
+                <div [ngClass]="{'keyword-title': class.className === 'strong' && isFirst}" class='feature-title'>{{classInfo.key | titlecase}}</div>
+                <div *ngIf='class.className === "strong" && isFirst' style="border: 2px solid black; height: 20px; background-color: white; border-radius: 1rem; margin-bottom: 0.5rem;"></div>
+                <span [innerHTML]="classInfo.value"></span>
+                <p></p>
+            </section>
+        </section>
+    </section>
+
+    <section class='slots-section generic-card grey-card'>
+        <section class='card-title'>
+            <span *ngIf='class.className === "strong"'>
+                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER LEVEL
+            </span>
+            <span *ngIf='class.className === "deft"'>
+                <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+            </span>
+            <span *ngIf='class.className === "wise"'>
+                TIE <span class='important'>MIRACLES</span> TO SLOTS
+            </span>
+        </section>
+        <section class='card-body' *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
+            <span class='grid' *ngIf='class.className === "strong"; else slotsSection'>
+                <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value'>
+                    {{combatAction}}
+                </p>
+            </span>
+            <ng-template #slotsSection>
+                <section class='slot-section grid'>
+                    <section [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot-split empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst; let i = index">
+                        <div class='slot-box'></div>
+                        <div class='slot-box'></div>
+                        <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
+                            <em>Req. 13+ AURA</em>
+                        </div>
+                        <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
+                            <em>Req. 16+ AURA</em>
+                        </div>
+                    </section>
+                </section>
+            </ng-template>
+        </section>
+    </section>
+
+    <section class='inventory-section generic-card'>
+        <section class='card-title'>
+            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN.
+        </section>
+        <section class='card-body'>
+            <section class='main-inventory'>
+                <div class='inventory-slot' *ngFor='let num of inventory'>
+                    <span>{{num}}</span>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+            
+            <section class='extra-inventory grid'>
+                <div class='inventory-slot' *ngFor='let num of extraInventory'>
+                    <span>{{num}}</span>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <section class='advancement-table-section generic-card grey-card'>
+        <section class='card-title'>
+            NOTE HOW YOU <span class='important'>GROW</span>
+        </section>
+        <section class='card-body'>
+            <section *ngFor='let tableInfo of getObjSansClass(class.className, advancement) | keyvalue: originalOrder'>
+                <section class='table-row grid'>
+                    <span class='adv-headers'>
+                        {{tableInfo.key | uppercase}}
+                    </span>
+                    <section *ngFor='let value of tableInfo.value'>
+                        {{value}}
+                    </section>
+                </section>
             </section>
         </section>
     </section>

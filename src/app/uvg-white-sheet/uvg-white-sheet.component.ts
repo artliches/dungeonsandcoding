@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UvgWhiteSheetComponent implements OnInit {
   // tslint:disable: max-line-length
-
-
   constructor() { }
 
   classDescrptions = [
