@@ -309,7 +309,7 @@ em {
 
 .card-title {
     font-family: $title-font;
-    font-size: 0.8rem;
+    font-size: 5.9pt;
 }
 
 .empty-box, .circle {
@@ -337,7 +337,7 @@ em {
     color: grey;
     border-bottom: 1px solid grey;
     .important {
-        color: $bio-card-color;
+        color: black;
     }
 }
 
@@ -353,16 +353,22 @@ em {
 
     display: grid;
     grid-gap: $standard-gap;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, min-content);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, auto);
 
     grid-template-areas:
-        "bio    bio     bio     job"
-        "bio    bio     bio     com"
-        "nCore  nCore   jFeat   com"
-        "stats  stats   jFeat   slots"
-        "inven  inven   inven   slots"
-        "inven  inven   inven   slots";
+        "bio    bio     bio     bio     job "
+        "bio    bio     bio     bio     slots"
+        "nCore  nCore   jFeat   com     slots"
+        "stats  stats   jFeat   com     slots"
+        "inven  inven   inven   inven   slots"
+        "inven  inven   inven   inven   slots";
+        // "bio    bio     bio     bio     job"
+        // "bio    bio     bio     bio     job"
+        // "nCore  nCore   jFeat   slots   com"
+        // "stats  stats   jFeat   slots   com"
+        // "inven  inven   inven   inven   inven"
+        // "inven  inven   inven   inven   inven";
 
     .bio-section {
         grid-area: bio;
@@ -380,6 +386,7 @@ em {
             color: white;
             font-weight: bold;
             border-bottom: none;
+            font-size: 10pt;
         }
 
         .card-body {
@@ -428,7 +435,7 @@ em {
 
     .stats-section {
         grid-area: stats;
-        height: min-content;
+        height: auto;
 
         .card-body {
             height: min-content;
@@ -452,7 +459,7 @@ em {
 
     .non-core-section {
         grid-area: nCore;
-        height: min-content;
+        // height: min-content;
         .card-body {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -470,7 +477,6 @@ em {
     .job-features-section {
         grid-area: jFeat;
         display: grid;
-        font-size: 0.71rem;
 
         .feature-title {
             font-family: $title-font;
@@ -543,7 +549,7 @@ em {
 
                 em {
                     position: relative;
-                    top: -17px;
+                    top: -39px;
                     justify-self: end;
                     font-size: 0.7rem;
                     padding-right: 0.3rem;
@@ -557,13 +563,13 @@ em {
         grid-area: inven;
 
         &.generic-card {
-            border-color: black;
+            border-color: $background-grey;
             border-width: 3px;
         }
 
         .card-title {
-            background-color: black;
-            color: white;
+            background-color: $background-grey;
+            color: grey;
             border-bottom: none;
         }
 
@@ -615,15 +621,14 @@ em {
 
     .combat-options-section {
         grid-area: com;
-        height: min-content;
         .card-body {
             display: grid;
-            font-size: 5.7pt;            
+            grid-template-rows: repeat(8, auto);
         }
     }
 
     .advancement-table-section {
-        height: min-content;
+        // height: min-content;
         display: grid;
         grid-area: adv;
         font-size: .79rem;
