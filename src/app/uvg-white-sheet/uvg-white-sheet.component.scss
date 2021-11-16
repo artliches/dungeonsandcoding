@@ -305,6 +305,45 @@ em {
 .empty-box {
     border: 1px solid black;
     border-radius: 1rem;
+
+    &.vampire-split {
+        display: grid;
+        .groups-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            .border-section:nth-child(1) {
+                border-right: 1px dotted black;
+            }
+
+            div:nth-child(2) {
+                .stain {
+                    position: relative;
+                    top: 55%;
+                    right: -90%;
+                }
+
+                .drop {
+                    position: relative;
+                    top: -15%;
+                    right: -90%;
+                }
+            }
+        }
+    }
+}
+
+.stain {
+    height: 7px;
+    width: 7px;
+    border: 1px solid black;
+}
+
+.drop {
+    height: 7px;
+    width: 7px;
+    border-radius: 0 50% 50% 50%;
+    border: 1px solid red;
+    transform: rotate(45deg);
 }
 
 .card-title {
@@ -315,6 +354,17 @@ em {
 .empty-box, .circle {
     background-color: white;
     border-width: 2px;
+}
+
+.hunger-stains-section {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    div:nth-child(1) {
+        border-bottom: 1px solid black;
+    }
+    em {
+        font-size: 0.4rem;
+    }
 }
 
 .stat-descrip {
@@ -337,7 +387,7 @@ em {
     color: grey;
     border-bottom: 1px solid grey;
     .important {
-        color: black;
+        color: red;
     }
 }
 
@@ -470,6 +520,16 @@ em {
                 grid-template-columns: 0.6fr repeat(2, $box-size);
                 grid-template-rows: $box-size;
                 grid-gap: $standard-gap;
+
+                .hpText {
+                    place-self: center;
+                    &.curr  {
+                        grid-column-start: 2; 
+                    }
+                    &.max {
+                        grid-column-start: 3;
+                    }
+                }
             }
         }
     }
@@ -549,7 +609,7 @@ em {
 
                 em {
                     position: relative;
-                    top: -39px;
+                    top: 9px;
                     justify-self: end;
                     font-size: 0.7rem;
                     padding-right: 0.3rem;

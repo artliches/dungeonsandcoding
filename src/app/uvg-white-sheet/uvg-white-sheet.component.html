@@ -197,8 +197,8 @@
             </section>
     
             <section>
-                CLASS
-                <ng-container *ngIf='class.className === "deft"'> & VOCATION</ng-container>
+                <ng-container *ngIf='class.className !== "deft"'>CLAN & COTERIE</ng-container>
+                <ng-container *ngIf='class.className === "deft"'>CLAN, COTERIE & MASK</ng-container>
                 <span class='empty-box'></span>
             </section>
     
@@ -208,7 +208,7 @@
             </section>
     
             <section>
-                LANGUAGES
+                LANGUAGES, FAVORS, & BLOOD BONDS
                 <span class='empty-box'></span>
             </section>
         </section>
@@ -225,7 +225,7 @@
 
     <section class='stats-section generic-card grey-card'>
         <section class='card-title'>
-            ROLL 3D6 FOR EACH <span class='important'>STAT</span> AND PLACE IT IN THE CIRCLE
+            ROLL 3D6 FOR EACH <span class='important'>TRAIT</span> AND PLACE IT IN THE CIRCLE. MARK <span class='important'>GROUPS</span> NEXT TO THEM.
         </section>
         <section class='card-body'>
             <section *ngFor="let stat of stats; first as isFirst" class='core-stat-section'>
@@ -239,7 +239,15 @@
                 </section>
                 <section class='stat-boxes'>
                     <div class='value circle'></div>
-                    <div class='empty-box'></div>
+                    <div class='empty-box vampire-split'>
+                        <div class='groups-section'>
+                            <div class='border-section'></div>
+                            <div>
+                                <div class='stain'></div>
+                                <div class='drop'></div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </section>
         </section>
@@ -268,6 +276,10 @@
                 </section>
                 <div class='circle'></div>
                 <div class='circle' *ngIf='nStat.statName === "hit points"'></div>
+
+                <em class='hpText curr' *ngIf='nStat.statName === "hit points"'>CURRENT</em>
+                <em class='hpText max' *ngIf='nStat.statName === "hit points"'>MAX</em>
+
             </section>
         </section>
     </section>
@@ -322,7 +334,7 @@
 
     <section class='inventory-section generic-card'>
         <section class='card-title'>
-            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN.
+            ROLL 3D6*10 <span class='important'>CASH</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT.
         </section>
         <section class='card-body'>
             <section class='main-inventory'>
@@ -349,12 +361,12 @@
         </span>
         <span class='card-body'>
                 <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
-                <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC</div>
+                <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <i>and</i> -1 dmg., to get +2 AC</div>
                 <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
                 <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
-                <div><strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
+                <div><strong>Protect.</strong> Make a <i>task roll</i> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
                 <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
-                <div><strong>Persist.</strong> Once/combat, make a CON task roll or save against <em>incoming damage</em>. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.</div>
+                <div><strong>Persist.</strong> Once/combat, make an END task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.</div>
 
                 <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
                     <ul>
