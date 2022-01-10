@@ -209,7 +209,7 @@ export class UvgWhiteSheetComponent implements OnInit {
         '&emsp;<strong>Rally.</strong> Take a small verbal action and encourage friends within a 15 feet radius to give +1 AV and +1 ST, or invert this ability for −1 AV and ST to enemies.',
         '&emsp;<strong>Flurry.</strong> Forsake move and make a one-handed melee attack and a one-handed ranged attack in the same round with suitable weapons.',
         '&emsp;<strong>Outplay.</strong> Parry and wait instead of attacking to get +2 AC. Gain double combat advantage in the next round against an enemy they have parried. Parrying again will gain triple combat advantage. If damaged while parrying, save or lose the effect.',
-        '&emsp;<strong>Spray.</strong> With a full auto weapon, you can make a regular area atttack. Your attack counts against all involved ACs, dealing base dmg. to all that you hit. If you wnat to exclude someone, a success must exceed that person\'s AC by at least 4 or you hit them anyways.',
+        // '&emsp;<strong>Spray.</strong> With a full auto weapon, you can make a regular area atttack. Your attack counts against all involved ACs, dealing base dmg. to all that you hit. If you wnat to exclude someone, a success must exceed that person\'s AC by at least 4 or you hit them anyways.',
       ]
     },
     {

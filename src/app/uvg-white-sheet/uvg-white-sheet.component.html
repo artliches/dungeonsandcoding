@@ -1,185 +1,3 @@
-<!-- <section *ngFor='let class of classDescrptions' class='char-sheet grid'>
-    <section class='bio-section grid'>
-        <section>
-            NAME
-        </section>
-        
-        <section>
-            LEVEL
-        </section>
-
-        <section>
-            CLASS
-            <ng-container *ngIf='class.className === "deft"'> & VOCATION</ng-container>
-        </section>
-
-        <section>
-            XP
-        </section>
-
-        <section>
-            LANGUAGES
-        </section>
-    </section>
-
-    <section class='job-section grid'>
-        <strong>
-            THE {{class.className | uppercase}}
-        </strong>
-        <em>
-            {{class.description}}
-        </em>
-    </section>
-
-    <section class='stats-section grid'>
-        <section class='non-core-stats-section grid'>
-            <section *ngFor='let nStat of nonCoreStats' class='single-non-core-section grid'>
-                <section class='stat grid'>
-                    <span class='title-size bold-font'>
-                        {{nStat.statName |uppercase}}
-                    </span>
-                    <em *ngIf='class.className === "strong" && nStat.strongDesc ||
-                        class.className === "wise" && nStat.wiseDesc; else elseBlock'>
-                        <span *ngIf='class.className === "strong"'>{{nStat.strongDesc}}</span>
-                        <span *ngIf='class.className === "wise"'>{{nStat.wiseDesc}}</span>
-                    </em>
-                    <ng-template #elseBlock>
-                        <em>
-                            {{nStat.description}}
-                        </em>
-                    </ng-template>
-                </section>
-                <div class='empty-box'></div>
-                <div class='empty-box' *ngIf='nStat.statName === "hit points"'></div>
-            </section>
-        </section>
-
-        <section *ngFor="let stat of stats; first as isFirst" class='stat-section grid'>
-            <section class='stat grid'>
-                <span class='bold-font'>
-                    {{stat.statName | uppercase}}
-                </span>
-                <em>
-                    {{stat.descrption}}
-                </em>
-            </section>
-            <div class='value empty-box'>
-            </div>
-            <div class='empty-box'>
-            </div>
-        </section>
-    </section>
-
-    <section class='job-features-section grid'>
-        <section class='advancement-table-section grid'>
-            <section *ngFor='let tableInfo of getObjSansClass(class.className, advancement) | keyvalue: originalOrder'>
-                <section class='table-row grid'>
-                    <span class='bold-font'>
-                        {{tableInfo.key | uppercase}}
-                    </span>
-                    <section *ngFor='let value of tableInfo.value'>
-                        {{value}}
-                    </section>
-                </section>
-            </section>
-        </section>
-
-        <section class='class-features-section grid'>
-            <section *ngFor="let classInfo of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder; first as isFirst">
-                <span class='bold-font'>{{classInfo.key | titlecase}}</span>
-                <hr *ngIf='class.className !== "strong" || class.className === "strong" && !isFirst' />
-                <div *ngIf='class.className === "strong" && isFirst' style="border: 1px solid black; height: 35px; margin-bottom: 0.5rem;"></div>
-                <span [innerHTML]="classInfo.value"></span>
-                <p></p>
-            </section>
-        </section>
-    </section>
-
-    <section class='slots-section grid'>
-        <section class='class-specials-section grid'>
-            <section *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
-                <span class='bold-font'>{{classSpecial.key | titlecase}}</span>
-                <hr />
-                <span *ngIf='class.className === "strong"; else slotsSection'>
-                    <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value'>
-                        {{combatAction}}
-                    </p>
-                </span>
-                <ng-template #slotsSection>
-                    <section class='slot-section grid'>
-                        <section [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst; let i = index">
-                            <div class='slot-box'></div>
-                            <div class='slot-box'>
-                            </div>
-                            <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
-                                <em>Req. 13+ AURA</em>
-                            </div>
-                            <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
-                                <em>Req. 16+ AURA</em>
-                            </div>
-                        </section>
-                    </section>
-                </ng-template>
-            </section>
-        </section>
-    </section>
-
-    <section class='inventory-section grid'>
-        <section class='main-inventory'>
-            <span class='inventory-title bold-font'>
-                Weapons, Armor, & Gear
-            </span>
-            <div class='inventory-slot grid' *ngFor='let num of inventory'>
-                <span class='bold-font'>{{num}}</span>
-                <div></div>
-                <div></div>
-            </div>
-        </section>
-        
-        <section class='extra-inventory grid'>
-            <span class='inventory-title bold-font'>
-                Extra Gear
-            </span>
-            <div class='inventory-slot grid' *ngFor='let num of extraInventory'>
-                <span class='bold-font'>{{num}}</span>
-                <div></div>
-                <div></div>
-            </div>
-        </section>
-    </section>
-
-    <section class='combat-options-section grid'>
-        <span class='title bold-font'>
-            Combat Options
-        </span>
-        <span>
-            <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
-            <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <em>and</em> -1 dmg., to get +2 AC</div>
-            <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
-            <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
-            <div><strong>Protect.</strong> Make a <em>task roll</em> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
-            <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
-              <ul>
-                <li>
-                  <strong>Push</strong> the enemy 5 ft. away, and follow if you like.
-                </li>
-                <li>
-                  <strong>Feint</strong> to make 2 attacks with combat adv. next round.
-                </li>
-                <li>
-                  <strong>Disarm</strong> the enemy to drop their weapon 2d6 ft. away.
-                </li>
-                <li>
-                  <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
-                </li>
-              </ul>
-            </div>
-            <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
-            <div><strong>Persist.</strong> Once/combat, make a CON task roll or save against <em>incoming damage</em>. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.</div>
-        </span>
-    </section>
-</section> -->
-
 <section *ngFor='let class of classDescrptions' class='vamp-sheet'>
     <section class='bio-section generic-card'>
         <section class='card-title'>
@@ -197,8 +15,8 @@
             </section>
     
             <section>
-                <ng-container *ngIf='class.className !== "deft"'>CLAN & COTERIE</ng-container>
-                <ng-container *ngIf='class.className === "deft"'>CLAN, COTERIE & MASK</ng-container>
+                <ng-container *ngIf='class.className !== "deft"'>CLASS & VOCATION</ng-container>
+                <ng-container *ngIf='class.className === "deft"'>CLASS</ng-container>
                 <span class='empty-box'></span>
             </section>
     
@@ -208,7 +26,7 @@
             </section>
     
             <section>
-                LANGUAGES, FAVORS, & BLOOD BONDS
+                LANGUAGES
                 <span class='empty-box'></span>
             </section>
         </section>
@@ -242,10 +60,10 @@
                     <div class='empty-box vampire-split'>
                         <div class='groups-section'>
                             <div class='border-section'></div>
-                            <div>
+                            <!-- <div>
                                 <div class='stain'></div>
                                 <div class='drop'></div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </section>
@@ -299,7 +117,7 @@
     <section class='slots-section generic-card grey-card'>
         <section class='card-title'>
             <span *ngIf='class.className === "strong"'>
-                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER LEVEL
+                CHOOSE 1 <span class='important'>COMBAT OPTION</span>
             </span>
             <span *ngIf='class.className === "deft"'>
                 <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
@@ -311,7 +129,6 @@
         <section class='card-body' *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
             <span class='grid strong-options-grid' *ngIf='class.className === "strong"; else slotsSection'>
                 <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value' [innerHTML]='combatAction'>
-                    <!-- {{combatAction}} -->
                 </p>
             </span>
             <ng-template #slotsSection>
@@ -334,7 +151,7 @@
 
     <section class='inventory-section generic-card'>
         <section class='card-title'>
-            ROLL 3D6*10 <span class='important'>CASH</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT.
+            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT.
         </section>
         <section class='card-body'>
             <section class='main-inventory'>
@@ -386,22 +203,4 @@
                   </div>
         </span>
     </section>
-
-    <!-- <section class='advancement-table-section generic-card grey-card'>
-        <section class='card-title'>
-            NOTE HOW YOU <span class='important'>GROW</span>
-        </section>
-        <section class='card-body'>
-            <section *ngFor='let tableInfo of getObjSansClass(class.className, advancement) | keyvalue: originalOrder'>
-                <section class='table-row grid'>
-                    <span class='adv-headers'>
-                        {{tableInfo.key | uppercase}}
-                    </span>
-                    <section *ngFor='let value of tableInfo.value'>
-                        {{value}}
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section> -->
 </section>
