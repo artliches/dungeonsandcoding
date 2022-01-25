@@ -15,8 +15,7 @@
             </section>
     
             <section>
-                <ng-container *ngIf='class.className !== "deft"'>CLASS & VOCATION</ng-container>
-                <ng-container *ngIf='class.className === "deft"'>CLASS</ng-container>
+                <ng-container>SPECIES & VOCATION</ng-container>
                 <span class='empty-box'></span>
             </section>
     
@@ -117,7 +116,7 @@
     <section class='slots-section generic-card grey-card'>
         <section class='card-title'>
             <span *ngIf='class.className === "strong"'>
-                CHOOSE 1 <span class='important'>COMBAT OPTION</span>
+                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
             </span>
             <span *ngIf='class.className === "deft"'>
                 <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
@@ -138,10 +137,10 @@
                         <div class='slot-box'></div>
                         <div class='slot-box'></div>
                         <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
-                            <em>Req. 13+ AURA</em>
+                            <em>Req. 13+ WIS</em>
                         </div>
                         <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
-                            <em>Req. 16+ AURA</em>
+                            <em>Req. 16+ WIS</em>
                         </div>
                     </section>
                 </section>
@@ -174,7 +173,7 @@
 
     <section class='combat-options-section generic-card grey-card'>
         <span class='card-title'>
-            SPECIAL <span class='important'>MANUEVERS</span>
+            SPECIAL COMBAT <span class='important'>MANUEVERS</span>
         </span>
         <span class='card-body'>
                 <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
@@ -183,7 +182,7 @@
                 <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
                 <div><strong>Protect.</strong> Make a <i>task roll</i> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
                 <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
-                <div><strong>Persist.</strong> Once/combat, make an END task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.</div>
+                <div><strong>Persist.</strong> Once/combat, make an CON task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.</div>
 
                 <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
                     <ul>

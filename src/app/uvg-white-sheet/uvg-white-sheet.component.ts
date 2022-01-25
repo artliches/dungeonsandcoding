@@ -29,7 +29,7 @@ export class UvgWhiteSheetComponent implements OnInit {
     {
       statName: 'hit points',
       description: 'how much punishment your meat-suit can take',
-      strongDesc: '+1 HP. END 13+ / +1 HP. END 16+'
+      strongDesc: '+1 HP. CON 13+ / +1 HP. CON 16+'
     },
     {
       statName: 'armor class',
@@ -54,24 +54,24 @@ export class UvgWhiteSheetComponent implements OnInit {
       descrption: 'physical power'
     },
     {
-      statName: 'endurance',
+      statName: 'constitution',
       descrption: 'physical resilience and  well-being'
     },
     {
-      statName: 'agility',
-      descrption: '+1 init. AGL 13+ / +2 init. AGL 16+'
+      statName: 'dexterity',
+      descrption: '+1 init. DEX 13+ / +2 init. DEX 16+'
     },
     {
       statName: 'karisma',
       descrption: 'divine favor, fortune, and luck'
     },
     {
-      statName: 'aura',
+      statName: 'wisdom',
       descrption: 'mental resilience and well-being'
     },
     {
-      statName: 'thought',
-      descrption: '+1 lang. THO 13+ / +2 lang. THO 16+'
+      statName: 'intelligence',
+      descrption: '+1 lang. INT 13+ / +2 lang. INT 16+'
     },
   ];
 
@@ -180,7 +180,7 @@ export class UvgWhiteSheetComponent implements OnInit {
         &emsp;&emsp;Miracles are given descriptive or evocative <strong>wording</strong>. The wording, vocation, and desired effect are used to triangulate the <strong>cost</strong> in HP: the player states what the miracle should do and the Referee suggests the costs. Costs may be lowered with drawbacks and ingredients, or increased if the effect is further from the wording, the vocation, and what can be acheived without magick.
         </div>
         <div>
-        &emsp;&emsp;If your level exceeds the HP cost, can slot scrolls with a successful trained Thought roll, and can reproduce its static effect once per day at <strong>zero</strong> HP cost.
+        &emsp;&emsp;If your level exceeds the HP cost, can slot scrolls with a successful trained Intelligence roll, and can reproduce its static effect once per day at <strong>zero</strong> HP cost.
         </div>
       `,
 
@@ -203,7 +203,7 @@ export class UvgWhiteSheetComponent implements OnInit {
       'special combat actions': [
         '&emsp;<strong>Bulwark.</strong> Spend a full action to protect an adjacent character by absorbing all attacks until their next turn. Each enemy saves against this effect.',
         '&emsp;<strong>Bullrush.</strong> After a hit, push an opponent backwards ten feet and move into the space formerly occupied by the opponent. The target saves. Target’s movement can trigger free attacks from someone else.',
-        '&emsp;<strong>Clamber.</strong> When fighting big opponents, roll AGL to cling and climb and gain double combat advantage while hanging on. New AGL rolls may be required.',
+        '&emsp;<strong>Clamber.</strong> When fighting big opponents, roll DEX to cling and climb and gain double combat advantage while hanging on. New DEX rolls may be required.',
         '&emsp;<strong>Berzerk.</strong> Work up a battle frenzy (1 round of concentration) for +2 AV and damage, but also −3 AC. Other slotted abilities are blocked. After combat, save or attack closest target.',
         '&emsp;<strong>Command.</strong> Tactically bestow a +4 AV bonus on an ally, once per battle for a single attack made right away or later in that fight. This requires a related small verbal action.',
         '&emsp;<strong>Rally.</strong> Take a small verbal action and encourage friends within a 15 feet radius to give +1 AV and +1 ST, or invert this ability for −1 AV and ST to enemies.',
