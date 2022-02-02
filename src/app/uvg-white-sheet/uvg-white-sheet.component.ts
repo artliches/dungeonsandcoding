@@ -46,6 +46,10 @@ export class UvgWhiteSheetComponent implements OnInit {
       description: 'how well you can hurt others',
       strongDesc: '+1 AV. STR 13+ / +1 dmg. STR 16+'
     },
+    {
+      statName: 'initiative',
+      description: 'how fast you can react to danger',
+    }
   ];
 
   stats = [

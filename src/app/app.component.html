@@ -55,3 +55,99 @@
 </section>
 
 <app-uvg-white-sheet *ngIf='false'></app-uvg-white-sheet>
+
+<div *ngIf='false' class='letter-size grid print-only'>
+  <span *ngFor='let num of numbers'>
+    <section class='spell-cheatsheet grid'>
+      <span *ngFor='let magic of magicObj'>
+        <span [innerHtml]='magic.left'></span>
+        <span [innerHtml]='magic.right'></span>
+      </span>
+    </section>
+  
+    <section class='energy-cheatsheet grid'>
+      <span *ngFor='let energy of energyObj'>
+        <span [innerHtml]='energy.left'></span>
+        <span [innerHtml]='energy.right'></span>
+      </span>
+    </section>
+  </span>
+</div>
+
+<div *ngIf='false' class='equipment-section grid print-only'>
+  <section class='equip-descrip grid'>
+    <strong>Equipment</strong>
+    <span>
+      <div>
+        The character is allowed ten regular objects, plus five in a
+        backpack, sack or similar container. Heavy objects count
+        as two, while minor objects count as half. Coins, gems and
+        very small things are no-size items—100 of them count as
+        one regular object. Use common sense to settle what is
+        what. Weapons have regular/heavy/minor designators.
+        Armors, unless magickal, count as per AC
+      </div>
+      <div>
+        For every completed uneven number of regular
+        objects exceeding the character’s limit, she moves down a
+        category in the Movement Rates table. Strength
+        can temporarily alleviate the consequences.
+      </div>
+    </span>
+  </section>
+  <section class='gear-section grid'>
+    <strong>Gear</strong>
+    <span class='gear-list grid'>
+      <span [ngClass]="{grey: gear.grey}" *ngFor='let gear of gearObj'>
+        <span [innerHtml]='gear.name'></span>
+        <span [innerHtml]='gear.cost'></span>
+      </span>
+    </span>
+  </section>
+
+  <section class='weapon-section grid'>
+    <strong>Weapons</strong>
+    <span class='weapon-list grid'>
+      <span [ngClass]="{grey: weapon.grey}"  *ngFor='let weapon of weaponObj'>
+        <span [innerHtml]='weapon.name'></span>
+        <span [innerHtml]='weapon.dmg'></span>
+        <span [innerHtml]='weapon.weight'></span>
+        <span [innerHtml]='weapon.rng'></span>
+        <span [innerHtml]='weapon.rof'></span>
+        <span class='detail-font-size' [innerHtml]='weapon.spe'></span>
+        <span [innerHtml]='weapon.cost'></span>
+      </span>
+    </span>
+  </section>
+
+  <section class='armor-section grid'>
+    <strong>Armor</strong>
+    <span class='armor-list grid'>
+      <span [ngClass]="{grey: armor.grey}" *ngFor='let armor of armorObj'>
+        <span [innerHtml]='armor.name'></span>
+        <span [innerHtml]='armor.ac'></span>
+        <span [innerHtml]='armor.cost'></span>
+      </span>
+    </span>
+  </section>
+
+  <section class='equip-details detail-font-size grid'>
+    <div>
+      ∗Wgt stands for Weight. R = Regular item (1 slot). M = Minor item
+      (half slot). N = No size item (100 for 1 slot). H = Heavy item (2 slots).
+    </div>
+    <div>
+      †RoF stands for Rate of Fire, measured in shots/round(s). This means
+      that you fire in the first round and then need to spend any remaining
+      rounds reloading before you can fire again. You can’t reload a weapon
+      with a fraction RoF (crossbow, black powder pistol etc.) while moving.
+    </div>
+    <div>
+      §Reach means that enemies within 10 feet are within melee range.
+      This is particularly important when dealing with free attcks.
+    </div>
+    <div>
+      ††If the character wears any kind of helmet, results of 16+ on the crits table may be rerolled once.
+    </div>
+  </section>
+</div>

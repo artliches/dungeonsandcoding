@@ -91,8 +91,16 @@
                         </em>
                     </ng-template>
                 </section>
-                <div class='circle'></div>
-                <div class='circle' *ngIf='nStat.statName === "hit points"'></div>
+                <div class='circle'>
+                    <span *ngIf="nStat.statName === 'initiative'">
+                        +1
+                    </span>
+                </div>
+                <div class='circle' *ngIf='nStat.statName === "hit points" || nStat.statName === "initiative"'>
+                    <span *ngIf="nStat.statName === 'initiative'">
+                        +2
+                    </span>
+                </div>
 
                 <em class='hpText curr' *ngIf='nStat.statName === "hit points"'>CURRENT</em>
                 <em class='hpText max' *ngIf='nStat.statName === "hit points"'>MAX</em>
@@ -116,13 +124,28 @@
     <section class='slots-section generic-card grey-card'>
         <section class='card-title'>
             <span *ngIf='class.className === "strong"'>
-                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
+                <span>
+                    CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
+                </span>
+                <em>
+                    gain new slots at level 4, 7, & 10
+                </em> 
             </span>
             <span *ngIf='class.className === "deft"'>
-                <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+                <span>
+                    <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+                </span>
+                <em>
+                    gain new slots at level 4, 7, & 10
+                </em>
             </span>
             <span *ngIf='class.className === "wise"'>
-                TIE <span class='important'>MIRACLES</span> TO SLOTS
+                <span>
+                    TIE <span class='important'>MIRACLES</span> TO SLOTS
+                </span>
+                <em>
+                    gain new slots at level 3, 5, 7, & 9
+                </em>
             </span>
         </section>
         <section class='card-body' *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
