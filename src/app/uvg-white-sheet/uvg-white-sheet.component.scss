@@ -7,9 +7,10 @@ $temp: (1: 'name', 2: 'level', 3: 'class', 4: 'xp', 5: 'lang', 6: 'lang');
 $title-font: 'Baron Neue', sans-serif;
 $box-size: 35px;
 $standard-gap: 0.3rem;
-$bio-card-color: red;
+$bio-card-color: #ebedef;
 $inventory-card-color: hsl(22, 100%, 50%);
 $background-grey: hsl(210, 11%, 93%);
+
 
 em {
     font-size: 0.5rem;
@@ -95,7 +96,7 @@ em {
 }
 
 .generic-card.grey-card {
-    background-color:  $background-grey ;
+    background-color:  $background-grey;
     border-color:  $background-grey ;
     padding: $standard-gap;
     height: auto;
@@ -105,7 +106,14 @@ em {
     color: grey;
     border-bottom: 1px solid grey;
     .important {
-        color: red;
+        color: black;
+
+        &.green {
+            color: darkgreen;
+        }
+        &.yellow {
+            color: goldenrod;
+        }
     }
 }
 
@@ -151,7 +159,7 @@ em {
 
         .card-title {
             background-color: $bio-card-color;
-            color: white;
+            color: black;
             font-weight: bold;
             border-bottom: none;
             font-size: 10pt;
@@ -394,7 +402,7 @@ em {
             .inventory-slot {
                 display: grid;
                 grid-template-columns: 0.1fr repeat(2, 1fr);
-                grid-template-rows: 13.5pt;
+                grid-template-rows: 13pt;
                 border-bottom: 1px solid black;
 
                 span {

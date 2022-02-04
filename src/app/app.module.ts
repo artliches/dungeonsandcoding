@@ -9,6 +9,7 @@ import { UvgBlackRulesComponent } from './uvg-black-rules/uvg-black-rules.compon
 import { UvgBlackSheetComponent } from './uvg-black-sheet/uvg-black-sheet.component';
 import { VampirePanicSheetComponent } from './vampire-panic-sheet/vampire-panic-sheet.component';
 import { UvgWhiteSheetComponent } from './uvg-white-sheet/uvg-white-sheet.component';
+import { WhitehackVerticalSheetComponent } from './whitehack-vertical-sheet/whitehack-vertical-sheet.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UvgWhiteSheetComponent } from './uvg-white-sheet/uvg-white-sheet.compon
     UvgBlackRulesComponent,
     UvgBlackSheetComponent,
     VampirePanicSheetComponent,
-    UvgWhiteSheetComponent
+    UvgWhiteSheetComponent,
+    WhitehackVerticalSheetComponent
   ],
   imports: [
     BrowserModule,

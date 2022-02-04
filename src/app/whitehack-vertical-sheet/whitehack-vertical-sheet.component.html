@@ -1,0 +1,211 @@
+<section *ngFor="let class of classDescriptions" class='wh-vert-sheet'>
+    <span class='job-description'>
+        <strong>
+            THE {{class.className}}
+        </strong>
+        <em>
+            {{class.description}}
+        </em>
+    </span>
+
+    <section class='name-section card'>
+        <span class='card-title'>
+            <span class='important'>name</span> yourself, mark down <span class='important'>species</span> and <span class='important'>vocation</span> groups, and learn common and one other <span class='important'>language</span>
+        </span>
+        <span class='card-body'>
+            <span class='name'>
+                Name
+                <div class='empty-box'></div>
+            </span>
+            <span class='species'>
+                Species & Vocation
+                <div class='empty-box'></div>
+            </span>
+            <span class='level'>
+                Level
+                <div class='empty-box'></div>
+            </span>
+            <span class='xp'>
+                XP
+                <div class='empty-box'></div>
+            </span>
+            <span class='lang'>
+                Languages, Details, & Musings
+                <div class='empty-box'></div>
+            </span>
+        </span>
+    </section>
+
+    <section class='stats-section card'>
+        <span class='card-title'>
+            mark down your <span class='important'>stats</span>, ro-roll <span class='important'>hd</span> each level
+        </span>
+        <span class='card-body'>
+            <section class='non-core-stats' *ngFor='let nStat of nonCoreStats'>
+                <section class='nStat-group'>
+                    <strong>
+                        {{nStat.statName}}
+                    </strong>
+                    <em class='details'>{{
+                            class.className === "strong" && nStat.strongDesc ?
+                            nStat.strongDesc : class.className === "wise" && nStat.wiseDesc ?
+                            nStat.wiseDesc : nStat.description
+                        }}</em>
+                    <span class='hp-box' *ngIf='nStat.statName === "hit points"'>
+                        <div class='empty-box'>
+                            <em class='details'>current</em>
+                        </div>
+                        <div class='empty-box'>
+                            <em class='details'>max</em>
+                        </div>
+                    </span>
+                    <span [ngClass]='{"init": nStat.statName === "initiative"}'>
+                        <div *ngIf='nStat.statName !== "hit points"' class='empty-box circle'>
+                            <div *ngIf='nStat.statName === "initiative"'>+1</div>
+                        </div>
+                        <div *ngIf='nStat.statName === "initiative"' class='empty-box circle'>
+                            <div *ngIf='nStat.statName === "initiative"'>+2</div>
+                        </div>
+                    </span>
+                </section>
+            </section>
+        </span>
+    </section>
+
+    <section class='traits-section card'>
+        <span class='card-title'>
+            roll 3d6 for each <span class='important'>trait</span> and place it in a circle. mark <span class='important'>groups</span> next to them.
+        </span>
+        <span class='card-body'>
+            <section *ngFor='let stat of stats'>
+                <span class='stat-group'>
+                    <strong>{{stat.statName}}</strong>
+                    <em class='details'>{{stat.description}}</em>
+                    <div class='empty-box circle'></div>
+                    <span class='groups-section'>
+                        <div class='empty-box'></div>
+                        <div class='empty-box'></div>
+                    </span>
+                </span>
+            </section>
+        </span>
+    </section>
+
+    <section class='job-details-section card'>
+        <span class='card-title'>
+            note what the <span class='important'>{{class.className}}</span> can do
+        </span>
+        <span class='card-body'>
+            <section *ngFor="let classDetails of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder; first as isFirst">
+                <strong [ngClass]="{'keyword-title': class.className === 'strong' && isFirst}">{{classDetails.key | uppercase}}</strong>
+                <div *ngIf='class.className === "strong" && isFirst' style="border: 2px solid black; height: 20px; background-color: white; border-radius: 1rem; margin-bottom: 0.5rem;"></div>
+                <span [innerHTML]="classDetails.value"></span>
+            </section>
+        </span>
+    </section>
+
+    <section class='special-combat-section card'>
+        <span class='card-title'>
+            special combat <span class='important'>manuevers</span>
+        </span>
+        <span class='card-body'>
+            <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
+            <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <i>and</i> -1 dmg., to get +2 AC</div>
+            <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
+            <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
+            <div><strong>Protect.</strong> Make a <i>task roll</i> against your AV. On success, next attack on an adjacent friend targets you. Enemy may save to avoid.</div>
+            <div><strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.</div>
+            <div><strong>Persist.</strong> Once/combat, make an CON task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.</div>
+
+            <div><strong>Trick.</strong> Attack and exchange your damage roll for one of the following, each negated by enemy save:
+                <ul>
+                  <li>
+                    <strong>Push</strong> the enemy 5 ft. away, and follow if you like.
+                  </li>
+                  <li>
+                    <strong>Feint</strong> to make 2 attacks with combat adv. next round.
+                  </li>
+                  <li>
+                    <strong>Disarm</strong> the enemy to drop their weapon 2d6 ft. away.
+                  </li>
+                  <li>
+                    <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
+                  </li>
+                </ul>
+              </div>
+        </span>
+    </section>
+
+    <section class='slots-section card'>
+        <section class='card-title'>
+            <span *ngIf='class.className === "strong"'>
+                <span>
+                    CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
+                </span>
+                <em>
+                    gain new slots at level 4, 7, & 10
+                </em> 
+            </span>
+            <span *ngIf='class.className === "deft"'>
+                <span>
+                    <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+                </span>
+                <em>
+                    gain new slots at level 4, 7, & 10
+                </em>
+            </span>
+            <span *ngIf='class.className === "wise"'>
+                <span>
+                    TIE <span class='important'>MIRACLES</span> TO SLOTS
+                </span>
+                <em>
+                    gain new slots at level 3, 5, 7, & 9
+                </em>
+            </span>
+        </section>
+        <section class='card-body' *ngFor='let classSpecial of getObjSansClass(class.className, classSpecials) | keyvalue: originalOrder'>
+            <span class='grid strong-options-grid' *ngIf='class.className === "strong"; else slotsSection'>
+                <p class='strong-combat-options' *ngFor='let combatAction of classSpecial.value' [innerHTML]='combatAction'>
+                </p>
+            </span>
+            <ng-template #slotsSection>
+                <section class='slot-section grid'>
+                    <section
+                     [ngClass]="{'wiseSlot': class.className === 'wise'}" class='slot-split empty-box grid' *ngFor="let slot of classSpecial.value; first as isFirst; let i = index">
+                        <div class='slot-box'></div>
+                        <div class='slot-box'></div>
+                        <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
+                            <em>Req. 13+ WIS</em>
+                        </div>
+                        <div class='slot-box' *ngIf='class.className === "wise" && isFirst'>
+                            <em>Req. 16+ WIS</em>
+                        </div>
+                    </section>
+                </section>
+            </ng-template>
+        </section>
+    </section>
+
+    <section class='inventory-section card'>
+        <section class='card-title'>
+            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD <span class='important green'>10 REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important gold'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT. NO-SIZED ITEMS LIKE COINS FIT 100 TO A SLOT.
+        </section>
+        <section class='card-body'>
+            <section class='main-inventory'>
+                <div class='inventory-slot' *ngFor='let num of inventory'>
+                    <span>{{num}}</span>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+            
+            <section class='extra-inventory'>
+                <div class='inventory-slot' *ngFor='let num of extraInventory'>
+                    <span>{{num}}</span>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>

@@ -47,7 +47,7 @@
             >> custom whitehack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/ultravioletWhitehack.pdf']">printable character sheet</a>, mash up of custom sheets by /u/georgejirico, with inspiration from seacat, and mothership
           </div>
           <div>
-            >> re-tooled whitehack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whColors.pdf']">sheets</a>, with color and style! alternate <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVamp.pdf']">sheets</a> with creepy colors and wording for vampire. big inspriation from mothership
+            >> re-tooled whitehack horiztonal sheets [<a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorz.pdf']">grey-scale</a> and <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorzMin.pdf']">printer-friendly</a>] and vertical versions as well [<a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVert.pdf']">grey-scale</a> and <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVertMin.pdf']">printer-friendly</a>]. inspired by mothership.
           </div>
         </span>
     </section>
@@ -55,6 +55,7 @@
 </section>
 
 <app-uvg-white-sheet *ngIf='false'></app-uvg-white-sheet>
+<app-whitehack-vertical-sheet *ngIf='false'></app-whitehack-vertical-sheet>
 
 <div *ngIf='false' class='letter-size grid print-only'>
   <span *ngFor='let num of numbers'>

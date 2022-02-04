@@ -59,10 +59,6 @@
                     <div class='empty-box vampire-split'>
                         <div class='groups-section'>
                             <div class='border-section'></div>
-                            <!-- <div>
-                                <div class='stain'></div>
-                                <div class='drop'></div>
-                            </div> -->
                         </div>
                     </div>
                 </section>
@@ -110,7 +106,7 @@
     </section>
 
     <section class='job-features-section generic-card grey-card'>
-        <section class='card-title'>NOTE WHAT YOUR <span class='important'>JOB</span> CAN DO</section>
+        <section class='card-title'>NOTE WHAT THE <span class='important'>{{class.className}}</span> CAN DO</section>
         <section class='card-body'>
             <section *ngFor="let classInfo of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder; first as isFirst">
                 <div [ngClass]="{'keyword-title': class.className === 'strong' && isFirst}" class='feature-title'>{{classInfo.key | titlecase}}</div>
@@ -173,7 +169,7 @@
 
     <section class='inventory-section generic-card'>
         <section class='card-title'>
-            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD 10 <span class='important'>REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT.
+            ROLL 3D6*10 <span class='important'>GOLD</span> TO START. YOU CAN HOLD <span class='important green'>10 REGULAR-SIZED OBJECTS</span> + 5 IN A <span class='important yellow'>BACKPACK</span> BEFORE SLOWING DOWN. <span class='important'>HEAVY OBJECTS</span> TAKE TWO SLOTS; <span class='important'>MINOR OBJECTS</span> TAKE HALF A SLOT.
         </section>
         <section class='card-body'>
             <section class='main-inventory'>
