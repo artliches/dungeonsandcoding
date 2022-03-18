@@ -24,7 +24,6 @@ section.wh-vert-sheet {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.3rem;
     grid-template-areas: 
-        // name    stat     trait   slot    spe     jobD    inven
         "job    job     job"
         "name   name    name"
         "stat   trait   trait"
@@ -435,11 +434,9 @@ section.wh-vert-sheet {
 
             div.slot-box {
                 display: grid;
-                border-bottom: 1px solid black;
-
-                // &:not(:last-child) {
-                //     border-bottom: 1px solid black;
-                // }
+                &:not(:last-child) {
+                    border-bottom: 1px solid black;
+                }
             }
         }
 
