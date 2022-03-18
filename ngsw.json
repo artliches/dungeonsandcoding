@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1643998885594,
+  "timestamp": 1647613055040,
   "index": "/dungeonsandcoding/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "/dungeonsandcoding/favicon.ico",
         "/dungeonsandcoding/index.html",
-        "/dungeonsandcoding/main-es2015.a7a60e0c8ba23b46bbf8.js",
-        "/dungeonsandcoding/main-es5.a7a60e0c8ba23b46bbf8.js",
+        "/dungeonsandcoding/main-es2015.3fae9fe8eaed1eb5dd5c.js",
+        "/dungeonsandcoding/main-es5.3fae9fe8eaed1eb5dd5c.js",
         "/dungeonsandcoding/manifest.webmanifest",
         "/dungeonsandcoding/polyfills-es2015.d74b108abb35193b00e4.js",
         "/dungeonsandcoding/polyfills-es5.383939211b6047758ab1.js",
@@ -39,6 +39,7 @@
         "/dungeonsandcoding/assets/charSheets/whHorzMin.pdf",
         "/dungeonsandcoding/assets/charSheets/whVert.pdf",
         "/dungeonsandcoding/assets/charSheets/whVertMin.pdf",
+        "/dungeonsandcoding/assets/charSheets/whVertOmnibus.pdf",
         "/dungeonsandcoding/assets/fonts/BaronNeue.otf",
         "/dungeonsandcoding/assets/icons/android-chrome-192x192.png",
         "/dungeonsandcoding/assets/icons/android-chrome-512x512.png",
@@ -58,6 +59,7 @@
     "/dungeonsandcoding/assets/charSheets/whHorzMin.pdf": "5dd7ac8de6bbb229bc4545ad7891f92044035839",
     "/dungeonsandcoding/assets/charSheets/whVert.pdf": "c1d01648fce944d10362c1841080ad7be799465b",
     "/dungeonsandcoding/assets/charSheets/whVertMin.pdf": "eb4048e84062a62dcc7f667e7f2df6b72b6fadd2",
+    "/dungeonsandcoding/assets/charSheets/whVertOmnibus.pdf": "6c2f700e571555771b5d17ad717c9db41de0e01b",
     "/dungeonsandcoding/assets/fonts/BaronNeue.otf": "d9ab92cb5f69ce8eef6fdf3fb592cd5040274a81",
     "/dungeonsandcoding/assets/icons/android-chrome-192x192.png": "17cc49db7e956fb23dbb4c65aa8d49362519d4c4",
     "/dungeonsandcoding/assets/icons/android-chrome-512x512.png": "2df47f193ce974549120760111230f457ced0b62",
@@ -65,9 +67,9 @@
     "/dungeonsandcoding/assets/icons/favicon-16x16.png": "1f13033abeb427829df1d78d48a6a6579760e94e",
     "/dungeonsandcoding/assets/icons/favicon-32x32.png": "1cd7671c7f1b3d6146f9a420996d134beb42ee26",
     "/dungeonsandcoding/favicon.ico": "2c64a0be9f9bc54d28688c464860b1a344b16b4f",
-    "/dungeonsandcoding/index.html": "d2476515a9f9a30649c79820bed63a26a76e1406",
-    "/dungeonsandcoding/main-es2015.a7a60e0c8ba23b46bbf8.js": "f3689f93ade5eae7e18094002f3bee9433447d97",
-    "/dungeonsandcoding/main-es5.a7a60e0c8ba23b46bbf8.js": "2c490a229de7437c43f053c61d4d04467d80dacc",
+    "/dungeonsandcoding/index.html": "4615a74f7eae6b325f4723ff06ce4ef7741ec089",
+    "/dungeonsandcoding/main-es2015.3fae9fe8eaed1eb5dd5c.js": "d485dc3060f7f300ed7b6f26ea23347e1f418b63",
+    "/dungeonsandcoding/main-es5.3fae9fe8eaed1eb5dd5c.js": "e36790c443669c356f1bb9173c7488e17d0e817c",
     "/dungeonsandcoding/manifest.webmanifest": "b7223ff26b1c412125c49203cad240972b8fb262",
     "/dungeonsandcoding/polyfills-es2015.d74b108abb35193b00e4.js": "65c537467564ee0ba776b629f71ed3413413a7cb",
     "/dungeonsandcoding/polyfills-es5.383939211b6047758ab1.js": "d8306970e4a4bb544d4b644b1f81fb8943c8635b",
