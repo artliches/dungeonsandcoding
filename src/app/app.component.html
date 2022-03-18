@@ -16,6 +16,15 @@
       </span>
     </section>
 
+    <section class='wardenOS'>
+      <a href='https://artliches.github.io/mosh-sheet/'>
+        mothership sheet
+      </a>
+      <span>
+         >> a WIP character sheet for use in the mothership RPG. stores information locally and has multiple themes --> <span class='code-descrip'>created with angular/css grid</span>
+      </span>
+    </section>
+
     <section class='winterNET'>
       <a href='https://artliches.github.io/deadhaltgaschapon/'>
         winterNET
@@ -30,24 +39,16 @@
     <h2>
       role-playing games
     </h2>
-    <section class='uvg'>
-      <span class='title'>
-        uvg & the black hack
-      </span>
-      <span class='descrip'>
-        >> my personal mashup of ultraviolet grasslands and the black hack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/uvg&theBlackHack.pdf']">printable character sheet</a>.
-      </span>
-    </section>
     <section class='whitehack'>
         <span class='title'>
             whitehack
         </span>
         <span class='descrip'>
           <div>
-            >> custom whitehack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/ultravioletWhitehack.pdf']">printable character sheet</a>, mash up of custom sheets by /u/georgejirico, with inspiration from seacat, and mothership
+            >> custom whitehack <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVertOmnibus.pdf']">character sheets</a>, with multiple versions for the three core classes. information heavy to help new and veteran players get into the game faster. inspired by mothership.
           </div>
           <div>
-            >> re-tooled whitehack horiztonal sheets [<a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorz.pdf']">grey-scale</a> and <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorzMin.pdf']">printer-friendly</a>] and vertical versions as well [<a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVert.pdf']">grey-scale</a> and <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whVertMin.pdf']">printer-friendly</a>]. inspired by mothership.
+            >> horizontal versions as well, though lacking certain updates horizontal sheets [<a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorz.pdf']">grey-scale</a> and <a class='clickable' target="_blank" [routerLink]="['/assets/charSheets/whHorzMin.pdf']">printer-friendly</a>].
           </div>
         </span>
     </section>
@@ -56,10 +57,15 @@
 
 <app-uvg-white-sheet *ngIf='false'></app-uvg-white-sheet>
 <app-whitehack-vertical-sheet *ngIf='false'></app-whitehack-vertical-sheet>
+<app-calendar *ngIf="false"></app-calendar>
 
 <div *ngIf='false' class='letter-size grid print-only'>
   <span *ngFor='let num of numbers'>
     <section class='spell-cheatsheet grid'>
+      <strong>ARCANE CHEATSHEET</strong>
+      <em><strong>Standard Spell Areas:</strong> 9sq/45ft. Can be shaped any way, but all squares must touch at least one other square.</em>
+      <em><strong>Standard Concentration Length:</strong> 6 rounds/1 minute.</em>
+
       <span *ngFor='let magic of magicObj'>
         <span [innerHtml]='magic.left'></span>
         <span [innerHtml]='magic.right'></span>
@@ -67,6 +73,7 @@
     </section>
   
     <section class='energy-cheatsheet grid'>
+      <em><strong>Using Energy:</strong> can spend 10 minutes to save once/day to detect and use a local energy source, making a single type of magic one magnitude cheaper.</em>
       <span *ngFor='let energy of energyObj'>
         <span [innerHtml]='energy.left'></span>
         <span [innerHtml]='energy.right'></span>

@@ -1,0 +1,68 @@
+<section class='calendar-main'>
+    <strong class='main-header'>
+        <div class='empty-box'></div> <span>YEARS AFTER DEICIDE</span>
+    </strong>
+
+    <section *ngFor='let month of year' class='individual-month'>
+        <strong
+            [ngClass]="{
+                'spring': month.season === 'spring',
+                'summer': month.season === 'summer',
+                'fall': month.season === 'fall',
+                'winter': month.season === 'winter'
+            }"
+        >
+            {{month.season | uppercase}}
+            <em class='detail-font'>{{month.flavor}}</em>
+        </strong>
+        <section class='days-grid'>
+            <div
+                *ngFor="let day of month.days; let i = index"
+                [ngClass]="{
+                    'typhoon': month.season === 'summer' && i === 8,
+                    'cas': month.season === 'fall' && i === 15,
+                    'igni': month.season === 'spring' && i === 11,
+                    'iibikun': month.season === 'fall' && i === 14,
+                    'sven': month.season === 'spring' && i === 8,
+                    'mid-month': i === 12,
+                    'end-month': i === 24
+                }"
+            >
+                {{i + 1}}
+            </div>
+        </section>
+        <section class='month-details'>
+            <span *ngFor='let holiday of holidays'>
+                <span *ngIf='holiday.season === month.season'>
+                    <span class='holiday-details' *ngFor='let day of holiday.holidays; let i = index'>
+                        <div
+                            [ngClass]="{
+                                'mid-month': i % 2 === 0,
+                                'end-month': i % 2
+                            }"
+                            class='empty-box'></div>
+                        {{day}}
+                    </span>
+
+                </span>
+            </span>
+        </section>
+    </section>
+
+    <section class='key-section'>
+        <section class='birthdays'>
+            <strong>BIRTHDAYS</strong>
+            <section class='bday-swatches' *ngFor="let bday of bdaySwatches">
+                <div                 
+                    [ngClass]="{
+                    'typhoon': bday === 'typhoon',
+                    'cas': bday === 'cas',
+                    'igni': bday === 'igni',
+                    'iibikun': bday === 'iibikun',
+                    'sven': bday === 'sven'
+                }" class='empty-box'></div>
+                <span>{{bday | uppercase}}</span>
+            </section>
+        </section>
+    </section>
+</section>

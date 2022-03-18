@@ -27,11 +27,18 @@
             </span>
             <span class='xp'>
                 XP
-                <div class='empty-box'></div>
+                <div class='empty-box'>
+                    <em class="details">current</em>
+                </div>
+                <div class='empty-box'>
+                    <em class="details">to next level up</em>
+                </div>
             </span>
             <span class='lang'>
                 Languages, Details, & Musings
-                <div class='empty-box'></div>
+                <div class='empty-box'>
+                    <em class="details">+1 lang. int 13+ / +2 lang. int 16+</em>
+                </div>
             </span>
         </span>
     </section>
@@ -46,11 +53,35 @@
                     <strong>
                         {{nStat.statName}}
                     </strong>
-                    <em class='details'>{{
-                            class.className === "strong" && nStat.strongDesc ?
-                            nStat.strongDesc : class.className === "wise" && nStat.wiseDesc ?
-                            nStat.wiseDesc : nStat.description
-                        }}</em>
+
+                    <span class="details">
+                        <div class="nStat-details" *ngIf="class.className === 'strong' && nStat.strongDesc; else wiseBlock">
+                            <em *ngFor="let detail of nStat.strongDesc">
+                                <div [ngClass]="{
+                                    'check': nStat.statName === 'hit points' || nStat.statName === 'attack value'
+                                }">
+                                    {{detail}}
+                                </div>
+                            </em>
+                        </div>
+                        <ng-template #wiseBlock>
+                            <div class="nStat-details"  *ngIf="class.className === 'wise' && nStat.wiseDesc; else generic">
+                                <em *ngFor="let detail of nStat.wiseDesc">
+                                    {{detail}}
+                                </em>
+                            </div>
+                        </ng-template>
+                        <ng-template #generic>
+                            <div class="nStat-details">
+                                <em                                 [ngClass]="{
+                                    'check': nStat.statName === 'initiative'
+                                }" *ngFor="let detail of nStat.description">
+                                    {{detail}}
+                                </em>
+                            </div>
+                        </ng-template>
+                    </span>
+
                     <span class='hp-box' *ngIf='nStat.statName === "hit points"'>
                         <div class='empty-box'>
                             <em class='details'>current</em>
@@ -59,12 +90,17 @@
                             <em class='details'>max</em>
                         </div>
                     </span>
-                    <span [ngClass]='{"init": nStat.statName === "initiative"}'>
+                    <span [ngClass]='{
+                        "init": nStat.statName === "initiative",
+                        "attack": nStat.statName === "attack value"
+                    }'>
                         <div *ngIf='nStat.statName !== "hit points"' class='empty-box circle'>
-                            <div *ngIf='nStat.statName === "initiative"'>+1</div>
                         </div>
-                        <div *ngIf='nStat.statName === "initiative"' class='empty-box circle'>
-                            <div *ngIf='nStat.statName === "initiative"'>+2</div>
+                        <div *ngIf='nStat.statName === "attack value"' class='empty-box'>
+                            <em class='details'>weapon name</em>
+                        </div>
+                        <div *ngIf='nStat.statName === "attack value"' class='empty-box'>
+                            <em class='details'>dmg</em>
                         </div>
                     </span>
                 </section>
@@ -98,7 +134,15 @@
         <span class='card-body'>
             <section *ngFor="let classDetails of getObjSansClass(class.className, classFeatures) | keyvalue: originalOrder; first as isFirst">
                 <strong [ngClass]="{'keyword-title': class.className === 'strong' && isFirst}">{{classDetails.key | uppercase}}</strong>
-                <div *ngIf='class.className === "strong" && isFirst' style="border: 2px solid black; height: 20px; background-color: white; border-radius: 1rem; margin-bottom: 0.5rem;"></div>
+                <span class="strong-keyword" *ngIf="class.className === 'strong' && isFirst">
+                    <div class='empty-box'></div>
+                    <div class='empty-box'>
+                        <em class='details'>current</em>
+                    </div>
+                    <div class='empty-box'>
+                        <em class='details'>max</em>
+                    </div>
+                </span>
                 <span [innerHTML]="classDetails.value"></span>
             </section>
         </span>
@@ -106,10 +150,37 @@
 
     <section class='special-combat-section card'>
         <span class='card-title'>
-            special combat <span class='important'>manuevers</span>
+            general <span class='important'>combat</span> rules
         </span>
         <span class='card-body'>
-            <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
+            <span>
+                <strong>Initiative.</strong>
+                &nbsp;Roll a d6: high roll wins. If there is a tie, missles before melee; lighter weapons before heavier ones.
+                <p>&nbsp;&nbsp;If you do nothing during your turn, you can change your initiative to 6 in following rounds.</p>
+                <p>&nbsp;&nbsp;You can choose a lower position. In the first round after this choice, you can go before others on the same initiative.</p>
+            </span>
+
+            <span>
+                <strong>Actions During a Round.</strong>
+                &nbsp;attack&#8594;move&#8594;small action
+            </span>
+
+            <span>
+                <strong>Free Attack & Disengaging</strong>
+                &nbsp;Casting a spell, quaffing a potion, taking something out of a bag, moving out of melee range, and similar actions give every ready enemy in melee range a free attack. You can only make one free attack per round, except for the Strong.
+                <p>&nbsp;&nbsp;To disengage, you must move backwards at a careful pace (-10ft/-2sq), still facing your opponent.</p>
+            </span>
+
+            <span>
+                <strong>Combat Advantage</strong>
+                &nbsp;The Referee decides when there is advantage, but generally flanking, high ground, sure footing vs. poor footing, back strikes or attacking unawares enemies grants +2AV/dmg.
+            </span>
+
+            <span class="persist-descrip">
+                <strong>Persist.</strong> Once/combat, make an CON task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.
+            </span>
+
+            <!-- <div><strong>Charge.</strong> Move 15 feet in a straight line and attack with combat advantage. -3 AC until your next turn.</div>
             <div><strong>Defense.</strong> Take -2 AV or -2 dmg., or -1 AV <i>and</i> -1 dmg., to get +2 AC</div>
             <div><strong>Offense.</strong> Take -2 AC and get +1 AV and +1 dmg. Lasts until your next turn.</div>
             <div><strong>Grapple.</strong> Make unarmed attack, but forsake dmg. to hold enemy. The enemy must win a contest against your STR to break free.</div>
@@ -132,7 +203,7 @@
                     <strong>Trip</strong> the enemy so that they lose their move in the next round, giving you combat adv.
                   </li>
                 </ul>
-              </div>
+              </div> -->
         </span>
     </section>
 

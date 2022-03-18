@@ -28,27 +28,27 @@ export class WhitehackVerticalSheetComponent implements OnInit {
   nonCoreStats = [
     {
       statName: 'hit points',
-      description: 'instant death at -10HP',
-      strongDesc: '+1 HP. CON 13+ / +1 HP. CON 16+'
-    },
-    {
-      statName: 'armor class',
-      description: 'how hard you are to hit'
-    },
-    {
-      statName: 'saving throw',
-      description: 'how trained or lucky you are in bad situations',
-      strongDesc: '+1 poison & death / +4 special melee attacks',
-      wiseDesc: '+2 magick & mind'
+      description: ['instant death at -10HP'],
+      strongDesc: ['+1 HP. CON 13+', '+1 HP. CON 16+']
     },
     {
       statName: 'attack value',
-      description: 'roll at or under to hurt someone',
-      strongDesc: '+1 AV. STR 13+ / +1 dmg. STR 16+'
+      description: ['roll at (crit) or under'],
+      strongDesc: ['+1 AV. STR 13+', '+1 dmg. STR 16+']
+    },
+    {
+      statName: 'armor class',
+      description: ['how hard you are to hit']
+    },
+    {
+      statName: 'saving throw',
+      description: ['survive a bad situation'],
+      strongDesc: ['+1 poison & death', '+4 special melee attacks'],
+      wiseDesc: ['+2 magick & mind']
     },
     {
       statName: 'initiative',
-      description: '+1 init. DEX 13+ / +2 init. DEX 16+',
+      description: ['+1 init. DEX 13+', '+2 init. DEX 16+'],
     }
   ];
 
@@ -75,7 +75,7 @@ export class WhitehackVerticalSheetComponent implements OnInit {
     },
     {
       statName: 'intelligence',
-      description: '+1 lang. INT 13+ / +2 lang. INT 16+'
+      description: 'mental acuity and flexibility'
     },
   ];
 
@@ -204,6 +204,7 @@ export class WhitehackVerticalSheetComponent implements OnInit {
     },
     {
       class: 'strong',
+      // slots: [1, 2, 3, 4],
       'special combat actions': [
         '&emsp;<strong>BULWARK.</strong> Spend a full action to protect an adjacent character by absorbing all attacks until their next turn. Each enemy saves against this effect.',
         '&emsp;<strong>BULLRUSH.</strong> After a hit, push an opponent backwards ten feet and move into the space formerly occupied by the opponent. The target saves. Target’s movement can trigger free attacks from someone else.',
@@ -247,6 +248,12 @@ export class WhitehackVerticalSheetComponent implements OnInit {
       </ul>`,
     `<strong>Press.</strong> Take penalty to your AV when using a special combat option, give your enemy the same penalty. If you fail or if the save succeeds, the enemy gets combat adv. against you in the next round.`,
     `<strong>Persist.</strong> Once/combat, make a CON task roll or save against incoming damage. On success, reduce dmg. by d6. On fail and/or dmg. takes you into negative HP, knocked out for 2 rounds.`
+  ];
+  basicCombatRules = [
+    `<strong>Initiative.</strong>
+    At the start of combat, roll a d6: high roll wins modified by high DEX. If two combatants are tied, missles go before melee and lighter weapons go before heavier ones.
+    <p>If you do nothing during your turn, you can change your initiative to 6 in the next and consecutive rounds.</p>
+    <p>You can choose a lower initiative instead of your roll. In the first round after this choice, you can let your actions happen just before others' on that initiative.</p>`
   ];
 
   ngOnInit() {

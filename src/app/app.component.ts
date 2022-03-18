@@ -27,6 +27,11 @@ export class AppComponent {
       Wounds, Read Language.`,
     },
     {
+      left: `2`,
+      right:     `<strong>Standard</strong>, just beyond the possible. For
+      example: Force Armor, Breathe Water, Minor Telekinesis, Invisibility.`,
+    },
+    {
       left: `d6`,
       right:      `<strong>Major</strong>, a major breach of natural law. For
       example: Teleportation, Animate Dead, Locate
@@ -58,15 +63,15 @@ export class AppComponent {
 
   energyObj = [
     {left: `<strong>Qu.</strong>`, right: `<strong>Energy Concentration</strong>`},
-    {left: '1 ',right: 'Conjuration (summoning)'},
-    {left: '2 ',right: 'Evocation (controlling the elements)'},
-    {left: '3 ',right: 'Necromancy (healing and damaging)'},
-    {left: '4 ',right: 'Abjuration (protecting, banishing)'},
-    {left: '5 ',right: 'Illusion (creating illusions)'},
-    {left: '6 ',right: 'Divination (getting information)'},
-    {left: '7 ',right: 'Transmutation (altering material things)'},
-    {left: '8 ',right: 'Enchantment (affecting the mind)'},
-    {left: '9+',right: 'Player choice'},
+    {left: '1 ', right: 'Conjuration (summoning)'},
+    {left: '2 ', right: 'Evocation (controlling the elements)'},
+    {left: '3 ', right: 'Necromancy (healing and damaging)'},
+    {left: '4 ', right: 'Abjuration (protecting, banishing)'},
+    {left: '5 ', right: 'Illusion (creating illusions)'},
+    {left: '6 ', right: 'Divination (getting information)'},
+    {left: '7 ', right: 'Transmutation (altering material things)'},
+    {left: '8 ', right: 'Enchantment (affecting the mind)'},
+    {left: '9+', right: 'Player choice'},
   ];
 
   numbers = Array(3).fill('');

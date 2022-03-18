@@ -10,6 +10,7 @@ import { UvgBlackSheetComponent } from './uvg-black-sheet/uvg-black-sheet.compon
 import { VampirePanicSheetComponent } from './vampire-panic-sheet/vampire-panic-sheet.component';
 import { UvgWhiteSheetComponent } from './uvg-white-sheet/uvg-white-sheet.component';
 import { WhitehackVerticalSheetComponent } from './whitehack-vertical-sheet/whitehack-vertical-sheet.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WhitehackVerticalSheetComponent } from './whitehack-vertical-sheet/whit
     UvgBlackSheetComponent,
     VampirePanicSheetComponent,
     UvgWhiteSheetComponent,
-    WhitehackVerticalSheetComponent
+    WhitehackVerticalSheetComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
