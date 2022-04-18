@@ -1,0 +1,57 @@
+$detail-font: 6pt;
+$standard-font-size: 8pt;
+$background-grey: hsl(210, 11%, 93%);
+$title-font: 'Baron Neue', sans-serif;
+$grid-gap: 0.3rem;
+
+em {
+    font-size: $detail-font;
+}
+
+
+.card {
+    border: 1px solid darkgrey;
+    // background-color: $background-grey;
+    border-radius: 5px;
+    padding: 0.3rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    .card-title {
+        color: grey;
+        font-family: $title-font;
+        border-bottom: 1px solid darkgrey;
+        .important {
+            color: black;
+
+            &.green {
+                color: darkgreen;
+            }
+
+            &.gold {
+                color: goldenrod;
+            }
+        }
+    }
+    .card-body {
+        display: grid;
+    }
+}
+
+.empty-box {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color: darkgrey;
+
+    display: grid;
+    place-content: end center;
+    &.circle {
+        border-radius: 50%;
+        width: 18pt;
+        height: 18pt;
+
+        place-content: center;
+    }
+}

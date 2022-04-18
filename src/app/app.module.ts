@@ -11,6 +11,14 @@ import { VampirePanicSheetComponent } from './vampire-panic-sheet/vampire-panic-
 import { UvgWhiteSheetComponent } from './uvg-white-sheet/uvg-white-sheet.component';
 import { WhitehackVerticalSheetComponent } from './whitehack-vertical-sheet/whitehack-vertical-sheet.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { WhitehackHorizontalComponent } from './whitehack-horizontal-sheet/whitehack-horizontal/whitehack-horizontal.component';
+import { WhNameComponent } from './whitehack-horizontal-sheet/wh-name/wh-name.component';
+import { WhTraitsComponent } from './whitehack-horizontal-sheet/wh-traits/wh-traits.component';
+import { WhStatsComponent } from './whitehack-horizontal-sheet/wh-stats/wh-stats.component';
+import { WhSlotsComponent } from './whitehack-horizontal-sheet/wh-slots/wh-slots.component';
+import { WhJobDescripComponent } from './whitehack-horizontal-sheet/wh-job-descrip/wh-job-descrip.component';
+import { WhCombatComponent } from './whitehack-horizontal-sheet/wh-combat/wh-combat.component';
+import { WhInventoryComponent } from './whitehack-horizontal-sheet/wh-inventory/wh-inventory.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +28,15 @@ import { CalendarComponent } from './calendar/calendar.component';
     VampirePanicSheetComponent,
     UvgWhiteSheetComponent,
     WhitehackVerticalSheetComponent,
-    CalendarComponent
+    CalendarComponent,
+    WhitehackHorizontalComponent,
+    WhNameComponent,
+    WhTraitsComponent,
+    WhStatsComponent,
+    WhSlotsComponent,
+    WhJobDescripComponent,
+    WhCombatComponent,
+    WhInventoryComponent
   ],
   imports: [
     BrowserModule,

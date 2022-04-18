@@ -1,0 +1,69 @@
+<section class="card">
+    <section class="card-title">
+        mark down your <span class='important'>stats</span>, ro-roll <span class='important'>hd</span> each level
+    </section>
+    
+    <section class="card-body">
+        <section class="stat" *ngFor="let stat of stats"
+            [ngClass]='{
+                "hp": stat.statName === "hit points",
+                "atk": stat.statName === "attack value",
+                "ac": stat.statName === "armor class",
+                "st": stat.statName === "saving throw",
+                "init": stat.statName === "initiative"
+            }'>
+            <strong class="stat-title">{{stat.statName | uppercase}}</strong>
+            <section class="stat-title-detail">
+                <span *ngIf="jobName === 'strong' && stat.strongDesc; else wiseBlock">
+                    <em *ngFor="let detail of stat.strongDesc">
+                        <div [ngClass]="{
+                            'check': stat.statName === 'hit points' || stat.statName === 'attack value'
+                        }">
+                            {{detail}}
+                        </div>
+                    </em>
+                </span>
+                <ng-template #wiseBlock>
+                    <span *ngIf="jobName === 'wise' && stat.wiseDesc; else generic">
+                        <em *ngFor="let detail of stat.wiseDesc">
+                            {{detail}}
+                        </em>
+                    </span>
+                </ng-template>
+
+                <ng-template #generic>
+                    <span>
+                        <em
+                            *ngFor="let detail of stat.description"
+                            [ngClass]="{'check': stat.statName === 'initiative'}">
+                            {{detail}}
+                        </em>
+                    </span>
+                </ng-template>
+            </section>
+
+            <section class="hp-box stat-box" *ngIf="stat.statName === 'hit points'">
+                <div class="empty-box">
+                    <em class="details">current</em>
+                </div>
+                <div class="empty-box">
+                    <em class="details">max</em>
+                </div>
+            </section>
+
+            <section
+                [ngClass]="{
+                    'init': stat.statName === 'initiative',
+                    'attack': stat.statName === 'attack value'
+                }" class="stat-box">
+                <div *ngIf="stat.statName !== 'hit points'" class="empty-box circle"></div>
+                <div *ngIf="stat.statName === 'attack value'" class="empty-box">
+                    <em class="details">weapon name</em>
+                </div>
+                <div *ngIf="stat.statName === 'attack value'" class="empty-box">
+                    <em class="details">dmg</em>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>

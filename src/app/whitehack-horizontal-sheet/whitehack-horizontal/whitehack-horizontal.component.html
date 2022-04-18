@@ -1,0 +1,33 @@
+<section *ngFor="let job of jobs" class="wh-horizontal">
+    <section class="job-section">
+        <strong>{{job.jobName | uppercase}}</strong> | <em>{{job.description}}</em>
+    </section>
+
+    <section class="name-section">
+        <app-wh-name></app-wh-name>
+    </section>
+
+    <section class="traits-section">
+        <app-wh-traits></app-wh-traits>
+    </section>
+
+    <section class="stats-section">
+        <app-wh-stats [jobName]="job.jobName"></app-wh-stats>
+    </section>
+
+    <section class="slots-section">
+        <app-wh-slots [jobName]="job.jobName"></app-wh-slots>
+    </section>
+
+    <section class="job-descrip-section">
+        <app-wh-job-descrip [jobName]="job.jobName"></app-wh-job-descrip>
+    </section>
+
+    <section class="combat-section">
+        <app-wh-combat></app-wh-combat>
+    </section>
+
+    <section class="inventory-section">
+        <app-wh-inventory></app-wh-inventory>
+    </section>
+</section>

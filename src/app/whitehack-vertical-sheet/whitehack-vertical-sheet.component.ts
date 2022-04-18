@@ -11,18 +11,18 @@ export class WhitehackVerticalSheetComponent implements OnInit {
   constructor() { }
 
   classDescriptions = [
-    // {
-    //   className: 'deft',
-    //   description: 'rely on superior technique and skill'
-    // },
+    {
+      className: 'deft',
+      description: 'rely on superior technique and skill'
+    },
     {
       className: 'strong',
       description: 'rely on combat skills and physique'
     },
-    // {
-    //   className: 'wise',
-    //   description: 'perform miracles through arcane negotiations'
-    // }
+    {
+      className: 'wise',
+      description: 'perform miracles through arcane negotiations'
+    }
   ];
 
   nonCoreStats = [

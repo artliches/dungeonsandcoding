@@ -1,0 +1,47 @@
+<section class="card">
+    <section class="card-title">
+        <span *ngIf='jobName === "strong"'>
+            <span>
+                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em> 
+        </span>
+        <span *ngIf='jobName === "deft"'>
+            <span>
+                <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em>
+        </span>
+        <span *ngIf='jobName === "wise"'>
+            <span>
+                TIE <span class='important'>MIRACLES</span> TO SLOTS
+            </span>
+            <em>
+                gain new slots at level 3, 5, 7, & 9
+            </em>
+        </span>
+    </section>
+
+    <section *ngFor="let slotObj of getObjSansClass(jobName, slots) | keyvalue: originalOrder" class="card-body">
+        <section class="slot-section">
+            <section
+                *ngFor="let slot of slotObj.value; first as isFirst; let i = index"
+                [ngClass]="{'wiseSlot': jobName === 'wise', 'strongSlot': jobName === 'strong', 'deftSlot': jobName === 'deft'}"
+                class='slot-split empty-box'
+            >
+                <div *ngIf='jobName !== "strong"' class='slot-box'></div>
+                <div *ngIf='jobName !== "strong"' class='slot-box'></div>
+                <div class='slot-box' *ngIf='jobName === "wise" && isFirst'>
+                    <em>Req. 13+ WIS</em>
+                </div>
+                <div class='slot-box' *ngIf='jobName === "wise" && isFirst'>
+                    <em>Req. 16+ WIS</em>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>
