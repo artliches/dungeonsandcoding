@@ -1,0 +1,32 @@
+<div class="card">
+    <span class="card-title">
+        note what the <span class="important">{{jobTitle}}</span> can do
+    </span>
+    <span [ngClass]="{'horz': horz, 'vert': !horz}" class='card-body'>
+        <section *ngFor="let classDetails of getObjSansClass(jobTitle, jobDescriptions) | keyvalue: originalOrder; first as isFirst">
+            <span class="info-title" [ngClass]="{
+                'keyword-title': jobTitle === 'strong' && isFirst
+            }">
+                <strong>{{classDetails.key | uppercase}}</strong>
+                <em class="use-circle" *ngIf="classDetails.key === 'influence' || classDetails.key === 'no'">used?</em>
+            </span>
+            <span class="strong-keyword" *ngIf="jobTitle === 'strong' && isFirst">
+                <div class='empty-box'></div>
+                <div class='empty-box'>
+                    <em class='details'>current</em>
+                </div>
+                <div class='empty-box'>
+                    <em class='details'>max</em>
+                </div>
+            </span>
+
+            <span [innerHTML]="classDetails.value"></span>
+
+            <span class="brave-comeback" *ngIf="jobTitle === 'brave' && isFirst">
+                <div class='empty-box'>
+                    <em class='details'>stored comeback die (d6)</em>
+                </div>
+            </span>
+        </section>
+    </span>
+</div>

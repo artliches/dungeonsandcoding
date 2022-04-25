@@ -1,0 +1,55 @@
+@use '../whStyles';
+.card {
+    height: 92%;
+    border-right: none;
+
+    .card-body {
+        grid-template-areas:
+        "name       lang    xp   level"
+        "species    lang    xp   level";
+    grid-template-columns: 29% 45% 20% 5%;
+    grid-template-rows: repeat(2, auto);
+    column-gap: 0.2rem;
+
+    span {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content whStyles.$field-size;
+        row-gap: 0.2rem;
+
+        &.lang, &.level {
+            grid-template-rows: min-content auto;
+        }
+        &.xp {
+            row-gap: 0rem;
+            grid-template-rows: min-content auto auto;
+            div.empty-box:nth-child(1) {
+                border-bottom-right-radius: 0rem;
+                border-bottom-left-radius: 0rem;
+                border-bottom: 1px dotted black;
+            }
+            div.empty-box:nth-child(2) {
+                border-top-left-radius: 0rem;
+                border-top-right-radius: 0rem;
+                border-top: none;
+            }
+        }
+    }
+
+    .name {
+        grid-area: name;
+    }
+    .level {
+        grid-area: level;
+    }
+    .species {
+        grid-area: species; 
+    }
+    .xp {
+        grid-area: xp;
+    }
+    .lang {
+        grid-area: lang;
+    }
+    }
+}

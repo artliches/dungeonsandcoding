@@ -1,0 +1,59 @@
+@use '../whStyles';
+.card {
+    height: 97.5%;
+
+    .card-body {
+        &.horz {
+            font-size: 7.8pt;
+        }
+        &.vert {
+            font-size: 8.45pt;
+        }
+        row-gap: whStyles.$standard-gap;
+        section {
+            text-transform: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            .info-title:not(.keyword-title) {
+                border-bottom: 1px solid black;
+                em {
+                    color: darkgrey;
+                }
+            }
+            .strong-keyword {
+                display: grid;
+                grid-template-columns: 70% 15% 15%;
+                grid-template-rows: 1fr;
+                .empty-box {
+                    height: 20pt;
+    
+                    &:nth-child(1) {
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        border-right: none;
+                    }
+    
+                    &:nth-child(2) {
+                        border-left: 1px dotted black;
+                        border-right: 1px dotted black;
+                        border-radius: 0px;
+                    }
+                    &:nth-child(3) {
+                        border-top-left-radius: 0px;
+                        border-bottom-left-radius: 0px;
+                        border-left: none;
+                    }
+                }
+            }
+            .brave-comeback {
+                display: grid;
+                grid-template-columns: 40%;
+                grid-template-rows: 1fr;
+                place-content: center;
+                .empty-box {
+                    height: 20pt;
+                }
+            }
+        }
+    }
+}

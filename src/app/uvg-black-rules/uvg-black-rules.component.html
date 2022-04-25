@@ -1,9 +1,0 @@
-
-<section class='rules-grid grid'>
-    <section class='rules-main'>
-        <article class='uvg-card' *ngFor='let rule of homebrewRules | keyvalue'>
-            <h1>{{rule.key}}</h1>
-            <section class='uvg-card-body rules-card-body' [innerHTML]='rule.value'></section>
-        </article>
-    </section>
-</section>

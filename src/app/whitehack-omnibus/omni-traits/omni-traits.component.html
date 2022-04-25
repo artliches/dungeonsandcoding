@@ -1,0 +1,27 @@
+<div [ngClass]="{'horz': horz}" class="card">
+    <span class="card-title">
+        roll 3d6 for each <span class="important">trait</span> and place it in a circle. mark <span class="important">groups</span> next to them.
+    </span>
+
+    <span class="card-body">
+        <section *ngFor="let trait of traits">
+            <span class='stat-group'>
+                <strong>{{trait.statName | uppercase}}</strong>
+                <em class='details'>
+                    <ng-container *ngIf="jobName === 'fortunate' && trait.statName === 'karisma'; else generic">
+                        <div>+4 morale check</div>
+                        +2 reaction rolls
+                    </ng-container>
+                    <ng-template #generic>
+                        {{trait.description}}
+                    </ng-template>
+                </em>
+                <div class='empty-box circle'></div>
+                <span class='groups-section'>
+                    <div class='empty-box'></div>
+                    <div class='empty-box'></div>
+                </span>
+            </span>
+        </section>
+    </span>
+</div>

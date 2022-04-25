@@ -1,0 +1,73 @@
+@use 'whStyles';
+
+.whSheet {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-gap: 0.3rem;
+    background-color: white;
+    color: black;
+    padding: 0.3rem;
+    overflow: none;
+
+    div {
+        height: 100%;
+        // width: 100%;
+
+        &.title {
+            grid-area: title;
+        }
+        &.name {
+            grid-area: name;
+        }
+        &.stats {
+            grid-area: stats;
+        }
+        &.traits {
+            grid-area: traits;
+        }
+        &.job {
+            grid-area: job;
+        }
+        &.slots {
+            grid-area: slots;
+        }
+        &.spe {
+            grid-area: spe;
+        }
+        &.inven {
+            grid-area: inven;
+        }
+    }
+}
+
+.vertLayout {
+    height: 11in;
+    width: 8.5in;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto repeat(8, 1fr);
+    grid-template-areas:
+        "title  title   title"
+        "name   name    name"
+        "stats  traits  traits"
+        "stats  traits  traits"
+        "job    slots   spe"
+        "job    slots   spe"
+        "job    slots   spe"
+        "inven  inven   inven"
+        "inven  inven   inven";
+}
+
+.horzLayout {
+    width: 11in;
+    height: 8.5in;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto repeat(6, 1fr);
+    grid-template-areas:
+        "title  title   title   title   title"
+        "name   name    name    name    name"
+        "stats  stats   job     spe     slots"
+        "traits traits  job     spe     slots"
+        "traits traits  job     spe     slots"
+        "inven  inven   inven   inven   inven"
+        "inven  inven   inven   inven   inven";
+}

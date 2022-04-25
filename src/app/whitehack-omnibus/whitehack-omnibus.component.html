@@ -1,0 +1,53 @@
+<span *ngFor="let job of jobs" class="whSheet vertLayout">
+    <div class="title">
+        <app-omni-title [title]="job.jobName" [descrip]="job.description"></app-omni-title>
+    </div>
+    <div class="name">
+        <app-omni-name></app-omni-name>
+    </div>
+    <div class="stats">
+        <app-omni-stats [jobName]="job.jobName"></app-omni-stats>
+    </div>
+    <div class="traits">
+        <app-omni-traits [jobName]="job.jobName"></app-omni-traits>
+    </div>
+    <div class="job">
+        <app-omni-job [jobTitle]="job.jobName"></app-omni-job>
+    </div>
+    <div class="slots">
+        <app-omni-slots [jobName]="job.jobName"></app-omni-slots>
+    </div>
+    <div class="spe">
+        <app-omni-special></app-omni-special>
+    </div>
+    <div class="inven">
+        <app-omni-inventory></app-omni-inventory>
+    </div>
+</span>
+
+<!-- <span *ngFor="let job of jobs" class="whSheet horzLayout">
+    <div class="title">
+        <app-omni-title [title]="job.jobName" [descrip]="job.description"></app-omni-title>
+    </div>
+    <div class="name">
+        <app-omni-name></app-omni-name>
+    </div>
+    <div class="stats">
+        <app-omni-stats [horz]="true"></app-omni-stats>
+    </div>
+    <div class="traits">
+        <app-omni-traits [horz]="true" [jobName]="job.jobName"></app-omni-traits>
+    </div>
+    <div class="job">
+        <app-omni-job [horz]="true" [jobTitle]="job.jobName"></app-omni-job>
+    </div>
+    <div class="slots">
+        <app-omni-slots [horz]="true" [jobName]="job.jobName"></app-omni-slots>
+    </div>
+    <div class="spe">
+        <app-omni-special [horz]="true"></app-omni-special>
+    </div>
+    <div class="inven">
+        <app-omni-inventory [horz]="true"></app-omni-inventory>
+    </div>
+</span> -->

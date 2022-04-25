@@ -1,0 +1,117 @@
+@use '../whStyles';
+.card {
+    &.horz {
+        border-right: none;
+    }
+    height: 97.5%;
+    .card-title>span {
+        display: grid;
+    }
+
+    .card-body {
+        display: grid;
+        grid-template-columns: 1fr;
+    
+        .slot-section {
+            display: grid;
+            grid-gap: whStyles.$standard-gap;
+            .slot-split {
+                grid-template-columns: 1fr;
+
+                &.horz {
+                    &.deftSlot {
+                        grid-template-rows: repeat(2, 30pt);
+                    }
+                    &.strongSlot, &.fortuneSlot {
+                        grid-template-rows: repeat(2, 31pt);
+                    }
+                    &.wiseSlot {
+                        grid-template-rows: repeat(2, 21pt);
+                    }
+                }
+                &.vert {
+                    &.strongSlot, &.deftSlot {
+                        grid-template-rows: repeat(2, 30pt);
+                    }
+                    &.wiseSlot {
+                        grid-template-rows: repeat(2, 20pt);
+                    }
+                }
+    
+                &.wiseSlot {    
+                    &:first-child {
+                        grid-template-rows: repeat(4, 20pt);
+                    }
+                }
+    
+                div.slot-box {
+                    display: grid;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid black;
+                    }
+                    &::before {
+                        content: '';
+                        border: 1px solid black;
+                        border-radius: 1rem;
+                        background-color: white;
+                        display: block;
+        
+                        position: relative;
+                        width: 10px;
+                        height: 10px;
+                        top: 40%;
+                        right: 6.5px;
+                    }
+    
+                    em {
+                        text-transform: uppercase;
+                        position: relative;
+                        top: 2px;
+                        justify-self: end;
+                        font-size: 6pt;
+                        padding-right: 0.3rem;
+                        color: darkgrey;
+                    }
+                }
+            }
+
+            .empty-box {
+                &.fortuneSlot {
+                    height: 57pt;
+                    place-content: stretch;
+                    padding: 1px;
+
+                    .fortunate-grid {
+                        display: grid;
+                        grid-template-areas:
+                            "identity   identity    identity    identity    identity    vocation     vocation     vocation     vocation"
+                            "xp         xp          hd          hp          hp          ac           st           av           morale"
+                            "special    special     special     special     special     special      special      special      special";
+
+                        $areas: identity, vocation, hd, hp, xp, st, ac, av, morale, special;
+                        @each $area in $areas {
+                            .#{$area} {
+                                display: grid;
+                                place-content: end start;
+                                grid-area: #{$area};
+                                border-left: 1px dotted black;
+                                &:not(:last-child) {
+                                    border-bottom: 1px dotted black;
+                                }
+                                &:nth-child(1) {
+                                    border-left: none;
+                                }
+                                &:nth-child(3) {
+                                    border-left: none;
+                                }
+                                &:nth-child(10) {
+                                    border-left: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

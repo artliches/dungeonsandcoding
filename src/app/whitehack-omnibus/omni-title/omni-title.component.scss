@@ -1,0 +1,9 @@
+@use '../whStyles';
+
+span {
+    font-size: whStyles.$standard-font-size;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: whStyles.$standard-gap;
+    place-content: center;
+}

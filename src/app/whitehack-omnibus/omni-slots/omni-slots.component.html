@@ -1,0 +1,72 @@
+<div [ngClass]="{'horz': horz}" class="card">
+    <span class="card-title">
+        <span *ngIf='jobName === "strong"'>
+            <span>
+                CHOOSE 1 <span class='important'>COMBAT OPTION</span> PER SLOT
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em> 
+        </span>
+        <span *ngIf='jobName === "deft"'>
+            <span>
+                <span class='important'>ATTUNE</span> A TEACHER, ITEM, PET, OR PLACE
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em>
+        </span>
+        <span *ngIf='jobName === "wise"'>
+            <span>
+                TIE <span class='important'>MIRACLES</span> TO SLOTS
+            </span>
+            <em>
+                gain new slots at level 3, 5, 7, & 9.
+            </em>
+        </span>
+        <span *ngIf="jobName === 'brave'">
+            <span>
+                CHOOSE 1 <span class="important">QUIRK</span> PER SLOT
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em>
+        </span>
+        <span *ngIf="jobName === 'fortunate'">
+            <span>
+                MARK DOWN 1 <span class="important">RETAINER</span> PER SLOT
+            </span>
+            <em>
+                gain new slots at level 4, 7, & 10
+            </em>
+        </span>
+    </span>
+
+    <span *ngFor="let slotObj of getObjSansClass(jobName, slots) | keyvalue: originalOrder" class="card-body">
+        <span *ngIf="jobName === 'fortunate'">
+            <strong>ST & Poor Attributes</strong> = HD+5, <strong>AV & Good Attributes</strong> = HD+10
+        </span>
+        <span class="slot-section">
+            <span
+                *ngFor="let slot of slotObj.value; first as isFirst; let i = index"
+                [ngClass]="{'wiseSlot': jobName === 'wise', 'strongSlot': jobName === 'strong' || jobName === 'brave' , 'deftSlot': jobName === 'deft', 'fortuneSlot': jobName === 'fortunate', 'slot-split': jobName !== 'fortunate', 'horz': horz, 'vert': !horz}"
+                class='empty-box'
+            >
+                <div *ngIf='jobName !== "strong" && jobName !== "brave" && jobName !== "fortunate"' class='slot-box'></div>
+                <div *ngIf='jobName !== "strong" && jobName !== "brave" && jobName !== "fortunate"' class='slot-box'></div>
+                <div class='slot-box' *ngIf='jobName === "wise" && isFirst'>
+                    <em>Req. 13+ WIS</em>
+                </div>
+                <div class='slot-box' *ngIf='jobName === "wise" && isFirst'>
+                    <em>Req. 16+ WIS</em>
+                </div>
+
+                <span class="fortunate-grid" *ngIf="jobName === 'fortunate'">
+                    <div class="{{stat}}" *ngFor="let stat of npcStats">
+                        <em>{{stat | uppercase}}</em>
+                    </div>
+                </span>
+            </span>
+        </span>
+    </span>
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+    <span class="card-title">
+        ROLL 3D6*10 <span class="important">GOLD</span> TO START. YOU CAN HOLD <span class="important green">10 REGULAR-SIZED OBJECTS</span> + <span class="important gold">5 IN A BACKPACK</span> BEFORE SLOWING DOWN. <span class="important">N</span>O-SIZED ITEMS LIKE COINS FIT 100 TO A SLOT; <span class="important">M</span>INOR OBJECTS TAKE HALF A SLOT; <span class="important">H</span>EAVY OBJECTS TAKE TWO SLOTS.
+    </span>
+
+    <span class='card-body'>
+        <span class='main-inventory'>
+            <div [ngClass]="{'horz': horz, 'vert': !horz}" class='inventory-slot' *ngFor='let num of inventory'>
+                <span>{{num}}</span>
+                <div></div>
+                <div></div>
+            </div>
+        </span>
+        
+        <span class='extra-inventory'>
+            <div [ngClass]="{'horz': horz, 'vert': !horz}" class='inventory-slot' *ngFor='let num of extraInventory'>
+                <span>{{num}}</span>
+                <div></div>
+                <div></div>
+            </div>
+        </span>
+    </span>
+</div>
