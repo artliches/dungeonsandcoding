@@ -17,7 +17,19 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
                 grid-area: #{$area};
             }
             &.legal {
+                display: grid;
+                grid-template-rows: 1fr;
+                row-gap: 1rem;
                 font-size: cyStyles.$small-font;
+                grid-template-areas:
+                    "legal1     legal2";
+                
+                em:nth-child(1) {
+                    grid-area: legal1;
+                }
+                em:nth-child(2) {
+                    place-self: end;
+                }
             }
         }
     }
@@ -45,12 +57,12 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
     display: grid;
     place-content: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1fr, min-content);
+    grid-template-rows: 1fr;
     grid-template-areas:
-        "punk   style   print"
-        "legal  legal   legal";
+        "punk   style   print";
     row-gap: 1rem;
     padding: 0.3rem;
+    border: 1px solid white;
     span, select {
         font-size: 10pt;
     }
@@ -68,15 +80,6 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
         border: none;
         margin-left: 0.3rem;
     }
-    .legal {
-        grid-area: legal;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-self: center;
-        column-gap: 1rem;
-        font-size: 8pt;
-    }
-
 }
 
 
