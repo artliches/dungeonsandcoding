@@ -45,7 +45,10 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
     display: grid;
     place-content: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-rows: repeat(1fr, min-content);
+    grid-template-areas:
+        "punk   style   print"
+        "legal  legal   legal";
     row-gap: 1rem;
     padding: 0.3rem;
     span, select {
@@ -65,6 +68,15 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
         border: none;
         margin-left: 0.3rem;
     }
+    .legal {
+        grid-area: legal;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-self: center;
+        column-gap: 1rem;
+        font-size: 6pt;
+    }
+
 }
 
 
