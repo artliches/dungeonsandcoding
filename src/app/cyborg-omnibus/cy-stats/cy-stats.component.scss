@@ -1,0 +1,121 @@
+@use '../cyStyles';
+$box-size: 50px;
+.card {
+    height: 98.5%;
+
+    .card-body {
+        grid-template-rows: repeat(2, min-content);
+        row-gap: 0.3rem;
+        .scoreRef {
+            display: grid;
+            grid-template-rows: repeat(2, min-content);
+            grid-template-columns: repeat(8, 1fr);
+            row-gap: 0.3rem;
+            span {
+                place-self: center;
+            }
+        }
+        .abilities {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 0.5rem;
+            .single-ability {
+                strong {
+                    font-size: cyStyles.$large-font;
+                }
+                em {
+                    font-size: cyStyles.$small-font;
+                }
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, min-content);
+                grid-template-areas:
+                    "title      box"
+                    "descrip    box"
+                    ".          box"
+                    ".          instruct";
+                .ability-title {
+                    grid-area: title;
+                }
+                .ability-descrip {
+                    grid-area: descrip;
+                }
+                .ability-instructions {
+                    grid-area: instruct;
+                    place-self: center;
+                }
+                .box-grid {
+                    place-self: center;
+                    grid-area: box;
+                    .empty-box {
+                        height: $box-size;
+                        width: $box-size;
+                        display: grid;
+                        place-content: end center;
+                    }
+                    &.hp-box {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: 1fr;
+                        .empty-box {
+                            &:nth-child(1) {
+                                border-right: 1px dotted;
+                            }
+                            &:nth-child(2) {
+                                border-left: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .creds-glitches {
+            display: grid;
+            grid-template-rows: repeat(2, min-content);
+            row-gap: 0.3rem;
+            .creds {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: min-content 40pt;
+                grid-template-areas: 
+                    "descrip    descrip"
+                    "box        box";
+
+                .cred-descrip {
+                    grid-area: descrip;
+                    font-size: cyStyles.$small-font;
+                }
+                .empty-box:nth-child(2) {
+                    border-right: 1px dotted cyStyles.$highlight-color;
+                }
+                .empty-box:nth-child(3) {
+                    border-left: none;
+                }
+            }
+            .glitches {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, min-content) 30pt;
+                grid-template-areas: 
+                    "title      title"
+                    "descrip    descrip"
+                    "box        box";
+
+                .title {
+                    grid-area: title;
+                }
+                .descrip {
+                    grid-area: descrip;
+                    font-size: cyStyles.$small-font;
+                }
+                .empty-box:nth-child(3) {
+                    border-right: 1px dotted cyStyles.$highlight-color;
+                }
+                .empty-box:nth-child(4) {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}

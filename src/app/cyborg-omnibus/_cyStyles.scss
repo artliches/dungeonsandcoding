@@ -1,0 +1,48 @@
+$highlight-color: blue;
+$pink: magenta;
+$large-font: 14pt;
+$small-font: 7pt;
+$normal-font: 8pt;
+@mixin important {
+    background-color: $highlight-color;
+    color: white;
+    padding: 0.1rem;
+}
+
+.card {
+    height: 100%;
+    padding: 0.3rem;
+
+    display: grid;
+    row-gap: 0.3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+        "title"
+        "body";
+
+    border: 1px solid;
+
+    .card-title {
+        grid-area: title;
+        display: grid;
+        font-size: 9.5pt;
+        text-transform: uppercase;
+    }
+    .card-body {
+        grid-area: body;
+        display: grid;
+        font-size: 8pt;
+    }
+}
+
+// .underline {
+//     border-bottom: 1px solid $highlight-color;
+// }
+
+.empty-box {
+    border: 1px solid;
+    display: grid;
+    place-content: end center;
+    font-size: $small-font;
+}

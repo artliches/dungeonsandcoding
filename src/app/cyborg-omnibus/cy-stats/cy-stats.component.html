@@ -1,0 +1,63 @@
+<div class="card">
+    <span class="card-title">
+        <span class="important">/// roll <strong>stats</strong>, plug in <strong>scores</strong>, get <strong>debt</strong></span>
+    </span>
+    <span class="card-body">
+        <span class="scoreRef important">
+            <span *ngFor="let roll of rollTable">
+                {{roll}}
+            </span>
+            <span *ngFor="let score of scoreTable">
+                {{score}}
+            </span>
+        </span>
+
+        <span class="abilities">
+            <span *ngFor="let ability of abilities">
+                <div class="single-ability">
+                    <strong class="ability-title">{{ability.name | uppercase}}</strong>
+                    <span class="ability-descrip">
+                        {{ability.descrip}}
+                    </span>
+                    <em class="ability-instructions">
+                        {{ability.instructions}}
+                    </em>
+                    <span [ngClass]="{'hp-box': ability.name === 'hit points'}" class="box-grid">
+                        <div class="empty-box">
+                            <em *ngIf="ability.name === 'hit points'">current</em>
+                        </div>
+                        <div *ngIf="ability.name === 'hit points'" class="empty-box">
+                            <em *ngIf="ability.name === 'hit points'">max</em>
+                        </div>
+                    </span>
+
+                </div>
+            </span>
+        </span>
+
+        <span class="creds-glitches">
+            <span class="creds">
+                <div class="important cred-descrip">/// You have a <strong>DEBT</strong> of {{this.debt}} to someone (pg. 61).</div>
+                <div class="empty-box">
+                    <em><strong class="important">¤[creds]</strong></em>
+                </div>
+                <div class="empty-box">
+                    <em><strong class="important">debt</strong></em>
+                </div>
+            </span>
+
+            <span class="glitches">
+                <span class="important title">/// Gain d# <strong>GLITCHES</strong> when you rest</span>
+                <span class="important descrip">
+                    /// max damage, reroll, -d6 damage, DR-4, No crit/fumble
+                </span>
+                <div class="empty-box">
+                    <em>die size</em>
+                </div>
+                <div class="empty-box">
+                    <em>remaining</em>
+                </div>
+            </span>
+        </span>
+    </span>
+</div>

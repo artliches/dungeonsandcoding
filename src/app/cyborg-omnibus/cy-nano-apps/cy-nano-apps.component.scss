@@ -1,0 +1,48 @@
+@use '../cyStyles';
+$box-size: 30pt;
+.card {
+    height: 97.5%;
+    .card-title {
+        background-color: white;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "title  title"
+            "apps   nano";
+        text-transform: none;
+        grid-gap: 0.3rem;
+        .title {
+            grid-area: title;
+            text-transform: uppercase;
+        }
+        .apps {
+            grid-area: apps;
+        }
+        .nano {
+            grid-area: nano;
+        }
+        .important:not(.title) {
+            font-size: 7pt;
+            display: grid;
+            grid-template-columns: 1fr;
+            div {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: 1fr;
+                .empty-box {
+                    width: $box-size;
+                    height: $box-size;
+                    background-color: white;
+                }
+            }
+        }
+        .empty-box {
+            height: 50px;
+        }
+    }
+    .card-body {
+        .empty-box {
+            height: 163px;
+        }
+    }
+}

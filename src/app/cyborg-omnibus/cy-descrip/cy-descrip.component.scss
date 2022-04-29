@@ -1,0 +1,17 @@
+@use '../cyStyles';
+.card {
+    height: 90%;
+    border: none;
+    .card-title {
+        .important {
+            font-size: 9pt;
+        }
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 1fr;
+        em {
+            font-size: cyStyles.$normal-font;
+            place-self: end;
+            text-transform: none;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<div class="card">
+    <span class="card-title">
+        <span class="important">
+            <strong>/// weapons_armor_crap.zip</strong>
+            <em>if greater than Strength+8 items, DR+2 on Agility/Strength tests. can carry no more than twice Strength+8 items.</em>
+        </span>
+    </span>
+    <span class="card-body">
+        <span class="important" [innerHtml]="gearSetup | safeHtml"></span>
+        <div class="empty-box weapon">
+            <div class="empty-box">
+                <em>.weapon_name</em>
+            </div>
+            <div class="empty-box">
+                <em>.dmg</em>
+            </div>
+            <div class="empty-box">
+                <em>.mags</em>
+            </div>
+        </div>
+        <div class="empty-box weapon">
+            <div class="empty-box">
+                <em>.weapon_name</em>
+            </div>
+            <div class="empty-box">
+                <em>.dmg</em>
+            </div>
+            <div class="empty-box">
+                <em>.mags</em>
+            </div>
+        </div>
+        <div class="empty-box armor">
+            <div class="empty-box">
+                <em>.armor: <strong class="tier-highlight">t2.</strong> A_HST injector | <strong class="tier-highlight">t3.</strong> +2DR Agility, A_HST injector | <strong class="tier-highlight">t4.</strong> +4DR Agility (+2DR Defense), −2DR Strength and Toughness. Jump ×4.</em>
+            </div>
+
+            <span class="tiers">
+                <span class="tier-section">
+                    <div class="circle">
+                        <strong>1</strong>
+                    </div>
+                    <em>-d2</em>
+                </span>
+                <span class="tier-section">
+                    <div class="circle">
+                        <strong>2</strong>
+                    </div>
+                    <em>-d4</em>
+                </span>
+                <span class="tier-section">
+                    <div class="circle">
+                        <strong>3</strong>
+                    </div>
+                    <em>-d6</em>
+                </span>
+                <span class="tier-section">
+                    <div class="circle">
+                        <strong>4</strong>
+                    </div>
+                    <em>-d8</em>
+                </span>
+            </span>
+        </div>
+
+        <div class="slots">
+            <div *ngFor="let line of gearLines; let i = index">
+                <em>{{i + 1}}</em>
+            </div>
+        </div>
+
+    </span>
+</div>

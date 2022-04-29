@@ -2,8 +2,8 @@
   codeLiches
 </h1>
 
-<section class='portfolio-section grid no-print'>
-  <article class='projects-section'>
+<section class='portfolio-section grid'>
+  <article class='projects-section no-print'>
     <h2>
       code & apps
     </h2>
@@ -35,7 +35,7 @@
     </section>
   </article>
 
-  <article class='rpg-section'>
+  <article class='rpg-section no-print'>
     <h2>
       role-playing games
     </h2>
@@ -52,5 +52,20 @@
             </div>
         </span>
     </section>
+
+    <section class="cyBorg">
+      <span class="title">
+        CY_BORG
+      </span>
+      <span class="descrip">
+        <div>>> custom cy_borg sheets made for each individual class. tons of info, printable, and themeable.</div>
+        &nbsp;&nbsp;>> <a class="clickable" (click)="toggleCyOmni()">{{cyOmniToggle}}</a>
+      </span>
+    </section>
   </article>
+
+  <span class="grid center">
+    <app-cyborg-omnibus *ngIf="showCyOmni"></app-cyborg-omnibus>
+  </span>
 </section>
+

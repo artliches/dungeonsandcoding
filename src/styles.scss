@@ -1,4 +1,4 @@
-$uvg-border: 1px solid purple;
+@use 'cyThemes';
 
 @font-face {
     font-family: 'Baron Neue';
@@ -56,44 +56,6 @@ body {
     border-radius: 50%;
 }
 
-.uvg-card {
-    display: grid;
-    grid-template-rows: min-content auto;
-    border: $uvg-border;
-    border-radius: 0.3rem;
-    height: 100%;
-    font-size: 1rem;
-
-    h1 {
-        font-weight: 100;
-        font-family: 'Baron Neue', sans-serif;
-        place-self: stretch;
-        margin: 0rem;
-        padding-left: 0.5rem;
-        font-size: 1.5rem;
-        background-color: purple;
-        color: white;
-    }
-    .uvg-card-body {
-        padding: 0.3rem;
-        border: $uvg-border;
-        border-top: 0px;
-        background-color: white;
-        color: black;
-        border-bottom-left-radius: 0.3rem;
-        border-bottom-right-radius: 0.3rem;
-        display: grid;
-        grid-template-rows: min-content auto;
-        row-gap: 0.3rem;
-
-        >span {
-            font-size: 0.5rem;
-            color: darkgrey;
-        }
-
-    }
-}
-
 .portfolio-section {
     grid-gap: 1rem;
     >article {
@@ -138,21 +100,5 @@ body {
     body {
         background-color: white;
         margin: 0;
-    }
-    .print-only {
-        display: grid;
-    }
-
-    .no-print {
-        display: none;
-    }
-    .stats-card {
-        >section {
-            >section {
-                span {
-                    font-size: 0.5rem;
-                }
-            }
-        }
     }
 }

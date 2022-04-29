@@ -1,0 +1,717 @@
+.gearhead {
+    $background-color: blue;
+    $highlight-color: magenta;
+    $subtle-color: purple;
+    @mixin important {
+        background-color: $background-color;
+        color: white;
+        padding: 0.1rem;
+    }
+
+    &.pick-something {
+        background-color: $background-color;
+        strong {
+            background-color: $highlight-color;
+            color: white;
+        }
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: white;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+    }
+    .legal {
+        color: $highlight-color;
+    }
+    .empty-box {
+        color: $subtle-color;
+    }
+
+    .circle {
+        border: 1px solid $subtle-color;
+        strong {
+            color: $subtle-color;
+        }
+    }
+}
+
+.mork {
+    $background-color: gold;
+    $highlight-color: white;
+    $subtle-color: black;
+    @mixin important {
+        background-color: $background-color;
+        color: black;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: black;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: black;
+            }
+          .important {
+              strong {
+                background-color: white;
+                color: black;
+              }
+
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+    }
+
+    .circle {
+        strong {
+            color: $subtle-color;
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.overcast {
+    $background-color: lightgray;
+    $highlight-color: white;
+    $subtle-color: black;
+    @mixin important {
+        background-color: $background-color;
+        color: black;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: black;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: black;
+            }
+          .important {
+              strong {
+                background-color: white;
+                color: black;
+              }
+
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+    }
+
+    .circle {
+        strong {
+            color: $subtle-color;
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.virtual-they-them {
+    $background-color: red;
+    $highlight-color: white;
+    $subtle-color: black;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: black;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: white;
+                color: black;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.terminal {
+    $background-color: rgb(138, 234, 146);
+    $highlight-color: rgb(51, 32, 42);
+    $subtle-color: rgb(51, 32, 42);
+    $font-color: rgb(51, 32, 42);
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: white;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: white;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+                color: white
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.rcd-malfunction {
+    $background-color: rgb(255,0,128);
+    $highlight-color: cyan;
+    $subtle-color: rgb(51, 32, 42);
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $subtle-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $subtle-color;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+                color: $subtle-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.shunned {
+    $background-color: black;
+    $highlight-color: goldenrod;
+    $subtle-color: blue;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $subtle-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $subtle-color;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+                color: $subtle-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.burned {
+    $background-color: blue;
+    $highlight-color: white;
+    $subtle-color: black;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $subtle-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $subtle-color;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.corp-killer {
+    $background-color: black;
+    $highlight-color: magenta;
+    $subtle-color: black;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $subtle-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $subtle-color;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+                color: $subtle-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.cyberslasher {
+    $background-color: magenta;
+    $highlight-color: gold;
+    $subtle-color: black;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $subtle-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $subtle-color;
+              }
+            }
+            .circle {
+                strong {
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+                color: black
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.forsaken {
+    $background-color: black;
+    $highlight-color: red;
+    $subtle-color: black;
+    $font-color: white;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $font-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $font-color;
+              }
+            }
+            .circle {
+                strong {
+                    background-color: $highlight-color;
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}
+
+.void {
+    $background-color: white;
+    $highlight-color: white;
+    $subtle-color: black;
+    $font-color: black;
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $font-color;
+    }
+    .card {
+        border-color: $subtle-color;
+        color: $subtle-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $font-color;
+              }
+            }
+            .circle {
+                strong {
+                    background-color: $highlight-color;
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $subtle-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $subtle-color;
+        }
+    }
+
+    .legal {
+        color: $subtle-color;
+    }
+}

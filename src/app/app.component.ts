@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  showCyOmni = false;
+  cyOmniToggle = 'show CY_BORG omnisheets';
   printUVGSheet = false;
   showUVGBlackRules = false;
   showWhitehackSheets = false;
@@ -59,7 +61,7 @@ export class AppComponent {
       but addictive drugs. Cheap magick type. Extra
       casting time. Time or place requirements.`
     },
-  ]
+  ];
 
   energyObj = [
     {left: `<strong>Qu.</strong>`, right: `<strong>Energy Concentration</strong>`},
@@ -413,5 +415,8 @@ export class AppComponent {
     this.showWhitehackSheets = !this.showWhitehackSheets;
   }
 
-
+  toggleCyOmni() {
+    this.showCyOmni = !this.showCyOmni;
+    this.cyOmniToggle = this.showCyOmni ? 'hide CY_BORG omnisheets' : 'show CY_BORG omnisheets';
+  }
 }

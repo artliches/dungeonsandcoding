@@ -1,0 +1,61 @@
+<span class="pick-something">
+    <span class="pick-a-punk">
+        <strong>PICK-A-PUNK</strong>
+        <select [(ngModel)]="selectedPunk" (change)="changePunk(selectedPunk)">
+            <option value="all">ALL</option>
+            <option *ngFor="let punk of punks" [value]="punk.name">{{punk.name | uppercase}}</option>
+        </select>
+    </span>
+    
+    <span class="pick-a-style">
+        <strong>PICK-A-STYLE</strong>
+        <select [(ngModel)]="selectedStyle">
+            <option *ngFor="let style of styles" [value]="style">{{style | uppercase}}</option>
+        </select>
+    </span>
+
+    <span>
+        <a class="clickable">
+            <strong (click)="print()">PRINT-A-PUNK</strong>
+        </a>
+    </span>
+</span>
+
+
+<span [ngClass]="{
+        'gearhead': selectedStyle === 'gearhead',
+        'mork': selectedStyle === 'mork',
+        'overcast': selectedStyle === 'overcast',
+        'virtual-they-them': selectedStyle === 'virtual-they-them',
+        'terminal': selectedStyle === 'terminal',
+        'rcd-malfunction': selectedStyle === 'rcd-malfunction',
+        'shunned': selectedStyle === 'shunned',
+        'burned': selectedStyle === 'burned',
+        'corp-killer': selectedStyle === 'corp-killer',
+        'cyberslasher': selectedStyle === 'cyberslasher',
+        'forsaken': selectedStyle === 'forsaken',
+        'void': selectedStyle === 'void'
+    }" class="cyborg-sheet vert" *ngFor="let punk of displayedPunks">
+    <div class="descrip">
+        <app-cy-descrip [punkName]="punk.name" [punkFlavor]="punk.flavor" [pageRef]="punk.page"></app-cy-descrip>
+    </div>
+    <div class="identity">
+        <app-cy-identity [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
+    </div>
+    <div class="stats">
+        <app-cy-stats [hacker]="punk.name === 'burned hacker'" [statChanges]="punk.statChanges"></app-cy-stats>
+    </div>
+    <div class="equip">
+        <app-cy-equip [gearModification]="punk['starting gear']"></app-cy-equip>
+    </div>
+    <div class="nanoApps">
+        <app-cy-nano-apps></app-cy-nano-apps>
+    </div>
+    <div class="legal">
+        <em>CY_BORG OMNISHEET is an independent production by @codeLiches and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</em>
+    </div>
+</span>
+
+<!-- <div class="cyborg-sheet horz" *ngFor="let punk of punks">
+    {{punk.name}} | {{punk.flavor}}
+</div> -->

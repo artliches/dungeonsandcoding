@@ -1,6 +1,24 @@
 .grid {
     display: grid;
+    &.center {
+        place-content: center;
+    }
 }
+
+.whitehack {
+    .title {
+        background-color: white;
+        color: black;
+    }
+}
+
+.cyBorg {
+    .title {
+        background-color: gold;
+        color: magenta;
+    }
+}
+
 .letter-size {
     background-color: white;
     color: black;
@@ -116,5 +134,11 @@
                 column-gap: 0.5rem;
             }
         }
+    }
+}
+
+@media print {
+    .no-print {
+        display: none;
     }
 }

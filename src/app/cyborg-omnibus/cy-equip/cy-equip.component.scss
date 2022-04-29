@@ -1,0 +1,90 @@
+@use '../cyStyles';
+$line-size: 37.5px;
+
+.card {
+    height: 98.5%;
+    .card-title {
+        .important {
+            display: grid;
+            grid-template-columns: 26% 74%;
+            grid-template-rows: 1fr;
+            em {
+                font-size: cyStyles.$small-font;
+                text-transform: none;
+                place-self: center start;
+            }
+        }
+    }
+    .card-body {
+        .important {
+            font-size: cyStyles.$small-font;
+        }
+        grid-template-rows: min-content repeat(3, $line-size) auto;
+        row-gap: 0.3rem;
+
+        .weapon {
+            grid-template-columns: 80% 10% 10%;
+            grid-template-rows: 1fr;
+            .empty-box {
+                border: none;
+                &:nth-child(1) {
+                    border-right: 1px dotted;
+                }
+                &:nth-child(3) {
+                    border-left: 1px dotted;
+                }
+            }
+        }
+
+        .armor {
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 1fr;
+
+            .empty-box {
+                border: none;
+            }
+
+            .tiers {
+                display: grid;
+                padding-top: 0.3rem;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr;
+                .tier-section {
+                    .circle {
+                        strong {
+                            background-color: white;
+                        }
+                        $circle-size: 15px;
+                        display: grid;
+                        place-content: center;
+                        height: $circle-size;
+                        width: $circle-size;
+                        // border-color: cyStyles.$highlight-color;
+                    }
+                }
+            }
+        }
+
+        .slots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(11, 1fr);
+            div {
+                display: grid;
+                place-content: center start;
+                border-bottom: 1px dotted;
+
+                &:nth-child(even) {
+                    border-left: 1px dotted;
+                }
+                &:nth-child(21), &:nth-child(22) {
+                    border-bottom: none;
+                }
+                em {
+                    margin-left: 0.3rem;
+                }
+            }
+        }
+
+    }
+}
