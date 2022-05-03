@@ -14,6 +14,13 @@
         </select>
     </span>
 
+    <span class="pick-a-layout">
+        <strong>PICK-A-LAYOUT</strong>
+        <select [(ngModel)]="selectedLayout">
+            <option *ngFor="let layout of layouts" [value]="layout">{{layout | uppercase}}</option>
+        </select>
+    </span>
+
     <span>
         <a class="clickable">
             <strong (click)="print()">PRINT-A-PUNK</strong>
@@ -22,7 +29,57 @@
 </span>
 
 
-<span [ngClass]="{
+<ng-container *ngIf="selectedLayout ==='vert' || selectedLayout==='all'">
+    <span [ngClass]="{
+            'gearhead': selectedStyle === 'gearhead',
+            'mork': selectedStyle === 'mork',
+            'overcast': selectedStyle === 'overcast',
+            'virtual-they-them': selectedStyle === 'virtual-they-them',
+            'terminal': selectedStyle === 'terminal',
+            'rcd-malfunction': selectedStyle === 'rcd-malfunction',
+            'shunned': selectedStyle === 'shunned',
+            'burned': selectedStyle === 'burned',
+            'corp-killer': selectedStyle === 'corp-killer',
+            'cyberslasher': selectedStyle === 'cyberslasher',
+            'forsaken': selectedStyle === 'forsaken',
+            'void': selectedStyle === 'void'
+        }" class="cyborg-sheet vert" *ngFor="let punk of displayedPunks">
+        <div class="descrip">
+            <app-cy-descrip [punkName]="punk.name" [punkFlavor]="punk.flavor" [pageRef]="punk.page"></app-cy-descrip>
+        </div>
+        <div class="identity">
+            <app-cy-identity [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
+        </div>
+        <div class="stats">
+            <app-cy-stats [hacker]="punk.name === 'burned hacker'" [statChanges]="punk.statChanges"></app-cy-stats>
+        </div>
+        <div class="equip">
+            <app-cy-equip [gearModification]="punk['starting gear']"></app-cy-equip>
+        </div>
+        <div class="nanoApps">
+            <app-cy-nano-apps></app-cy-nano-apps>
+        </div>
+    
+        <div class="info info-left">
+            <app-cy-combat [left]="true"></app-cy-combat>
+        </div>
+    
+        <div class="info info-right">
+            <app-cy-combat [right]="true"></app-cy-combat>
+        </div>
+    
+        <div class="info info-bottom">
+            <app-cy-combat [bottom]="true"></app-cy-combat>
+        </div>
+        <div class="legal">
+            <em>CY_BORG OMNISHEET is an independent production by @codeLiches and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</em>
+            <em>CY_BORG IS ©2022 STOCKHOLM KARTELL.</em>
+        </div>
+    </span>
+</ng-container>
+
+<ng-container *ngIf="selectedLayout === 'horz' || selectedLayout=== 'all'">
+    <span [ngClass]="{
         'gearhead': selectedStyle === 'gearhead',
         'mork': selectedStyle === 'mork',
         'overcast': selectedStyle === 'overcast',
@@ -35,28 +92,37 @@
         'cyberslasher': selectedStyle === 'cyberslasher',
         'forsaken': selectedStyle === 'forsaken',
         'void': selectedStyle === 'void'
-    }" class="cyborg-sheet vert" *ngFor="let punk of displayedPunks">
+    }" class="cyborg-sheet horz" *ngFor="let punk of displayedPunks">
     <div class="descrip">
         <app-cy-descrip [punkName]="punk.name" [punkFlavor]="punk.flavor" [pageRef]="punk.page"></app-cy-descrip>
     </div>
     <div class="identity">
-        <app-cy-identity [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
+        <app-cy-identity [horz]="true" [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
     </div>
     <div class="stats">
         <app-cy-stats [hacker]="punk.name === 'burned hacker'" [statChanges]="punk.statChanges"></app-cy-stats>
     </div>
     <div class="equip">
-        <app-cy-equip [gearModification]="punk['starting gear']"></app-cy-equip>
+        <app-cy-equip [horz]="true" [gearModification]="punk['starting gear']"></app-cy-equip>
     </div>
     <div class="nanoApps">
-        <app-cy-nano-apps></app-cy-nano-apps>
+        <app-cy-nano-apps [horz]="true"></app-cy-nano-apps>
     </div>
+    
+    <!-- <div class="info info-left">
+        <app-cy-combat [left]="true"></app-cy-combat>
+    </div>
+    
+    <div class="info info-right">
+        <app-cy-combat [right]="true"></app-cy-combat>
+    </div>-->
+    
+    <div class="info info-bottom">
+        <app-cy-combat [slasher]="punk.name === 'renagade cyberslasher'" [horz]="true" [bottom]="true"></app-cy-combat>
+    </div> 
     <div class="legal">
         <em>CY_BORG OMNISHEET is an independent production by @codeLiches and is not affiliated with Stockholm Kartell. It is published under the CY_BORG Third Party License.</em>
         <em>CY_BORG IS ©2022 STOCKHOLM KARTELL.</em>
     </div>
-</span>
-
-<!-- <div class="cyborg-sheet horz" *ngFor="let punk of punks">
-    {{punk.name}} | {{punk.flavor}}
-</div> -->
+    </span>
+</ng-container>

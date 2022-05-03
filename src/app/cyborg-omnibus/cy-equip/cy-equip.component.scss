@@ -1,12 +1,12 @@
 @use '../cyStyles';
-$line-size: 37.5px;
+$line-size: 30px;
 
 .card {
     height: 98.5%;
     .card-title {
         .important {
             display: grid;
-            grid-template-columns: 26% 74%;
+            grid-template-columns: 27% 73%;
             grid-template-rows: 1fr;
             em {
                 font-size: cyStyles.$small-font;
@@ -14,13 +14,57 @@ $line-size: 37.5px;
                 place-self: center start;
             }
         }
+        &.horz {
+            .important {
+                grid-template-columns: 29% 71%;
+            }
+        }
     }
     .card-body {
         .important {
             font-size: cyStyles.$small-font;
         }
-        grid-template-rows: min-content repeat(3, $line-size) auto;
+        grid-template-rows: min-content repeat(2, $line-size) $line-size*1.5 auto;
+        grid-template-areas: 
+            "descrip"
+            "weaponL"
+            "weaponR"
+            "armor"
+            "inven";
+
+            .descrip {
+                grid-area: descrip;
+            }
+            .weaponL {
+                grid-area: weaponL;
+            }
+            .weaponR {
+                grid-area: weaponR;
+            }
+            .inven {
+                grid-area: inven;
+            }
         row-gap: 0.3rem;
+
+        &.horz {
+            column-gap: 0.3rem;
+            grid-template-rows: min-content 40px 60px auto;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+                "descrip    descrip"
+                "weaponL    weaponR"
+                "armor      armor"
+                "inven      inven";
+
+            .armor {
+                .empty-box {
+                    em {
+                        font-size: 6.8pt;
+                    }
+                }
+            }
+
+        }
 
         .weapon {
             grid-template-columns: 80% 10% 10%;
@@ -39,12 +83,14 @@ $line-size: 37.5px;
         .armor {
             grid-template-columns: 80% 20%;
             grid-template-rows: 1fr;
+            grid-area: armor;
 
             .empty-box {
                 border: none;
             }
 
             .tiers {
+                place-self: center stretch;
                 display: grid;
                 padding-top: 0.3rem;
                 grid-template-columns: repeat(4, 1fr);

@@ -1,13 +1,13 @@
 <div class="card">
-    <span class="card-title">
+    <span [ngClass]="{'horz': horz}" class="card-title">
         <span class="important">
             <strong>/// weapons_armor_crap.zip</strong>
             <em>if greater than Strength+8 items, DR+2 on Agility/Strength tests. can carry no more than twice Strength+8 items.</em>
         </span>
     </span>
-    <span class="card-body">
-        <span class="important" [innerHtml]="gearSetup | safeHtml"></span>
-        <div class="empty-box weapon">
+    <span [ngClass]="{'horz': horz}" class="card-body">
+        <span class="important descrip" [innerHtml]="gearSetup | safeHtml"></span>
+        <div class="empty-box weapon weaponL">
             <div class="empty-box">
                 <em>.weapon_name</em>
             </div>
@@ -18,7 +18,7 @@
                 <em>.mags</em>
             </div>
         </div>
-        <div class="empty-box weapon">
+        <div class="empty-box weapon weaponR">
             <div class="empty-box">
                 <em>.weapon_name</em>
             </div>
@@ -62,7 +62,7 @@
             </span>
         </div>
 
-        <div class="slots">
+        <div class="slots inven">
             <div *ngFor="let line of gearLines; let i = index">
                 <em>{{i + 1}}</em>
             </div>

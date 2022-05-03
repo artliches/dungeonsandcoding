@@ -1,8 +1,7 @@
 @use 'cyStyles';
-$areas: descrip, identity, stats, equip, nanoApps, combat, legal;
+$areas: descrip, identity, stats, equip, nanoApps, combat, legal, info-left, info-right, info-bottom;
 
 .cyborg-sheet {
-    margin-bottom: 1rem;
     display: grid;
     grid-gap: 0.3rem;
     background-color: white;
@@ -28,28 +27,42 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal;
                     grid-area: legal1;
                 }
                 em:nth-child(2) {
-                    place-self: end;
+                    display: grid;
+                    place-self: start end;
                 }
             }
         }
     }
 
     &.vert {
+        margin-bottom: 1rem;
+        place-self: center stretch;
         height: 11in;
         width: 8.5in;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: min-content repeat(4, 1fr) min-content;
+        grid-template-rows: repeat(6, min-content);
         grid-template-areas:
-            "identity   identity    identity       descrip"
-            "stats      equip       equip          equip"
-            "stats      equip       equip          equip"
-            "nanoApps   nanoApps    nanoApps       nanoApps"
-            "legal      legal       legal          legal";
+            "info-left       identity       identity    identity       descrip       info-right"
+            "info-left       stats          equip       equip          equip         info-right"
+            "info-left       stats          equip       equip          equip         info-right"
+            "info-left       nanoApps       nanoApps    nanoApps       nanoApps      info-right"
+            "info-left     info-bottom    info-bottom info-bottom    info-bottom   info-right"
+            "legal           legal          legal       legal          legal         legal";
     }
     
     &.horz {
-        height: 8.5in;
         width: 11in;
+        height: 8.5in;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: min-content min-content repeat(3, min-content) min-content;
+        grid-template-areas:
+            "  identity       identity    identity       descrip "
+            "  identity       identity    identity        nanoApps"
+            "  stats          equip       equip          nanoApps"
+            "  stats          equip       equip          nanoApps"
+            "  stats          equip       equip          nanoApps"
+            "  info-bottom    info-bottom info-bottom    info-bottom"
+            "  legal          legal       legal          legal   ";
     }
 }
 

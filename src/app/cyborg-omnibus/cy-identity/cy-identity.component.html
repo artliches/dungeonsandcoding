@@ -2,13 +2,13 @@
     <span class="card-title">
         <span class="important">/// automatic information system corrupted...reboot failed; /// manually enter your <strong>name</strong>, roll {{extraInfo}}, and submit any/all other information.</span>
     </span>
-    <span class="card-body">
+    <span [ngClass]="{'horz': horz}" class="card-body">
         <div class="empty-box">
             <em>.name</em>
         </div>
         <div class="empty-box urInfo">
             <span *ngIf="specialTraits" class="important">
-                {{specialTraits}}
+                <span [innerHtml]="specialTraits"></span>
             </span>
         </div>
         <div class="empty-box lrInfo"></div>

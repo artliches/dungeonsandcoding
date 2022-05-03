@@ -43,6 +43,10 @@
             color: $subtle-color;
         }
     }
+    .info {
+        background-color: $background-color;
+        color: white;
+    }
 }
 
 .mork {
@@ -99,6 +103,10 @@
     }
 
     .legal {
+        color: $subtle-color;
+    }
+    .info {
+        background-color: $background-color;
         color: $subtle-color;
     }
 }
@@ -159,6 +167,11 @@
     .legal {
         color: $subtle-color;
     }
+
+    .info {
+        background-color: $background-color;
+        color: $subtle-color;
+    }
 }
 
 .virtual-they-them {
@@ -166,6 +179,7 @@
     $highlight-color: white;
     $subtle-color: black;
     $font-color: white;
+    $border-color: darkred;
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -177,8 +191,8 @@
         color: black;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -204,17 +218,21 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
     }
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
         color: $subtle-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
     }
 }
 
@@ -223,6 +241,7 @@
     $highlight-color: rgb(51, 32, 42);
     $subtle-color: rgb(51, 32, 42);
     $font-color: rgb(51, 32, 42);
+    $border-color: darkgreen;
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -234,8 +253,8 @@
         color: white;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -261,7 +280,7 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
         em {
             strong.tier-highlight {
                 background-color: $highlight-color;
@@ -272,11 +291,15 @@
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
+        color: $subtle-color;
+    }
+    .info {
+        background-color: $background-color;
         color: $subtle-color;
     }
 }
@@ -286,6 +309,7 @@
     $highlight-color: cyan;
     $subtle-color: rgb(51, 32, 42);
     $font-color: white;
+    $border-color: rgb(51, 32, 42);
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -297,8 +321,8 @@
         color: $subtle-color;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -324,7 +348,7 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
         em {
             strong.tier-highlight {
                 background-color: $highlight-color;
@@ -335,12 +359,16 @@
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
-        color: $subtle-color;
+        color: $border-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
     }
 }
 
@@ -405,6 +433,10 @@
     .legal {
         color: $subtle-color;
     }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
+    }
 }
 
 .burned {
@@ -412,6 +444,7 @@
     $highlight-color: white;
     $subtle-color: black;
     $font-color: white;
+    $border-color: blue;
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -423,8 +456,8 @@
         color: $subtle-color;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -450,17 +483,21 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
     }
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
-        color: $subtle-color;
+        color: $border-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
     }
 }
 
@@ -469,6 +506,7 @@
     $highlight-color: magenta;
     $subtle-color: black;
     $font-color: white;
+    $border-color: hsl(279, 99%, 38%);
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -480,8 +518,8 @@
         color: $subtle-color;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -507,7 +545,7 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
         em {
             strong.tier-highlight {
                 background-color: $highlight-color;
@@ -518,12 +556,16 @@
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
-        color: $subtle-color;
+        color: $border-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
     }
 }
 
@@ -532,6 +574,7 @@
     $highlight-color: gold;
     $subtle-color: black;
     $font-color: white;
+    $border-color: hsl(279, 99%, 38%);
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -543,8 +586,8 @@
         color: $subtle-color;
     }
     .card {
-        border-color: $subtle-color;
-        color: $subtle-color;
+        border-color: $border-color;
+        color: $border-color;
         .important {
             @include important;
         }
@@ -570,7 +613,7 @@
         }
     }
     .empty-box {
-        color: $subtle-color;
+        color: $border-color;
         em {
             strong.tier-highlight {
                 background-color: $highlight-color;
@@ -581,12 +624,16 @@
 
     .slots {
         div {
-            color: $subtle-color;
+            color: $border-color;
         }
     }
 
     .legal {
-        color: $subtle-color;
+        color: $border-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
     }
 }
 
@@ -595,6 +642,74 @@
     $highlight-color: red;
     $subtle-color: black;
     $font-color: white;
+    $border-color: hsl(0, 100%, 35%);
+    @mixin important {
+        background-color: $background-color;
+        color: $font-color;
+        padding: 0.1rem;
+    }
+
+    strong {
+        background-color: $highlight-color;
+        color: $font-color;
+    }
+    .card {
+        border-color: $border-color;
+        color: $border-color;
+        .important {
+            @include important;
+        }
+        .card-title {
+            @include important;
+        }
+        .card-body {
+            strong {
+                background-color: $background-color;
+                color: $font-color;
+            }
+          .important {
+              strong {
+                background-color: $highlight-color;
+                color: $font-color;
+              }
+            }
+            .circle {
+                strong {
+                    background-color: $highlight-color;
+                    color: $subtle-color;
+                }
+            }
+        }
+    }
+    .empty-box {
+        color: $border-color;
+        em {
+            strong.tier-highlight {
+                background-color: $highlight-color;
+            }
+        }
+    }
+
+    .slots {
+        div {
+            color: $border-color;
+        }
+    }
+
+    .legal {
+        color: $border-color;
+    }
+    .info {
+        background-color: $background-color;
+        color: $font-color;
+    }
+}
+
+.void {
+    $background-color: white;
+    $highlight-color: white;
+    $subtle-color: black;
+    $font-color: black;
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -651,13 +766,17 @@
     .legal {
         color: $subtle-color;
     }
+    .info {
+        background-color: $background-color;
+        color: $subtle-color;
+    }
 }
 
-.void {
-    $background-color: white;
+.fuck-your-printer {
+    $background-color: black;
     $highlight-color: white;
     $subtle-color: black;
-    $font-color: black;
+    $font-color: white;
     @mixin important {
         background-color: $background-color;
         color: $font-color;
@@ -666,7 +785,7 @@
 
     strong {
         background-color: $highlight-color;
-        color: $font-color;
+        color: $background-color;
     }
     .card {
         border-color: $subtle-color;
@@ -685,7 +804,7 @@
           .important {
               strong {
                 background-color: $highlight-color;
-                color: $font-color;
+                color: $background-color;
               }
             }
             .circle {

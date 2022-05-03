@@ -9,6 +9,10 @@ $areas: name, urInfo, llInfo, lrInfo;
         grid-template-columns: 1fr 3fr;
         grid-template-rows: 25pt 35pt;
 
+        &.horz {
+            grid-template-rows: 18pt 28pt;
+        }
+
         @each $area in $areas {
             .#{$area} {
                 grid-area: #{$area};

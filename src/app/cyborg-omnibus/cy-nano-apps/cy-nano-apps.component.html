@@ -1,4 +1,4 @@
-<div class="card">
+<div [ngClass]="{'horz': horz}" class="card">
     <span class="card-title">
         <span class="important title">
             <strong>/// cybertech_apps_nano.torrent</strong>
@@ -30,7 +30,6 @@
         </span>
     </span>
     <span class="card-body">
-
-        <div class="empty-box"></div>
+        <div *ngIf="!horz"></div>
     </span>
 </div>

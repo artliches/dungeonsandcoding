@@ -40,9 +40,20 @@ $box-size: 30pt;
             height: 50px;
         }
     }
+
+    &.horz {
+        height: 98.5%;
+        .card-title {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "title"
+                "apps"
+                "nano";
+        }
+    }
     .card-body {
-        .empty-box {
-            height: 163px;
+        div{
+            height: 150px;
         }
     }
 }

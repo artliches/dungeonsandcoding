@@ -1,18 +1,28 @@
 @use '../cyStyles';
-$violence-sections: combat-tests, fumbles, crits, after-combat, battered, cy-rage, dead;
 
-.card {
-    .card-body {
-        font-size: cyStyles.$small-font;
-        grid-template-areas:
-            "combat-tests   fumbles     crits"
-            "after-combat   battered    cy-rage"
-            "dead           dead        dead";
-        @each $area in $violence-sections {
-            .#{$area} {
-                grid-area: #{$area};
-                border: 1px dotted blue;
-            }
+.combat {
+    font-size: 6.5pt;
+    .single-line {
+        &:not(.bottom) {
+            writing-mode: vertical-rl;
+        }
+        &.left {
+            transform: rotate(180deg);
+            writing-mode: vertical-lr;
+        }
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, max-content);
+        column-gap: 0.3rem;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 5.75pt;
+        &.slasher {
+            font-size: 5.5pt;
         }
     }
 }

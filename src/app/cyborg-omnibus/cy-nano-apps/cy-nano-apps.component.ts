@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cy-nano-apps',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cy-nano-apps.component.scss']
 })
 export class CyNanoAppsComponent implements OnInit {
+  @Input() horz: boolean;
 
   constructor() { }
 

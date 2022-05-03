@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CyIdentityComponent implements OnInit {
   @Input() specialTraits: string;
   @Input() extraInfo: string;
+  @Input() horz: boolean;
   constructor() { }
 
   ngOnInit(): void {
