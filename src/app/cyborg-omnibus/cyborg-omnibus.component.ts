@@ -21,8 +21,8 @@ export class CyborgOmnibusComponent implements OnInit {
     'cyberslasher',
     'forsaken',
   ];
-  selectedLayout = 'all';
-  layouts = ['all', 'vert', 'horz'];
+  selectedLayout = 'vert';
+  layouts = ['vert', 'horz'];
   selectedStyle = 'overcast';
   displayedPunks = [];
   punks = [

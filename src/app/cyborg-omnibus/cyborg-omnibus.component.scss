@@ -69,10 +69,10 @@ $areas: descrip, identity, stats, equip, nanoApps, combat, legal, info-left, inf
 .pick-something {
     display: grid;
     place-content: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas:
-        "punk   style   print";
+        "punk   style   layout   print";
     row-gap: 1rem;
     padding: 0.3rem;
     border: 1px solid white;
