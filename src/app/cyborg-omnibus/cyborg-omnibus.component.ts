@@ -143,5 +143,4 @@ export class CyborgOmnibusComponent implements OnInit {
   print() {
     window.print();
   }
-
 }
