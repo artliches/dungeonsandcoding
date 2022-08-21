@@ -40,6 +40,11 @@
                 gain new slots at level 4, 7, & 10
             </em>
         </span>
+        <span *ngIf="jobName === 'void'">
+            <span>
+                MARK DOWN WHAT WHAT MAKES YOU <span class="important">SPECIAL</span>
+            </span>
+        </span>
     </span>
 
     <span *ngFor="let slotObj of getObjSansClass(jobName, slots) | keyvalue: originalOrder" class="card-body">
@@ -68,5 +73,9 @@
                 </span>
             </span>
         </span>
+    </span>
+
+    <span class="card-body" *ngIf="jobName === 'void'">
+        <div class="empty-box void"></div>
     </span>
 </div>

@@ -6,7 +6,7 @@
     <span [ngClass]="{'horz': horz}" class='card-body'>
         <span>
             <strong>Initiative.</strong>
-            &nbsp;Roll a d6: high roll wins. If there is a tie, missles before melee; lighter weapons before heavier ones.
+            &nbsp;Roll a d6: high roll wins. If there is a tie, missiles before melee; lighter weapons before heavier ones.
             <p>&nbsp;&nbsp;If you do nothing during your turn, you can change your initiative to 6 in following rounds.</p>
             <p>&nbsp;&nbsp;You can choose a lower position. In the first round after this choice, you can go before others on the same initiative.</p>
         </span>
@@ -28,7 +28,18 @@
         </span>
     
         <span class="persist-descrip">
-            <strong>Persist.</strong> Once/combat, make an CON task roll or save against <i>incoming damage</i>. On success, reduce dmg. by d6. On fail and/or if dmg. takes you into negative HP, knocked out for 2 rounds.
+            <strong>Persist.</strong> Once/combat, make an CON task roll or save against <i>incoming damage.</i>
+            <ul>
+                <li>
+                    On success, reduce dmg. by d6. This does not heal you.
+                </li>
+                <li>
+                    On fail, take full dmg. If HP > 0, knocked out for 2 rounds.
+                </li>
+                <li>
+                    If dmg takes you into negative HP, die in d6 rounds.
+                </li>
+            </ul>
         </span>
     </span>
 </div>

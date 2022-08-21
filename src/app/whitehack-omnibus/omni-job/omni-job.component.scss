@@ -2,6 +2,12 @@
 .card {
     height: 97.5%;
 
+    .empty-box {
+        &.void {
+            height: 265pt;
+        }
+    }
+
     .card-body {
         &.horz {
             font-size: 7.8pt;

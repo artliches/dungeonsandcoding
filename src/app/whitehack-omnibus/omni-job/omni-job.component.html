@@ -1,6 +1,6 @@
 <div class="card">
     <span class="card-title">
-        note what the <span class="important">{{jobTitle}}</span> can do
+        note what {{jobTitle !== 'void' ? 'the' : ''}} <span class="important">{{getJobTitle()}}</span> can do
     </span>
     <span [ngClass]="{'horz': horz, 'vert': !horz}" class='card-body'>
         <section *ngFor="let classDetails of getObjSansClass(jobTitle, jobDescriptions) | keyvalue: originalOrder; first as isFirst">
@@ -28,5 +28,8 @@
                 </div>
             </span>
         </section>
+        <span class="void-box" *ngIf="jobTitle === 'void'">
+            <div class="empty-box void"></div>
+        </span>
     </span>
 </div>

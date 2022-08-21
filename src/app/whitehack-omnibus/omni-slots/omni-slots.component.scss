@@ -8,6 +8,12 @@
         display: grid;
     }
 
+    .empty-box {
+        &.void {
+            height: 255pt;
+        }
+    }
+
     .card-body {
         display: grid;
         grid-template-columns: 1fr;

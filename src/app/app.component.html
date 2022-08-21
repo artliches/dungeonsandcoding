@@ -1,81 +1,109 @@
-<h1 class='no-print'>
-  codeLiches
-</h1>
-
-<section class='portfolio-section grid'>
-  <article class='projects-section no-print'>
-    <h2>
-      code & apps
-    </h2>
-    <section class='wardenOS'>
-      <a href='https://artliches.github.io/wardenOS'>
-        wardenOS
-      </a>
-      <span>
-         >> a collection of tools for use in the mothership RPG --> <span class='code-descrip'>pwa created with angular/css grid</span>
-      </span>
-    </section>
-
-    <section class='wardenOS'>
-      <a href='https://artliches.github.io/mosh-sheet/'>
-        mothership sheet
-      </a>
-      <span>
-         >> a WIP character sheet for use in the mothership RPG. stores information locally and has multiple themes --> <span class='code-descrip'>created with angular/css grid</span>
-      </span>
-    </section>
-
-    <section class='winterNET'>
-      <a href='https://artliches.github.io/deadhaltgaschapon/'>
-        winterNET
-      </a>
-      <span>
-         >> an in-game roller/artifact for the deadhalt RPG --> <span class=code-descrip>created with angular/css grid</span>
-      </span>
-    </section>
-
-    <section class='cyBorg'>
-      <a href='https://artliches.github.io/cyborg-missions/'>
-        //MISSION.GENERATOR
-      </a>
-      <span>
-         >> a random mission generator for CY_BORG by Stockholm Kartell --> <span class=code-descrip>pwa created with angular/css grid</span>
-      </span>
-    </section>
-  </article>
-
-  <article class='rpg-section no-print'>
-    <h2>
-      role-playing games
-    </h2>
-    <section class='whitehack'>
-        <span class='title'>
-            whitehack
-        </span>
-        <span class='descrip'>
-            <div>
-                >> custom whitehack character sheets. dense, packed with info, created so players will have most needed info at their fingertips. inspired by mothership.
-                <div>
-                    &nbsp;&nbsp;>> <a class="clickable" target="_blank" href="https://drive.google.com/file/d/1C7HZABUyzNsUBizw9t1GhDBhsYuwd-ZU/view?usp=sharing">all-in-one</a> or <a class="clickable" target="_blank" href="https://drive.google.com/drive/folders/1dQmJOZCU_y2RTBejJwjgEergcjTzwG7q?usp=sharing">individuals</a>
-                </div>
-            </div>
-        </span>
-    </section>
-
-    <section class="cyBorg">
-      <span class="title">
-        CY_BORG
-      </span>
-      <span class="descrip">
-        <div>>> custom cy_borg sheets made for each individual class. tons of info, printable, and themeable.</div>
-        <div>>> get the vertical and horizontal pdfs <a target="_blank" class="clickable" href="https://drive.google.com/drive/folders/1QyjxmKGHuBM4trkoA9UlobPRCuuHlkHX?usp=sharing">here</a></div>
-        &nbsp;&nbsp;>> <a class="clickable" (click)="toggleCyOmni()">{{cyOmniToggle}}</a>
-      </span>
-    </section>
-  </article>
-
-  <span class="grid center">
-    <app-cyborg-omnibus *ngIf="showCyOmni"></app-cyborg-omnibus>
+<span class="portfolio-layout">
+  <span class="header">
+    <h1 class='no-print'>
+      CODELICHES
+    </h1>
+    <em>ttrpg apps that make your game faster & weirder</em>
   </span>
-</section>
-
+  
+  <section class='portfolio-section grid'>
+    <article class='projects-section no-print'>
+      <h2>
+        code & apps
+      </h2>
+      <section class='wardenOS'>
+        <a href='https://artliches.github.io/wardenOS'>
+          wardenOS
+        </a>
+        <span>
+           >> a collection of tools for use in the mothership RPG --> <span class='code-descrip'>pwa created with angular/css grid</span>
+        </span>
+      </section>
+  
+      <section class='winterNET'>
+        <a href='https://artliches.github.io/deadhaltgaschapon/'>
+          winterNET
+        </a>
+        <span>
+           >> an in-game roller/artifact for the deadhalt RPG --> <span class=code-descrip>created with angular/css grid</span>
+        </span>
+      </section>
+  
+      <section class='cyBorg'>
+        <a href='https://artliches.github.io/cyborg-missions/'>
+          //MISSION.GENERATOR
+        </a>
+        <span>
+           >> a random mission generator compatible with CY_BORG by Stockholm Kartell --> <span class=code-descrip>pwa created with angular/css grid</span>
+        </span>
+      </section>
+  
+      <section class="cyBorg">
+        <a href="https://artliches.github.io/pvnk-spawner/">
+          p v n k . s p a w n e r
+        </a>
+        <span>
+          >> a random pvnk (player character) generator compatible with CY_BORG by Stockholm Kartell --> <span class="code-descrip">pwa created with angular/css grid</span>
+        </span>
+      </section>
+  
+      <section class="whitehack">
+        <a href="https://artliches.github.io/who-goes-there/">
+          WHO GOES THERE?
+        </a>
+        <span>
+          >> a random NPC generator compatible with swords and sworcery games --> <span class="code-descrip">pwa created with angular/css grid</span>
+        </span>
+      </section>
+  
+      <section class="winterNET">
+        <a href="https://artliches.github.io/what-wretch-approaches/">
+          WHAT WRETCH APPROACHES?
+        </a>
+        <span>
+          >> a random NPC generator compatible with MÖRK BORG --> <span class="code-descrip">pwa created with angular/css grid</span>
+        </span>
+      </section>
+    </article>
+  
+    <article class='rpg-section no-print'>
+      <h2>
+        tabletop roleplaying game assets
+      </h2>
+      <section class='whitehack'>
+          <span class='title'>
+              whitehack
+          </span>
+          <span class='descrip'>
+              <div>
+                  >> custom whitehack character sheets. dense, packed with info, created so players will have most needed info at their fingertips. inspired by mothership.
+                  <div>
+                      &nbsp;&nbsp;>> <a class="clickable" target="_blank" href="https://drive.google.com/file/d/1NJnxAl4AzS2i9Z8rvJTdnJ8hFOchs3cG/view?usp=sharing">all-in-one</a> or <a class="clickable" target="_blank" href="https://drive.google.com/drive/folders/19JuCMyD_zcbn6P4nVerFA52A20zS-_mO?usp=sharing">individuals</a>
+                  </div>
+              </div>
+          </span>
+      </section>
+  
+      <section class="cyBorg">
+        <span class="title">
+          CY_BORG
+        </span>
+        <span class="descrip">
+          <div>>> custom cy_borg sheets made for each individual class. tons of info, printable, and themeable.</div>
+          <div>>> get the vertical and horizontal pdfs <a target="_blank" class="clickable" href="https://drive.google.com/drive/folders/1QyjxmKGHuBM4trkoA9UlobPRCuuHlkHX?usp=sharing">here</a></div>
+          &nbsp;&nbsp;>> <a class="clickable" (click)="toggleCyOmni()">{{cyOmniToggle}}</a>
+        </span>
+      </section>
+    </article>
+  
+    <span class="grid center">
+      <app-cyborg-omnibus *ngIf="showCyOmni"></app-cyborg-omnibus>
+    </span>
+  </section>
+  
+  <section class="twitter">
+    <a href="https://twitter.com/codeLiches" target="_blank">
+      follow @codeLiches on Twitter
+    </a>
+  </section>
+</span>

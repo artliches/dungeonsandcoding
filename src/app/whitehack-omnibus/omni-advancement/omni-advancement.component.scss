@@ -1,0 +1,112 @@
+table {
+    border-spacing: 0rem;
+    margin: 0rem;
+}
+
+th {
+    text-align: left;
+}
+
+th, strong {
+    font-family: 'Gabriela-Regular', sans-serif;
+}
+
+strong {
+    font-size: 9pt;
+}
+
+td {
+    padding-right: 12pt;
+}
+
+tr:nth-child(even) {
+    background-color: lightgrey;
+}
+
+em {
+    font-size: 9pt;
+}
+
+.center-layout {
+    display: grid;
+    place-content: center;
+}
+
+.backLayout {
+    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3pt;
+
+    grid-template-areas:
+        "table  hit"
+        "com    hit"
+        "com    miss"
+        "rang   rang"
+        "heal   death"
+        "mag    mag";
+    
+    .advancement-table {
+        grid-area: table;
+    }
+    .crit-hit {
+        grid-area: hit;
+    }
+    .crit-miss {
+        grid-area: miss;
+        .body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 6pt;
+        }
+    }
+    .crit-data {
+        grid-area: cData;
+    }
+    .ranged {
+        grid-area: rang;
+    }
+    .special-combat {
+        grid-area: com;
+    }
+    .healing {
+        grid-area: heal;
+    }
+    .death {
+        grid-area: death;
+    }
+    .magick {
+        grid-area: mag;
+    }
+
+    &.wise {
+        .card {
+            font-size: 8.8pt;
+        }
+    }
+}
+
+.card {
+    font-size: 10pt;
+    background-color: #ebedef;
+    border-radius: 5px;
+    padding: 0.3rem;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas: 
+        "title"
+        "body";
+    .title {
+        grid-area: title;
+    }
+    .body {
+        grid-area: body;
+    }
+}
+
+ul {
+    margin: 0rem;
+    padding-left: 1rem;
+}

@@ -1,9 +1,29 @@
 @use '../whStyles';
 
-span {
+.title-layout {
     font-size: whStyles.$standard-font-size;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        'brand      job     .';
+}
+
+span.job-title-layout {
+    grid-area: job;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: whStyles.$standard-gap;
     place-content: center;
+    em {
+        font-size: 7.5pt;
+    }
+}
+
+.brand {
+    grid-area: brand;
+}
+
+strong {
+    font-family: 'Gabriela-Regular', sans-serif;
 }

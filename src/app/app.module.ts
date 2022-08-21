@@ -26,6 +26,7 @@ import { CyCyberComponent } from './cyborg-omnibus/cy-cyber/cy-cyber.component';
 import { CyCombatComponent } from './cyborg-omnibus/cy-combat/cy-combat.component';
 import { SafeHtmlPipe } from './safepipe.module';
 import { FormsModule } from '@angular/forms';
+import { OmniAdvancementComponent } from './whitehack-omnibus/omni-advancement/omni-advancement.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FormsModule } from '@angular/forms';
     CyEquipComponent,
     CyNanoAppsComponent,
     CyCyberComponent,
-    CyCombatComponent
+    CyCombatComponent,
+    OmniAdvancementComponent,
   ],
   imports: [
     FormsModule,

@@ -11,27 +11,27 @@ export class OmniTraitsComponent {
   traits = [
     {
       statName: 'strength',
-      description: 'physical power'
+      description: 'physical prowess'
     },
     {
       statName: 'constitution',
-      description: 'physical resilience and  well-being'
+      description: 'endurance & health'
     },
     {
       statName: 'dexterity',
-      description: 'coordination and quickness'
+      description: 'coordination & quickness'
     },
     {
-      statName: 'karisma',
-      description: 'divine favor, fortune, and luck'
+      statName: 'charisma',
+      description: 'influence, morale, & reactions'
     },
     {
       statName: 'wisdom',
-      description: 'mental resilience and well-being'
+      description: 'insight, perception, & judgement'
     },
     {
       statName: 'intelligence',
-      description: 'mental acuity and flexibility'
+      description: 'memory & reasoning'
     },
   ];
 

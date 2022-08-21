@@ -2,7 +2,8 @@ $detail-font: 6pt;
 $standard-font-size: 8pt;
 $large-font-size: 8.5pt;
 $background-grey: hsl(210, 11%, 93%);
-$title-font: 'Baron Neue', sans-serif;
+$title-font: 'Gabriela-Regular', sans-serif;
+$body-font: 'Roboto', sans-serif;
 $standard-gap: 0.3rem;
 $field-size: 27pt;
 
@@ -24,9 +25,9 @@ em {
 .card {
     height: 100%;
     font-size: $standard-font-size;
-    // background-color: $background-grey;
-    border-right: 0.1rem solid darkgrey;
-    // border-radius: 5px;
+    background-color: $background-grey;
+    // border-right: 0.1rem solid darkgrey;
+    border-radius: 5px;
     padding: 0.3rem;
 
     display: grid;
@@ -43,6 +44,7 @@ em {
         color: grey;
         font-size: $large-font-size;
         border-bottom: 1px solid darkgray;
+        font-weight: bold;
         .important {
             color: black;
 

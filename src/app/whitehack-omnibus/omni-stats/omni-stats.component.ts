@@ -22,7 +22,7 @@ export class OmniStatsComponent {
     },
     {
       statName: 'armor class',
-      description: ['how hard you are to hit']
+      description: ['how hard it is to hit you']
     },
     {
       statName: 'saving throw',
@@ -31,9 +31,13 @@ export class OmniStatsComponent {
       wiseDesc: ['+2 magick & mind']
     },
     {
-      statName: 'initiative',
+      statName: 'initiative mod',
       description: ['+1 init. DEX 13+', '+2 init. DEX 16+'],
-    }
+    },
+    {
+      statName: 'movement',
+      description: ['travel distance in feet every 10sec'],
+    },
   ];
 
   constructor() { }

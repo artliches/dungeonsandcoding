@@ -1,0 +1,258 @@
+<span class="center-layout">
+    <span [ngClass]="{'wise': jobName === 'wise'}" class="backLayout">
+        <span class="card advancement-table">
+            <strong class="title">{{jobName | titlecase}} Advancement Table</strong>
+            <table class="body">
+                <tr>
+                    <th [ngClass]="{'xp': header === 'XP'}" *ngFor="let header of tableHeaders">
+                        {{header}}
+                    </th>
+                </tr>
+                <tr *ngFor="let row of dataRows">
+                    <td *ngFor="let data of row">
+                        {{data}}
+                    </td>
+                </tr>
+            </table>
+        </span>
+    
+        <span class="card crit-hit">
+            <strong class="title">Critical Hit</strong>
+            <table class="body">
+                <tr>
+                    <th *ngFor="let header of critTableHeaders">
+                        {{header}}
+                    </th>
+                </tr>
+                <tr *ngFor="let row of critTableData">
+                    <td *ngFor="let data of row">
+                        {{data}}
+                    </td>
+                </tr>
+            </table>
+        </span>
+    
+        <span class="card crit-miss">
+            <strong class="title">Critical Fumble</strong>
+            <span class="body">
+                <table>
+                    <tr>
+                        <th *ngFor="let header of critFumbleHeader">
+                            {{header}}
+                        </th>
+                    </tr>
+                    <tr *ngFor="let row of critFumbleData">
+                        <td *ngFor="let data of row">
+                            {{data}}
+                        </td>
+                    </tr>
+                </table>
+                <em>
+                    Targets wearing helmets re-roll results of 16+ once, and you can
+                    save against fumbling to just fail instead. Crits always do
+                    double damage, stacking with the deft's double damage.
+                </em>
+            </span>
+        </span>
+    
+        <span class="crit-data">
+    
+        </span>
+    
+        <span class="card ranged">
+            <strong class="title">Missile Attacks</strong>
+            <span class="body">
+                Weapon ranges are the <em>close range</em>.
+                <ul>
+                    <li>
+                        The attack gets −1 AV for each exceeded
+                        increment of the close range value, up to a maximum of
+                        −4 (longer shots are impossible).
+                    </li>
+                    <li>
+                        When firing into a melee, you must beat the AC of
+                        your target by 4 or more in order to hit it. If you beat it by
+                        less, you hit someone else in the melee, at the Referee's
+                        discretion. A miss is still a miss, though.
+                    </li>
+                    <li>
+                        Targetting a certain
+                        spot is a task roll. Hitting a moving target's spot is a
+                        missile attack vs AC 0. Targets in area get
+                        to save to avoid damage. The area of effect
+                        15×15 feet, or 9 grid squares. Can be arranged
+                        into a cone for breath weapons, or spread differently
+                        in a tight space. For ray weapons, count the number of
+                        squares crossed in the line of fire (9 squares = 45ft).
+                    </li>
+                </ul>
+            </span>
+        </span>
+    
+        <span class="card special-combat">
+            <strong>Special Combat Options</strong>
+            <ul>
+                <li>
+                    <strong>Charge.</strong> Charge 15 feet in a straight line to aack with
+                    combat advantage. You get −3 AC until your
+                    next turn.
+                </li>
+                <li>
+                    <strong>Defense.</strong> Take −2 AV or −2 damage, or −1 AV and −1
+                    damage, to get +2 AC.
+                </li>
+                <li>
+                    <strong>Offense.</strong> Take −2 AC and get +1 AV and+1 damage. All
+                    effects last until your next turn.
+                </li>
+                <li>
+                    <strong>Grapple.</strong> Make a regular unarmed attack, but forsake
+                    your damage to hold your opponent. The
+                    opponent must win a contest against your
+                    strength to break free.
+                </li>
+                <li>
+                    <strong>Protect.</strong> Make a task roll against your AV (i.e. not an
+                    attack). If you succeed, the next attack on an
+                    adjacent friend targets you instead. Enemies
+                    may save to avoid it.
+                </li>
+                <li>
+                    <strong>Trick.</strong> Attack and exchange your damage roll for
+                    one of the following effects, each negated
+                    by an enemy save:
+                    <ul>
+                        <li>
+                            Push the enemy five feet
+                            backwards or diagonally backwards, and follow
+                            into her former space if you like.
+                        </li>
+                        <li>
+                            Feint to make
+                            two attacks with combat advantage in the next
+                            round.
+                        </li>
+                        <li>
+                            Disarm the enemy so that her weapon
+                            drops 2d6 feet away.
+                        </li>
+                        <li>
+                            Trip the enemy so that
+                            she loses one move in the next round, giving
+                            you combat advantage.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Press.</strong> Take a penalty to your AV when using a special
+                    combat option. Give your opponent the same
+                    penalty to her save. If you fail or if the save
+                    succeeds, the enemy gets combat advantage
+                    against you in the next round.
+                </li>
+            </ul>
+        </span>
+    
+        <span class="card healing">
+            <strong>Healing & Injuries</strong>
+            <span class="body">
+                <span>
+                    A character who has <em>not gone below zero HP</em>
+                    will restore all hit points with 48 hours of rest.
+                </span>
+                <ul>
+                    <li>
+                        Recovers 1 HP every evening and
+                        morning, 2 HP if she succeeds at a constitution task
+                        roll.
+                    </li>
+                    <li>
+                        A character can bind 1d6−3 HP
+                        worth of wounds immediately after a battle, with
+                        a trained task roll. Fumbling = -1HP.
+                        <em>
+                            Can only bind HP lost in that battle.
+                        </em>
+                    </li>
+                </ul>
+                <br />
+                <div>
+                    If your HP went into the negatives, you are <em>injured</em>. Heal at usual rate, but
+                    only to HP 1. Also counts as carrying five regular items.
+                </div>
+                <ul>
+                    <li>
+                        To remove injured condition, must be treated by someone with a healer
+                        vocation—a physician, a healer, an old crone, etc.
+                    </li>
+                    <li>
+                        Can remove the injured condition quickly by giving the
+                        character a permanent disadvantage, noted next to
+                        a trait. The disadvantage can be used to demand
+                        negative double rolls or to nullify the positive double
+                        roll benefit of a group for a particular task.
+                    </li>
+                    <li>
+                        When someone uses a weapon’s knock-out special
+                        ability, the resulting damage can’t kill but only knock
+                        out. This means that you heal normally even from
+                        negative HP.
+                    </li>
+                </ul>
+            </span>
+        </span>
+    
+        <span class="card death">
+            <strong class="title">Damage & Death</strong>
+            <span class="body">
+                <table>
+                    <tr>
+                        <th>HP</th>
+                        <th>Consequence</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            0
+                        </td>
+                        <td>Knocked out until healed to positive HP.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            < 0
+                        </td>
+                        <td>
+                            Knocked out as per above but must also save or
+                            die in d6 rounds. −10 HP means instant death.
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div>
+                    A successful first aid attempt stops bleeding as well as
+                    dying, but if it is interrupted (it takes 10 minutes to
+                    complete), the dying process starts again without another
+                    save. A character who has negative HP but isn't dying
+                    must save again and follow the above rules if she is
+                    subjected to further damage.
+                </div>
+            </span>
+        </span>
+    
+        <span *ngIf="jobName === 'wise'" class="card magick">
+            <strong class="title">Magick HP Guidelines</strong>
+            <span class="body">
+                <tr>
+                    <th *ngFor="let header of magickHeaders">
+                        {{header}}
+                    </th>
+                </tr>
+                <tr *ngFor="let row of magickData">
+                    <td *ngFor="let data of row">
+                        {{data}}
+                    </td>
+                </tr>
+            </span>
+        </span>
+    
+    </span>
+</span>

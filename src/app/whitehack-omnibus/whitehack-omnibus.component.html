@@ -25,6 +25,10 @@
     </div>
 </span>
 
+<span *ngFor="let job of jobs" class="whSheet backSheet">
+    <app-omni-advancement [jobName]="job.jobName"></app-omni-advancement>
+</span>
+
 <!-- <span *ngFor="let job of jobs" class="whSheet horzLayout">
     <div class="title">
         <app-omni-title [title]="job.jobName" [descrip]="job.description"></app-omni-title>

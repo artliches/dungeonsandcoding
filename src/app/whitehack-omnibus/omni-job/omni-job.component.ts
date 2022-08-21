@@ -167,5 +167,9 @@ Referee unless the player wishes it to happen.
     return 0;
   }
 
+  getJobTitle(): string {
+    return this.jobTitle === 'void' ? 'you' : this.jobTitle;
+  }
+
 
 }
