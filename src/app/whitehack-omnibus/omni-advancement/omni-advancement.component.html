@@ -30,9 +30,13 @@
                     </td>
                 </tr>
             </table>
+            <em>
+                Worn helmets shatter to negate rolling on this table. Crits always do
+                double damage, stacking with the deft's double damage.
+            </em>
         </span>
     
-        <span class="card crit-miss">
+        <!-- <span class="card crit-miss">
             <strong class="title">Critical Fumble</strong>
             <span class="body">
                 <table>
@@ -53,7 +57,7 @@
                     double damage, stacking with the deft's double damage.
                 </em>
             </span>
-        </span>
+        </span> -->
     
         <span class="crit-data">
     
@@ -201,11 +205,18 @@
                 </ul>
             </span>
         </span>
+
+        <span class="card short">
+            <strong class="title">Short Rest</strong>
+            <span class="body">
+                Characters can take a 3 hour rest drinking water, sitting down, and binding wounds to heal 2HP and to free up one locked slot.
+            </span>
+        </span>
     
         <span class="card death">
             <strong class="title">Damage & Death</strong>
             <span class="body">
-                <table>
+                <table class="death-table">
                     <tr>
                         <th>HP</th>
                         <th>Consequence</th>
@@ -235,6 +246,13 @@
                     must save again and follow the above rules if she is
                     subjected to further damage.
                 </div>
+                <br />
+                <div>
+                    <ul>
+                        <li>Stunned. -2 to all rolls and movement is reduced to 10ft./round</li>
+                        <li>Paralyzed. -4 to all rolls and movement is reduced to 10ft./round</li>
+                    </ul>
+                </div>
             </span>
         </span>
     
@@ -251,6 +269,32 @@
                         {{data}}
                     </td>
                 </tr>
+
+                <div>
+                    <ul class="extra-magick">
+                        <li>
+                            Spell Foci. casting without a foci increases all spell cost by +1HP.
+                            <ul>
+                                <li>
+                                    Wooden Foci. +0HP cost
+                                </li>
+                                <li>
+                                    Silver Foci. -1HP cost
+                                </li>
+                                <li>
+                                    Specialized Foci. -2HP cost only to <em>specific school of magick</em>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Blood Magick. casting at > 0 HP carries additional costs.
+                            <ul>
+                                <li>All spells cost 1HP minimum.</li>
+                                <li>All spells must save or have their cost doubled.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </span>
         </span>
     

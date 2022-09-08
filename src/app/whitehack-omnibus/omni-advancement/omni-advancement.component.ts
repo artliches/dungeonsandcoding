@@ -85,7 +85,7 @@ export class OmniAdvancementComponent implements OnInit {
     ];
 
     critTableHeaders = [
-        'd20',
+        'd12',
         'The target\'s',
     ];
 
@@ -107,14 +107,14 @@ export class OmniAdvancementComponent implements OnInit {
         [10, 'Must try to flee.'],
         [11, 'Is deaf for 10 minutes.'],
         [12, 'Starts to bleed. +1 damage every round.'],
-        [13, 'Takes an additional d6 damage.'],
-        [14, 'Is stunned. No actions for 2 rounds.'],
-        [15, 'Is confused. Save or attack the nearest ally.'],
-        [16, 'Dies in 5 rounds.'],
-        [17, 'Dies instantly.'],
-        [18, 'Meets a gory death. Allies check morale.'],
-        [19, 'Attacks an ally, then dies. Roll to hit.'],
-        [20, 'Re-roll to get two crit effects.'],
+        // [13, 'Takes an additional d6 damage.'],
+        // [14, 'Is stunned. No actions for 2 rounds.'],
+        // [15, 'Is confused. Save or attack the nearest ally.'],
+        // [16, 'Dies in 5 rounds.'],
+        // [17, 'Dies instantly.'],
+        // [18, 'Meets a gory death. Allies check morale.'],
+        // [19, 'Attacks an ally, then dies. Roll to hit.'],
+        // [20, 'Re-roll to get two crit effects.'],
     ];
 
     critFumbleData = [
