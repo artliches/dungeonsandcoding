@@ -9,6 +9,7 @@ export class CyIdentityComponent implements OnInit {
   @Input() specialTraits: string;
   @Input() extraInfo: string;
   @Input() horz: boolean;
+  @Input() isClassless = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 <div class="card">
     <span class="card-title">
-        <span class="important">/// automatic information system corrupted...reboot failed; /// manually enter your <strong>name</strong>, roll {{extraInfo}}, and submit any/all other information.</span>
+        <span class="important">/// automatic information system corrupted...reboot failed; /// manually enter your <strong>name</strong> <span *ngIf='!isClassless'>, roll {{extraInfo}}</span>, and submit any/all other information.</span>
     </span>
     <span [ngClass]="{'horz': horz}" class="card-body">
         <div class="empty-box">

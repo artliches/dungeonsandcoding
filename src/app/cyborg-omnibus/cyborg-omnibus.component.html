@@ -48,10 +48,10 @@
             <app-cy-descrip [punkName]="punk.name" [punkFlavor]="punk.flavor" [pageRef]="punk.page"></app-cy-descrip>
         </div>
         <div class="identity">
-            <app-cy-identity [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
+            <app-cy-identity [isClassless]="punk.name === 'classless'" [specialTraits]="punk.specialTraits" [extraInfo]="punk.extraInfo"></app-cy-identity>
         </div>
         <div class="stats">
-            <app-cy-stats [hacker]="punk.name === 'burned hacker'" [statChanges]="punk.statChanges"></app-cy-stats>
+            <app-cy-stats [classless]="punk.name === 'classless'" [glitches]="punk.glitches" [hacker]="punk.name === 'burned hacker'" [statChanges]="punk.statChanges"></app-cy-stats>
         </div>
         <div class="equip">
             <app-cy-equip [gearModification]="punk['starting gear']"></app-cy-equip>
@@ -108,15 +108,6 @@
     <div class="nanoApps">
         <app-cy-nano-apps [horz]="true"></app-cy-nano-apps>
     </div>
-    
-    <!-- <div class="info info-left">
-        <app-cy-combat [left]="true"></app-cy-combat>
-    </div>
-    
-    <div class="info info-right">
-        <app-cy-combat [right]="true"></app-cy-combat>
-    </div>-->
-    
     <div class="info info-bottom">
         <app-cy-combat [slasher]="punk.name === 'renagade cyberslasher'" [horz]="true" [bottom]="true"></app-cy-combat>
     </div> 

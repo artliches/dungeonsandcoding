@@ -27,6 +27,16 @@ export class CyborgOmnibusComponent implements OnInit {
   displayedPunks = [];
   punks = [
     {
+      name: 'classless',
+      page: 'pg. 38',
+      flavor: `<strong>We should have burned this city centuries ago.</strong> The Nu-Capitalists and Immortal OG Money Aristocrats that rule on high in their glass towers stole our futures. The cops silence our voices and gun us down in the streets. They turned us into wage-slaves, and turned us against our fellow man just to survive. <strong>No more.</strong>`,
+      specialTraits: `You choose two stats to <strong>roll 4d6</strong>, dropping the lowest d6.`,
+      glitches: 'd2',
+      'starting gear': `
+        <div>/// Roll d12 for <strong>weapon</strong> (pg. 58) and d3 for <strong>armor</strong> (pg. 60).</div>
+      `
+    },
+    {
       name: 'shunned nanomancer',
       page: 'pg. 42',
       flavor: `<strong>It\'s inside you</strong>. Infesting your brain, warping your flesh. People are afraid of you now. They\'re afraid of the power that poisons you. <strong>You\'re scared too.</strong>`,
@@ -132,7 +142,6 @@ export class CyborgOmnibusComponent implements OnInit {
   }
 
   changePunk(value: any) {
-    console.log(value);
     if (value === 'all') {
       this.displayedPunks = this.punks;
     } else {

@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CyStatsComponent implements OnInit {
   @Input() hacker: boolean;
   @Input() statChanges: any;
+  @Input() glitches: any;
+  @Input() classless = false;
   debt = '';
   rollTable = ['Roll', '1-4', '5-6', '7-8', '9-12', '13-14', '15-16', '17-20'];
   scoreTable = ['Score', '-3', '-2', '-1', '0', '+1', '+2', '+3'];
