@@ -5,26 +5,30 @@
 
     <span [ngClass]="{'horz': horz}" class='card-body'>
         <span>
-            <strong>Initiative.</strong>
-            &nbsp;Roll a d6: high roll wins. If there is a tie, missiles before melee; lighter weapons before heavier ones.
-            <p>&nbsp;&nbsp;If you do nothing during your turn, you can change your initiative to 6 in following rounds.</p>
-            <p>&nbsp;&nbsp;You can choose a lower position. In the first round after this choice, you can go before others on the same initiative.</p>
-        </span>
-    
-        <span>
             <strong>Actions During a Round.</strong>
             &nbsp;attack&#8594;move&#8594;small action
+        </span>
+
+        <span>
+            <strong>Combat Advantage</strong>
+            &nbsp;The Referee decides when there is advantage, but generally flanking, high ground, sure footing vs. poor footing, or attacking unawares enemies grants +2AV/dmg.
+        </span>
+
+        <span>
+            <strong>Combat Stances.</strong>
+            &nbsp;Chosen at the beginning of your turn, these stances modify your stats until the start of your next turn:
+            <ul>
+                <li><strong>Offense</strong>. take −2 AC and get +1 AV and+1 damage.</li>
+                <li><strong>Defense</strong>. take −2 AV or −2 damage, or −1 AV and −1 damage, to get +2 AC.</li>
+                <li><strong>Brace</strong>. take -2AV or -2 damage, or -1AV and -1 damage, to get +2 ST.</li>
+            </ul>
+            More combat options can be found on the inverse-side.
         </span>
     
         <span>
             <strong>Free Attack & Disengaging</strong>
             &nbsp;Casting a spell, quaffing a potion, taking something out of a bag, moving out of melee range, and similar actions give every ready enemy in melee range a free attack. You can only make one free attack per round, except for the Strong.
-            <p>&nbsp;&nbsp;To disengage, you must move backwards at a careful pace (-10ft/-2sq), still facing your opponent.</p>
-        </span>
-    
-        <span>
-            <strong>Combat Advantage</strong>
-            &nbsp;The Referee decides when there is advantage, but generally flanking, high ground, sure footing vs. poor footing, back strikes or attacking unawares enemies grants +2AV/dmg.
+            <p>&nbsp;&nbsp;To disengage, you must move at a careful pace (-10ft/-2sq).</p>
         </span>
     
         <span class="persist-descrip">

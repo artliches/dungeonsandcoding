@@ -102,8 +102,11 @@
                 grid-area: mv;
             }
             &.init {
-                padding-top: 0.3rem;
+                // padding-top: 0.3rem;
                 grid-area: init;
+                .stat-name-section {
+                    place-self: start;
+                }
             }
 
             .check::before {

@@ -6,6 +6,10 @@
     height: 97.5%;
 
     .card-body {
+        ul {
+            margin: 0rem;
+            padding-left: 1rem;
+        }
         &:not(.horz) {
             font-size: 8.45pt;
         }
@@ -21,10 +25,6 @@
         }
 
         .persist-descrip {
-            ul {
-                margin: 0rem;
-                padding-left: 1rem;
-            }
             i::after {
                 content: '';
                 display: inline-block;

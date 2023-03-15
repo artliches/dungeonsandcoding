@@ -135,7 +135,7 @@ export class OmniAdvancementComponent implements OnInit {
         ['0'   , 'Zero, trivial effect, slotted scroll or simple effect boosted by a limiting condition.'],
         ['1'   , 'Simple, can be achieved without magick.'],
         ['2'   , 'Standard, just beyond the possible. '],
-        ['d6'  , ' Major, a major breach of natural law.'],
+        ['d6'  , 'Major, a major breach of natural law.'],
         ['2d6' , 'Powerful, use of raw power.'],
         ['+'   , 'Costly. Peripheral to vocation and/or wording. Extra duration, range, effect area, victims, damage. No save. Craft item (Cost × 2). Adding another charge (Cost × 1). Expensive magick type. Crafting a permanent magick item (Cost × 2 permanent HP).'],
         ['−'   , 'Cheaper. Very close to vocation and/or wording. Rare/costly ingredients. Bad side effects for the Wise. Wise save (fail negates). Boosting but addictive drugs. Cheap magick type. Extra casting time. Time or place requirements.'],

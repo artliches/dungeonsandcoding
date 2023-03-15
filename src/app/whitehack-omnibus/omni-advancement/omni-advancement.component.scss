@@ -44,7 +44,8 @@ em {
         "com    hit"
         "com    rang"
         "heal   short"
-        "heal   death";
+        "heal   death"
+        "boss      boss";
     
     .advancement-table {
         grid-area: table;
@@ -75,6 +76,9 @@ em {
     .death {
         grid-area: death;
     }
+    .boss {
+        grid-area: boss;
+    }
     .magick {
         grid-area: mag;
         .extra-magick {
@@ -86,6 +90,9 @@ em {
     .short {
         grid-area: short;
     }
+    .card {
+        font-size: 10pt;
+    }
 
     &.wise {
         grid-template-areas:
@@ -94,9 +101,10 @@ em {
         "com    rang"
         "heal   short"
         "heal   death"
-        "mag    mag";
+        "mag    mag"
+        "boss   boss";
         .card {
-            font-size: 9pt;
+            font-size: 8.4pt;
         }
     }
 }

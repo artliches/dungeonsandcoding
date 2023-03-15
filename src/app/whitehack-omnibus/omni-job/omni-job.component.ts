@@ -15,10 +15,10 @@ export class OmniJobComponent {
       class: 'deft',
       vocation:
         `<div>
-        When properly equipped, and when rolling for a task or an attack that is in line with the vocation, the deft always use a positive double roll. For this reason, deft characters don\'t mark the the vocation group next to a specific attribute.
+        When properly equipped, and when rolling for a task or an attack that is in line with the vocation, the deft always have advantage (roll 2d20, taking the better result). For this reason, deft characters don\'t mark the the vocation group next to a specific attribute.
         </div>
         <p>
-        Additionaly, when they try to do damage from an advantageous position in combat, deft characters may switch this double positive roll benefit for double damage, if their vocation is relevant to the situation.
+        Additionaly, when they try to do damage from an advantageous position in combat, deft characters may switch this advantage benefit for double damage, if their vocation is relevant to the situation.
         </p>
         <div>
         A combat oriented vocation gets +1 to damage and AC from an off-hand weapon, while non-combat oriented vocations may save to turn a successful task roll into a critical success, once per session.
@@ -139,7 +139,7 @@ and creatures will always sense their courageous quality.
         </div>
         <p></p>
         <div>
-          The Fortunate may give XP earned from gold to raise their HD, following the same XP curve as their master.
+          The Fortunate may give XP earned raise their HD, following the same XP curve as their master.
         </div>
       `,
 

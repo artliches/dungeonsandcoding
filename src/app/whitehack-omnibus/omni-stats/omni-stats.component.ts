@@ -13,12 +13,12 @@ export class OmniStatsComponent {
     {
       statName: 'hit points',
       description: ['instant death at -10HP'],
-      strongDesc: ['+1 HP. CON 13+', '+1 HP. CON 16+']
+      strongDesc: ['<strong>CON 13+</strong>: +1 HP.', '<strong>CON 16+</strong>: +1 HP.']
     },
     {
       statName: 'attack value',
       description: ['roll at (crit) or under'],
-      strongDesc: ['+1 AV. STR 13+', '+1 dmg. STR 16+']
+      strongDesc: ['<strong>STR 13+</strong>: +1 AV.', '<strong>STR 16+</strong>: +1 dmg.']
     },
     {
       statName: 'armor class',
@@ -32,7 +32,7 @@ export class OmniStatsComponent {
     },
     {
       statName: 'initiative mod',
-      description: ['+1 init. DEX 13+', '+2 init. DEX 16+'],
+      description: [`<strong>DEX 13+</strong>:<div>+1 init. & +5MV</div>`, `<strong>DEX 16+</strong>:<div>+2 init. & +10MV</div>`],
     },
     {
       statName: 'movement',

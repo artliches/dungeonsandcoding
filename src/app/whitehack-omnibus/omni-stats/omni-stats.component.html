@@ -33,18 +33,15 @@
                                 'check': stat.statName === 'hit points'|| stat.statName === 'attack value'
                             }"
                         >
-                            <em>{{desc}}</em>
+                            <em [innerHTML]="desc"></em>
                         </div>
                     </span>
                 </ng-template>
                 <ng-template #generic>
                     <div
                         *ngFor="let desc of stat.description"
-                        [ngClass]="{
-                            'check': stat.statName === 'initiative mod'
-                        }"
                     >
-                        <em>{{desc}}</em>
+                        <em *ngIf="stat.statName !== 'initiative mod'">{{desc}}</em>
                     </div>
                 </ng-template>
             </span>
@@ -71,6 +68,14 @@
                 <ng-container *ngIf="stat.statName !== 'attack value' && stat.statName !== 'hit points' && stat.statName !== 'initiative mod'">
                     <div class="empty-box circle">
                     </div>
+                </ng-container>
+                <ng-container *ngIf="stat.statName === 'initiative mod'">
+                    <div
+                    *ngFor="let desc of stat.description"
+                    class="check"
+                >
+                    <em [innerHTML]="desc"></em>
+                </div>
                 </ng-container>
             </span>
         </div>
